@@ -1,0 +1,50 @@
+// ----------------------------------------------------------------
+// パンくず(Yost SEO)
+// IN
+// <div class="bread-navi">
+// <?php // パンくずリスト(yost seo)
+// if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<div class="bread-navi">','</div>' ); }
+// ?>
+// </div>
+//
+// OUT
+// <div class="bread-navi"><span><span><a href="//localhost:3000/">HOME</a> &gt; <span class="breadcrumb_last" aria-current="page">◯◯◯◯</span></span></span></div>
+// ----------------------------------------------------------------
+.bread-navi {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  a {
+    margin: 0 5px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+    &:link, &:visited {
+      text-decoration: none;
+    }
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+  span > span > span{
+    margin: 0 5px;
+  }
+  .breadcrumb_last {}
+}
+@include res_min() {
+  .bread-navi {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    @include maxW();
+    a {
+      margin: 0 8px;
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+    span > span > span{
+      margin: 0 8px;
+    }
+    .breadcrumb_last {}
+  }
+}

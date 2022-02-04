@@ -1,0 +1,303 @@
+/* ----------------------------------------------------------------
+  ヘッダーのレイアウト
+---------------------------------------------------------------- */
+.site_header {
+  transition: .15s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+
+  width: 100%;
+  height: 60px;
+  text-align: left;
+  background-color: rgba(255,255,255,0);
+  box-shadow: 0 3px 6px rgba(0,0,0,0);
+  @include flex(nowrap, flex-end, center);
+  .header_logo {
+    opacity: 0;
+    padding: 0 12px;
+    line-height: 1;
+    img {
+      max-width: 220px;
+    }
+  }
+  .button_inquery {
+    margin-left: auto;
+    flex: 0 0 64px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: $keyColor;
+  }
+  .menu_bar {
+    flex: 0 0 60px;
+  }
+}
+@include res_min( $break2 ) {
+  .site_header {
+    height: 70px;
+    .header_logo {
+      padding: 0;
+      flex: 0 0 244px;
+      img {
+        margin-top: 4px;
+        margin-left: 12px;
+      }
+    }
+    .button_inquery {
+      display: none;
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  メニューのスタイル
+---------------------------------------------------------------- */
+.global_menu {
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFEBE5;
+  padding: 20px 15px 100px;
+  // overflow-y: scroll;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  pointer-events: none;
+  z-index: 9998;
+  transition:.15s;
+}
+@include res_min( $break2 ) {
+  .global_menu {
+    opacity: 1;
+    height: 100%;
+    background-color: transparent;
+    padding: 0;
+    pointer-events: visible;
+    position: relative;
+    top: auto;
+  }
+}
+
+.menu {
+  // li
+  .menu_item {
+    text-align: center;
+    a {
+      display: block;
+      padding: .8em 1em;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $baseColor;
+      line-height: 1.5;
+      letter-spacing: .1em;
+      position: relative;
+    }
+    a {
+      &:link, &:visited {
+        opacity: 1;
+      }
+      &:hover, &:active {
+        opacity: .7;
+      }
+    }
+  }
+  // お申し込みボタン
+  .menu_item__inquery {
+    a {
+      margin: 25px auto 0;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 88%;
+      max-width: 305px;
+      height: 70px;
+      border-radius: 10px;
+      &:link, &:visited {
+        opacity: 1;
+        background-color: $keyColor;
+        color: #fff;
+      }
+      &:hover, &:active {
+        opacity: .7;
+      }
+    }
+  }
+}
+@include res_min( $break2 ) {
+  .menu {
+    height: 100%;
+    @include flex(nowrap, flex-end, center);
+    // li
+    .menu_item {
+      padding: 0 11px;
+      border-left: 1px solid #707070;
+      &:first-of-type {
+        padding-left: 2px;
+        border-left: none;
+      }
+      a {
+        padding: 0;
+        font-size: 1.3rem;
+        line-height: 1.46154;
+        letter-spacing: 0;
+      }
+    }
+    // お申し込みボタン
+    .menu_item__inquery {
+      border-left: none;
+      a {
+        white-space: nowrap;
+        margin-top: auto;
+        padding: 0 12px;
+        width: auto;
+        max-width: none;
+        height: 44px;
+        border-radius: 22px;
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  開閉トグル
+---------------------------------------------------------------- */
+.menu_bar {
+  // button reset
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  // position: absolute;
+  // right: 0;
+  // top: 0;
+
+  .menu_bar_line {
+    width: 30px;
+    height: 2px;
+    background-color: $keyColor;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $keyColor;
+      position: absolute;
+      left: 0;
+      @include transition;
+    }
+    &::before {
+      top: -9px;
+    }
+    &::after {
+      top: 9px;
+    }
+  }
+}
+@include res_min( $break2 ) {
+  .menu_bar {
+    display: none;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  スクロールでfixed　まとめて指定
+---------------------------------------------------------------- */
+// header
+.site_header.is__fixed {
+  background-color: rgba(255,255,255,1);
+  box-shadow: 0 3px 6px rgba(0,0,0,.16);
+  .header_logo {
+    opacity: 1;
+  }
+  .button_inquery {
+    height: 100%;
+    border-radius: 0;
+  }
+}
+@include res_min( $break2 ) {
+  .site_header.is__fixed {
+    .menu {
+      // li
+      .menu_item {
+        &:first-of-type {
+          padding-left: 2px;
+        }
+      }
+      // お申し込みボタン
+      .menu_item__inquery {
+        padding: 0;
+        a {
+          padding: 0;
+          width: 112px;
+          max-width: none;
+          height: 70px;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  メニュー開閉時の挙動　まとめて指定
+---------------------------------------------------------------- */
+// body
+body.is__open {
+  overflow: hidden;
+}
+
+// header
+.site_header.is__open {
+  background-color: #FFEBE5;
+  .header_logo,
+  .button_inquery {
+    display: none;
+  }
+}
+
+// メニュー
+.global_menu.is__open {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+// 開閉トグルのデザイン
+.menu_bar.is__open {
+  .menu_bar_line {
+    background-color: transparent !important;
+    &::before,
+    &::after {
+      top: 0;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+}

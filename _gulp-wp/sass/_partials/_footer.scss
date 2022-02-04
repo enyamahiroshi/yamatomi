@@ -1,0 +1,73 @@
+/* ----------------------------------------------------------------
+  フッターのレイアウト
+---------------------------------------------------------------- */
+.site_footer {
+  background-color: $baseColor;
+  padding: 60px 38px 78px;
+}
+@include res_min( $break ) {
+  .site_footer {
+    padding: 70px;
+  }
+}
+
+.footer_contents {
+  text-align: center;
+  .logo_footer {
+    margin: 0 auto;
+    width: 66.667%;
+  }
+  .btn_footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80px;
+    margin-top: 30px;
+    padding: 0 30px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.5;
+    letter-spacing: .05em;
+    &:link, &:visited {
+      text-decoration: none;
+      background-color: #fff;
+      border-radius: 6px;
+    }
+    &:hover, &:active {
+      opacity: .8;
+      color: inherit;
+    }
+    span {
+      vertical-align: middle;
+    }
+    i {
+      img {
+        vertical-align: middle;
+        width: 14px;
+      }
+    }
+  }
+}
+@include res_min( $break ) {
+  .footer_contents {
+    @include flex(nowrap, space-between, center);
+    &::after {
+      content: '';
+      flex: 0 1 200px;
+      height: 100%;
+    }
+    .logo_footer {
+      flex: 0 0 200px;
+    }
+    .footer_link {
+      flex-basis: calc(100% - 200px);
+    }
+    .btn_footer {
+      white-space: nowrap;
+      display: inline-flex;
+      height: 60px;
+      margin: 0 30px;
+      padding: 0 35px;
+    }
+  }
+}

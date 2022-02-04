@@ -1,0 +1,311 @@
+/* ------------------------------------
+//  BASE
+// ----------------------------------*/
+a {
+  display: inline-block;
+  color: $baseColor;
+  text-decoration: none;
+  transition: all .1s linear 0s;
+  &:link, &:visited {
+    color: $linkColor;
+    text-decoration: none;
+  }
+  &:hover, &:active {
+    opacity: .8;
+  }
+  // ウェブアイコン使用時
+  i {
+    margin: 0 4px;
+  }
+  // transform使用時にchromeでズレが生じるのを防ぐ
+  backface-visibility: hidden;
+}
+//個別にリンクカラー等を変更
+header,
+footer,
+.clear_link_style {
+  a {
+    &:link, &:visited {
+      color: $baseColor;
+      text-decoration: none;
+    }
+    &:hover, &:active {
+      opacity: 1;
+      color: $baseColor;
+      text-decoration: none;
+    }
+  }
+}
+//画像リンク
+a img {
+  opacity: 1;
+}
+@include res_min( $break ) {
+  a img {
+    transition: opacity .1s linear 0s;
+    backface-visibility: hidden;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  アイコンタイプ
+---------------------------------------------------------------- */
+// 左に > アイコン
+.link_type_arrow_left1 {
+  padding: 0 0 0 18px;
+  position: relative;
+  &::before {
+    content: '';
+    width: 7px;
+    height: 100%;
+    background-image: url(./assets/img/common/ico_arrow_r_white.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% auto;
+    position: absolute;
+    top: .4em;
+    left: 0;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  ボタンタイプ
+---------------------------------------------------------------- */
+.button1 {
+  display: inline-block;
+  padding: 7px 15px 8px;
+  min-width: 180px;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 999px;
+  position: relative;
+  &::before {
+    content: '';
+    width: 7px;
+    height: 100%;
+    background-image: url(./assets/img/common/ico_arrow_r_white.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 10px;
+    position: absolute;
+    top: 0;
+    right: 18px;
+  }
+  &:link, &:visited {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    text-decoration: none;
+  }
+}
+
+.button2 {
+  display: inline-block;
+  padding: 12px 55px 12px 23px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 9999px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-repeat: no-repeat;
+  background-position: right 23px center;
+  &:link, &:visited {
+    color: $mainColor;
+    text-decoration: none;
+  }
+  &:hover, &:active {
+    opacity: 0.8;
+    text-decoration: none;
+  }
+
+  &.button2__download {
+    background-image: url(./assets/img/common/ico_download_ex.svg);
+    background-size: 20px auto;
+  }
+  &.button2__blank {
+    background-image: url(./assets/img/common/ico_blank.svg);
+    background-size: 14px auto;
+  }
+}
+
+.button3 {
+  display: block;
+  height: 70px;
+  margin-top: 17px;
+  padding: 22px 1em;
+  background-color: $mainColor;
+  text-align: center;
+  border-radius: 999px;
+  &:link, &:visited {
+    color: #fff;
+    text-decoration: none;
+  }
+  @include flex(nowrap, center, center);
+  i {
+    margin: 0 11px 0 0;
+    img {
+      width: 34px;
+    }
+  }
+  span {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}
+@include res_min( $break ) {
+  .button3 {
+    height: 60px;
+    margin-top: 25px;
+    padding: 16px 1em;
+    i {
+      margin-right: 12px;
+    }
+    span {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  ページナビ
+---------------------------------------------------------------- */
+.pager {
+  margin-top: 16px;
+  padding: 0 46px;
+  @include flex(wrap, center, stretch);
+  position: relative;
+
+  .prev,
+  .next,
+  .pager_num {
+    width: 30px;
+    flex: 0 0 30px;
+    height: 30px;
+    border-radius: 100%;
+    font-family: $ff-num;
+    font-size: 1.4rem;
+    line-height: 1;
+    @include flex(nowrap, center, center);
+  }
+
+  .pager_num {
+    margin: 16px 8px 0;
+  }
+  a.pager_num {
+    &:hover, &:active {
+      text-decoration: none;
+      background-color: $brown;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+  .current {
+    background-color: $brown;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  // 前後
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 0;
+    &::before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      background-image: url(./assets/img/common/ico_arrow_pager.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 5px;
+      border-radius: 15px;
+      position: absolute;
+      bottom: 0;
+    }
+    &::after {
+      content: "";
+      width: 30px;
+      height: 30px;
+      border: 1px solid $brown;
+      border-radius: 15px;
+      position: absolute;
+      bottom: 0;
+    }
+    &:hover, &:active {
+      text-decoration: none;
+      &::before {
+        background-color: $brown;
+        background-image: url(./assets/img/common/ico_arrow_pager_white.svg);
+      }
+    }
+  }
+  .prev {
+    left: 0;
+    padding-left: 40px;
+    &::before {
+      transform: scale(-1,-1);
+    }
+    &::before,
+    &::after {
+      left: 0;
+    }
+  }
+  .next {
+    right: 0;
+    padding-right: 40px;
+    &::before,
+    &::after {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  ///// 個別記事内
+  &__entry {
+    margin-top: 34px;
+    margin-bottom: 60px;
+    padding: 0;
+    @include flex(nowrap, space-between, stretch);
+    .prev,
+    .next {
+      width: auto;
+      flex: 0 0 auto;
+      position: relative;
+    }
+  }
+
+}
+
+
+/* ----------------------------------------------------------------
+  その他
+---------------------------------------------------------------- */
+
+// blank
+.link_blank {
+  img {
+    vertical-align: -1px;
+    margin-left: 1px;
+    width: 14px;
+  }
+}
+
+// telリンク
+.link_tel {
+  &:hover, &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}
+@include res_min( $break ) {
+  .link_tel {
+    pointer-events: none;
+  }
+}

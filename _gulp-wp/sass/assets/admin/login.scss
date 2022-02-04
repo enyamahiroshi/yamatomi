@@ -1,0 +1,22 @@
+// デフォルト設定
+body, html {
+  background: #f1f1f1 none repeat scroll 0 0;
+}
+.login h1 a {
+  pointer-events: none;
+
+  // background-image: none, url("./assets/img/wordpress-logo.svg?ver=20131107");
+  background-image: url("logo-login.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: block;
+  font-size: 20px;
+  height: 84px;
+  line-height: 1.3em;
+  margin: 0 auto 25px !important;
+  outline: 0 none;
+  padding: 0;
+  text-indent: -9999px;
+  width: 316px !important;
+}

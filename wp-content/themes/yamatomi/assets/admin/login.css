@@ -1,0 +1,21 @@
+body,
+html{
+  background: #f1f1f1 none repeat scroll 0 0;
+}
+
+.login h1 a{
+  display: block;
+  margin: 0 auto 25px !important;
+  padding: 0;
+  width: 316px !important;
+  height: 84px;
+  outline: 0 none;
+  background-image: url('logo-login.png');
+  background-position: center bottom;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  font-size: 20px;
+  line-height: 1.3em;
+  pointer-events: none;
+}

@@ -1,0 +1,43 @@
+// ----------------------------------------------------------------
+// * Mixins
+// ----------------------------------------------------------------
+
+// トランジション
+@mixin transition($trg: all, $time: .1) {
+  transition: $trg #{$time + s} linear 0s;
+}
+
+//レスポンシブの指定
+@mixin res_min($size: $break) {
+  @media only screen and (min-width: $size + 'px') {
+    @content;
+  }
+}
+@mixin res_max($size: $break) {
+  @media only screen and (max-width: $size + 'px') {
+    @content;
+  }
+}
+
+//max-width
+@mixin maxW($size: $maxsize) {
+  width: 100%;
+  max-width: calc(#{$size + px} + 30px);
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @include res_min( $break ) {
+    max-width: calc(#{$size + px} + 10%);
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+//flexbox
+@mixin flex($wrap: wrap, $justify: flex-start, $alignitems: center){
+  display: flex;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $alignitems;
+}

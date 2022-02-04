@@ -1,0 +1,113 @@
+/* ----------------------------------------------------------------
+  各ページ共通
+---------------------------------------------------------------- */
+//メインコンテンツ
+.site_main {
+}
+@include res_min( $break ) {
+  .site_main {
+  }
+}
+
+
+// section
+.sec {
+  & > .inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @include maxW;
+  }
+}
+@include res_min( $break ) {
+  .sec {
+    & > .inner {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+}
+
+
+// title
+.sec_title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.667;
+  img {
+    display: block;
+    margin: 0 auto 20px;
+    width: auto;
+    height: 29px;
+  }
+}
+@include res_min( $break ) {
+  .sec_title {
+    font-size: 3.6rem;
+    font-weight: 900;
+    line-height: 1.778;
+    img {
+      margin-bottom: 30px;
+      height: 59px;
+    }
+  }
+}
+
+.sec_sub_title {
+  margin-top: 70px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 900;
+  span {
+    display: block;
+    font-size: 1.6rem;
+  }
+}
+@include res_min( $break ) {
+  .sec_sub_title {
+    margin-top: 95px;
+    margin-bottom: 30px;
+    font-size: 3.2rem;
+  }
+}
+
+
+/* ------------------------------------
+//  パーツ
+// ----------------------------------*/
+
+// 注釈
+.note {
+  position: relative;
+  padding-left: 1.1em;
+  margin-top: .5em;
+  line-height: 1.5;
+  &::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+// マーカー
+.marker {
+  background-color: #FFE2D9;
+  padding: 0 .3em;
+  margin: 0 .3em;
+}
+
+
+// アンカーリンク
+.anchor {
+  display: block;
+  padding-top: 40px;
+  margin-top: -40px;
+}
+@include res_min( $break ) {
+  .anchor {
+    padding-top: 80px;
+    margin-top: -80px;
+  }
+}

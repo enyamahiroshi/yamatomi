@@ -1,0 +1,57 @@
+<section class="form-wrap">
+
+  <div class="form-item">
+    <div class="form-item__label">
+      会社名
+      <span class="optional">任意</span>
+    </div>
+    <div class="form-item__input">[mwform_text name="会社名" placeholder="例：株式会社◯◯◯"]</div>
+  </div>
+  <div class="form-item">
+    <div class="form-item__label">
+      お名前
+      <span class="required">必須</span>
+    </div>
+    <div class="form-item__input">[mwform_text name="お名前" placeholder="例：鈴木　太郎"]</div>
+  </div>
+  <div class="form-item">
+    <div class="form-item__label">
+      フリガナ
+      <span class="required">必須</span>
+    </div>
+    <div class="form-item__input">[mwform_text name="フリガナ" placeholder="例：スズキ　タロウ"]</div>
+  </div>
+  <div class="form-item">
+    <div class="form-item__label">
+      メールアドレス
+      <span class="required">必須</span>
+    </div>
+    <div class="form-item__input">[mwform_email name="メールアドレス" placeholder="例：info@mts-system.jp"]</div>
+  </div>
+  <div class="form-item">
+    <div class="form-item__label">
+      電話番号
+      <span class="optional">任意</span>
+    </div>
+    <div class="form-item__input">[mwform_tel name="電話番号"]</div>
+  </div>
+  <div class="form-item">
+    <div class="form-item__label">
+      お問い合わせ内容
+      <span class="required">必須</span>
+    </div>
+    <div class="form-item__input">[mwform_textarea name="お問い合わせ内容"]</div>
+  </div>
+
+  <div class="agree">
+    <div class="form-item__input">[mwform_checkbox name="agree" class="agree" children="プライバシーポリシーに同意する" separator=""]</div>
+    <div class="agree__txt">当サイトのプライバシーポリシーは、<a href="../privacy_policy/" target="_blank">こちら</a> からご確認いただけます。</div>
+  </div>
+
+  <div class="form-button-wrap">
+    <div class="form-button form-button__submit">[mwform_bsubmit name="submit" value="send"]送信する[/mwform_bsubmit]</div>
+    <div class="form-button form-button__back">[mwform_bback value="back"]戻る[/mwform_bback]</div>
+    <div class="form-button form-button__confirm">[mwform_bconfirm value="confirm"]内容を確認[/mwform_bconfirm]</div>
+  </div>
+
+</section>
