@@ -1,3 +1,7 @@
+$header_height_SP: 70; // ヘッダーの高さ SP
+$header_height_PC: 100; // ヘッダーの高さ PC
+
+
 /* ----------------------------------------------------------------
   ヘッダーのレイアウト
 ---------------------------------------------------------------- */
@@ -8,50 +12,121 @@
   top: 0;
   z-index: 9999;
 
+  padding: 0 0 0 19px;
+  background-color: #fff;
   width: 100%;
-  height: 60px;
+  height: #{$header_height_SP + px};
   text-align: left;
-  background-color: rgba(255,255,255,0);
-  box-shadow: 0 3px 6px rgba(0,0,0,0);
-  @include flex(nowrap, flex-end, center);
+  @include flex(nowrap, flex-end, stretch);
   .header_logo {
-    opacity: 0;
-    padding: 0 12px;
+    padding: 7px 0;
     line-height: 1;
-    img {
-      max-width: 220px;
+    white-space: nowrap;
+    &:hover {
+      opacity: .8;
+    }
+    .header_logo_mark {
+      img {
+        width: auto;
+        height: 32px;
+      }
+    }
+  }
+  .header_logo_compamy_name {
+    margin-top: 4px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .button_search {
+    margin-left: auto;
+    flex: 0 1 57px;
+    font-size: 1.2rem;
+    line-height: 1.333;
+    text-align: center;
+    @include flex(nowrap, center, center);
+    flex-direction: column;
+    &::before {
+      content: '';
+      width: 27px;
+      height: 27px;
+      background-image: url(./assets/img/common/icon_search.svg);
+      background-size: cover;
+      display: block;
+      margin-bottom: 6px;
     }
   }
   .button_inquery {
-    margin-left: auto;
-    flex: 0 0 64px;
-    height: 40px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    font-weight: 600;
+    flex: 0 1 97px;
+    height: 100%;
+    font-size: 1.2rem;
+    line-height: 1.333;
     color: #fff;
-    background-color: $keyColor;
-  }
-  .menu_bar {
-    flex: 0 0 60px;
+    text-align: center;
+    background-color: $mainColor;
+    @include flex(nowrap, center, center);
+    flex-direction: column;
+    span {
+      display: none;
+    }
+    &::before {
+      content: '';
+      width: 25px;
+      height: 17px;
+      background-image: url(./assets/img/common/icon_mail.svg);
+      background-size: cover;
+      display: block;
+      margin-bottom: 4px;
+    }
   }
 }
 @include res_min( $break2 ) {
   .site_header {
-    height: 70px;
+    padding-right: 26px;
+    height: #{$header_height_PC + px};
+    align-items: center;
     .header_logo {
       padding: 0;
-      flex: 0 0 244px;
-      img {
-        margin-top: 4px;
-        margin-left: 12px;
+      @include flex(nowrap, flex-start, flex-end);
+      .header_logo_mark {
+        img {
+          width: 137px;
+          height: auto;
+        }
+      }
+    }
+    .header_logo_compamy_name {
+      margin: 0 0 9px 26px;
+      font-size: 2rem;
+    }
+    .button_search {
+      flex: 0 0 110px;
+      font-size: 1.5rem;
+      line-height: 1;
+      flex-direction: row;
+      &::before {
+        margin-bottom: 0;
+        margin-right: 6px;
       }
     }
     .button_inquery {
-      display: none;
+      flex-basis: auto;
+      padding: 14px 32px 17px;
+      height: auto;
+      font-size: 1.7rem;
+      line-height: 1;
+      white-space: nowrap;
+      @include flex(nowrap, center, center);
+      flex-direction: row;
+      span {
+        display: inline-block;
+      }
+      br {
+        display: none;
+      }
+      &::before {
+        content: none;
+      }
     }
   }
 }
@@ -64,12 +139,12 @@
   opacity: 0;
   width: 100%;
   height: 100vh;
-  background-color: #FFEBE5;
-  padding: 20px 15px 100px;
+  background-color: #fff;
+  padding: 18px 20px 100px;
   // overflow-y: scroll;
   position: absolute;
   left: 0;
-  top: 60px;
+  top: #{$header_height_SP + px};
   pointer-events: none;
   z-index: 9998;
   transition:.15s;
@@ -77,11 +152,12 @@
 @include res_min( $break2 ) {
   .global_menu {
     opacity: 1;
-    height: 100%;
-    background-color: transparent;
+    height: auto;
     padding: 0;
+    @include flex(nowrap, center, stretch);
     pointer-events: visible;
     position: relative;
+    left: auto;
     top: auto;
   }
 }
@@ -89,80 +165,63 @@
 .menu {
   // li
   .menu_item {
-    text-align: center;
-    a {
+    .menu_link {
       display: block;
-      padding: .8em 1em;
+      padding: 13px 0;
+      border-bottom: 1px solid #A8B9C4;
+      background-image: url(./assets/img/common/icon_arrow1.svg);
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      background-size: auto 3px;
       font-size: 1.8rem;
-      font-weight: 600;
-      color: $baseColor;
-      line-height: 1.5;
-      letter-spacing: .1em;
-      position: relative;
-    }
-    a {
+      color: $mainColor;
+      line-height: 1;
+      span {
+        display: block;
+        margin-top: 3px;
+        font-family: $ff-en;
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #668CA5;
+      }
       &:link, &:visited {
-        opacity: 1;
+        background-color: #fff;
       }
       &:hover, &:active {
-        opacity: .7;
-      }
-    }
-  }
-  // お申し込みボタン
-  .menu_item__inquery {
-    a {
-      margin: 25px auto 0;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 88%;
-      max-width: 305px;
-      height: 70px;
-      border-radius: 10px;
-      &:link, &:visited {
         opacity: 1;
-        background-color: $keyColor;
-        color: #fff;
-      }
-      &:hover, &:active {
-        opacity: .7;
+        background-color: #D8E6EF;
       }
     }
   }
 }
 @include res_min( $break2 ) {
   .menu {
-    height: 100%;
-    @include flex(nowrap, flex-end, center);
+    @include flex(nowrap, center, center);
     // li
     .menu_item {
-      padding: 0 11px;
-      border-left: 1px solid #707070;
-      &:first-of-type {
-        padding-left: 2px;
-        border-left: none;
-      }
-      a {
-        padding: 0;
-        font-size: 1.3rem;
-        line-height: 1.46154;
-        letter-spacing: 0;
+      .menu_link {
+        padding: 13px 17px;
+        border-bottom: none;
+        background-image: none;
+        font-size: 1.7rem;
+        text-align: center;
+        span {
+          margin-top: 6px;
+        }
       }
     }
-    // お申し込みボタン
-    .menu_item__inquery {
-      border-left: none;
-      a {
-        white-space: nowrap;
-        margin-top: auto;
-        padding: 0 12px;
-        width: auto;
-        max-width: none;
-        height: 44px;
-        border-radius: 22px;
-      }
-    }
+  }
+}
+
+// カレントページ設定
+.blog .menu .menu_item .menu_link[href*='news'],
+.brand .menu .menu_item .menu_link[href*='brand'],
+.product .menu .menu_item .menu_link[href*='product'],
+.case_study .menu .menu_item .menu_link[href*='case_study'],
+.company .menu .menu_item .menu_link[href*='company'],
+.recruit .menu .menu_item .menu_link[href*='recruit'] {
+  &:link, &:visited {
+    background-color: #D8E6EF;
   }
 }
 
@@ -180,17 +239,14 @@
   appearance: none;
 
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: #{$header_height_SP + px};
   position: relative;
-  // position: absolute;
-  // right: 0;
-  // top: 0;
 
   .menu_bar_line {
-    width: 30px;
+    width: 38px;
     height: 2px;
-    background-color: $keyColor;
+    background-color: transparent;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -201,16 +257,16 @@
       content: "";
       width: 100%;
       height: 2px;
-      background-color: $keyColor;
+      background-color: $mainColor;
       position: absolute;
       left: 0;
       @include transition;
     }
     &::before {
-      top: -9px;
+      top: -7px;
     }
     &::after {
-      top: 9px;
+      top: 7px;
     }
   }
 }
@@ -222,60 +278,11 @@
 
 
 /* ----------------------------------------------------------------
-  スクロールでfixed　まとめて指定
----------------------------------------------------------------- */
-// header
-.site_header.is__fixed {
-  background-color: rgba(255,255,255,1);
-  box-shadow: 0 3px 6px rgba(0,0,0,.16);
-  .header_logo {
-    opacity: 1;
-  }
-  .button_inquery {
-    height: 100%;
-    border-radius: 0;
-  }
-}
-@include res_min( $break2 ) {
-  .site_header.is__fixed {
-    .menu {
-      // li
-      .menu_item {
-        &:first-of-type {
-          padding-left: 2px;
-        }
-      }
-      // お申し込みボタン
-      .menu_item__inquery {
-        padding: 0;
-        a {
-          padding: 0;
-          width: 112px;
-          max-width: none;
-          height: 70px;
-          border-radius: 0;
-        }
-      }
-    }
-  }
-}
-
-
-/* ----------------------------------------------------------------
   メニュー開閉時の挙動　まとめて指定
 ---------------------------------------------------------------- */
 // body
 body.is__open {
   overflow: hidden;
-}
-
-// header
-.site_header.is__open {
-  background-color: #FFEBE5;
-  .header_logo,
-  .button_inquery {
-    display: none;
-  }
 }
 
 // メニュー

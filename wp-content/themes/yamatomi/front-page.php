@@ -1,59 +1,60 @@
 <?php get_header(); ?>
 
     <!-- key visiual -->
-    <div class="kv">
-      <h1 class="kv_logo">
-        <picture>
-          <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/img_title_large.png?211225" media="(min-width: 768px)">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/img_title_small.png?211225" alt="小布施バーチャル町民会議 202.02.11-03.19">
-        </picture>
-      </h1>
-    </div>
-
-    <!-- コンセプト -->
-    <span id="concept" class="anchor"></span>
-    <section class="sec sec_concept">
-      <div class="contents_block1">
-        <div class="inner">
-          <h2 class="concept_title">
-            <img class="concept_title_sub" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tit_concept_sub.png?211225" alt="CONCEPT">
-            <img class="concept_title_main" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tit_concept_main.png?211225" alt="まちをまるごと「サードプレイス」に">
-          </h2>
-          <p>
-            東京から新幹線と在来線を乗り継いで2時間30分。<br>
-            葛飾北斎が晩年を過ごし、「栗のまち」としても知られる長野県小布施町。<br>
-            この町を舞台に、<em class="marker">「町民」の定義を捉え直す、新しいまちづくりの試み</em>が始まっている。
+    <section class="kv">
+      <div class="slider">
+        <div class="slider__item">
+          <div class="slider__item__image">
+            <picture>
+              <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv01_s.jpg" media="(max-width: 768px)">
+              <img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv01.jpg" alt="" width="2400" height="1400">
+            </picture>
+            <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide01.png" alt="" width="260" height="260"></i>
+          </div>
+          <p class="slider__item__title">
+            <small>UNEVEN BIO POROUS SPLITTON</small>
+            <em>アニーヴンビオポーラススプリットン</em>
           </p>
-          <p>
-            小布施は、面積19㎢、人口1.1万人という小さな町だ。<br>
-            町中で知り合いに遭遇するのは日常茶飯事で、行きつけの飲食店では店主が温かく迎えてくれる、<em class="marker">アットホームな規模感</em>が特徴だ。<br>
-            小布施は江戸時代末期、北信地域最大の規模を誇った「六斎市」が開かれ、様々な物や人が行き交う場所として発展した。また、1980年代には暮らす人も訪れる人も心地よく過ごせる空間づくりを重視した「町並修景事業」を行い、2010年代には全国から若者が集い事業構想に取り組む「小布施若者会議」を開催するなど、まちづくりの先進地としても知られている。こうした歴史の中で、<em class="marker">内と外、官と民など異質なもの同士が溶けあう風土や、町にあるものを活かして独自の未来像を描く創造性</em>が育まれてきた。
+          <p class="slider__item__text">
+            ポーラス層による多自然型機能に加えて、自然石に近い柔らかな曲線がつくる深目地と、客土層と胴込めコンクリート層の２層構造により、昆虫や植物の生息の場を短時間でつくりあげます。
           </p>
         </div>
-      </div>
-      <div class="contents_block2">
-        <div class="inner">
-          <p>
-            そんな小布施には、住むのでもなく、旅行先として訪れるのでもなく、新しい関わり方を実践する人がいる。都会に住んで働きながら、小布施を舞台にした観光体験を企画する人。都会や大企業では味わいづらい、自らの手で企画を形にする楽しさが何よりのやりがいだと言う。またある人は、数日間ゲストハウスに滞在して本業はテレワークでこなす傍ら、小布施のまちづくりに関わっている。素泊まりの宿のはずが、オーナーと仲良くなり、ご飯をごちそうしてもらうこともしばしばあるらしい。
+        <div class="slider__item">
+          <div class="slider__item__image">
+            <picture>
+              <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv02_s.jpg" media="(max-width: 768px)">
+              <img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv02.jpg" alt="" width="2400" height="1400">
+            </picture>
+            <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide02.png" alt="" width="260" height="260"></i>
+          </div>
+          <p class="slider__item__title">
+            <small>SPLITTON 05 POROUS</small>
+            <em>スプリットン05ポーラス</em>
           </p>
-          <p>
-            そうした人にとって、小布施は<em class="marker">町がまるごと「サードプレイス」</em>になっている。
+          <p class="slider__item__text">
+            0.5㎡規格の施工性の良い、コストパフォーマンスに優れた大型スプリットンブロックです。<br>通常の製品は下の写真のように面取りのある製品ですが、これは面取りをなくした製品です。
           </p>
-          <p>
-            暮らしを営む「家」でも、仕事に勤しむ「職場」でもない、<em class="marker">自分の時間を気ままに過ごしながら仲間と交流の深め、より豊かに活動する活力が生まれる場所</em>を「サードプレイス」（第3の居場所）と言う。
+        </div>
+        <div class="slider__item">
+          <div class="slider__item__image">
+            <picture>
+              <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv03_s.jpg" media="(max-width: 768px)">
+              <img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv03.jpg" alt="" width="2400" height="1400">
+            </picture>
+            <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide03.png" alt="" width="260" height="260"></i>
+          </div>
+          <p class="slider__item__title">
+            <small>SAMPLE</small>
+            <em>サンプル</em>
           </p>
-          <p>
-            この町に惹かれて集う仲間たちは、自分が居たいと思う場所だからこそ、町の未来を自分事として考える。小布施にとって、町に関わり、町を想う人は、どこに住民票があったとしても「バーチャル町民」だ。
-          </p>
-          <p>
-            「小布施バーチャル町民会議」は、従来の「町民」「来訪者」の垣根を超え、<em class="marker">小布施に暮らす人も通う人も一緒になり、自分の居場所として誇れる町をつくる新しい挑戦</em>なのだ。
+          <p class="slider__item__text">
+            サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル
           </p>
         </div>
       </div>
     </section>
 
     <!-- 小布施バーチャル町民会議とは -->
-    <span id="about" class="anchor"></span>
     <section class="sec sec_about">
       <div class="inner">
         <h2 class="sec_title">
@@ -194,7 +195,6 @@
     </section>
 
     <!-- 日程 -->
-    <span id="schedule" class="anchor"></span>
     <section class="sec sec_schedule">
       <div class="inner">
         <h2 class="sec_title">
@@ -286,7 +286,6 @@
     </section>
 
     <!-- テーマ -->
-    <span id="theme" class="anchor"></span>
     <section class="sec sec_theme">
       <div class="inner">
         <h2 class="sec_title">
@@ -332,7 +331,6 @@
     </section>
 
     <!-- 募集要項 -->
-    <span id="details" class="anchor"></span>
     <section class="sec sec_details">
       <div class="inner">
         <h2 class="sec_title">
@@ -396,7 +394,6 @@
     </section>
 
     <!-- よくあるご質問 -->
-    <span id="faq" class="anchor"></span>
     <section class="sec sec_faq">
       <div class="inner">
         <h2 class="sec_title">

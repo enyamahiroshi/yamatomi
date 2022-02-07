@@ -4,7 +4,7 @@ Author:
 Author URI:
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
 @import '_core/reset';
 @import '_core/valiables';
 @import '_core/mixins';
@@ -14,7 +14,13 @@ Author URI:
 @import '_partials/link';
 @import '_partials/list';
 @import '_partials/headline';
-// @import '_partials/hamburger';
 @import '_partials/header';
 @import '_partials/footer';
 @import '_partials/pages';
+@import '_partials/editor';
+@import '_partials/form';
+
+@import '_plugins/pagenavi';
+@import '_plugins/yostseo-pankuzu';
+
+@import '_options/sliders';

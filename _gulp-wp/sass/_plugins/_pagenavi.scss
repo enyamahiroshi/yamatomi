@@ -3,12 +3,12 @@
 // ----------------------------------------------------------------
 $btn-size-mobile: "36";
 $btn-size-desctop: "28";
-$current: $c-main;
-$border: $c-gray3;
-$txt-link: $c-gray3;
-$txt-hover: $c-white;
-$bg-link: $c-white;
-$bg-hover: $c-main;
+$current: $mainColor;
+$border: $gray1;
+$txt-link: $gray1;
+$txt-hover: #fff;
+$bg-link: #fff;
+$bg-hover: $mainColor;
 
 // wrap
 .wp-pagenavi {

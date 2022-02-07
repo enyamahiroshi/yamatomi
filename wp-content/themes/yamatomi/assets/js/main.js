@@ -1,19 +1,5 @@
 (function ($) {
   /* --------------------------------------------------
-    スクロールで処理
-  -------------------------------------------------- */
-  const $headNav = $('.site_header');
-  const $scrollY = $('#concept').offset().top; // scroll量
-  const $aadclass = 'is__fixed'; // add css class
-  $(window).on('load scroll', function() {
-    if ($(this).scrollTop() > $scrollY && $headNav.hasClass($aadclass) == false) {
-      $headNav.addClass($aadclass);
-    } else if ($(this).scrollTop() < $scrollY && $headNav.hasClass($aadclass) == true) {
-      $headNav.removeClass($aadclass);
-    }
-  });
-
-  /* --------------------------------------------------
     メニュー開閉
   -------------------------------------------------- */
   const body = $('body');

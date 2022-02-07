@@ -3,9 +3,11 @@
 ---------------------------------------------------------------- */
 //メインコンテンツ
 .site_main {
+  padding-top: 70px;
 }
 @include res_min( $break ) {
   .site_main {
+    padding-top: 100px;
   }
 }
 

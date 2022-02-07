@@ -20,22 +20,6 @@ a {
   // transform使用時にchromeでズレが生じるのを防ぐ
   backface-visibility: hidden;
 }
-//個別にリンクカラー等を変更
-header,
-footer,
-.clear_link_style {
-  a {
-    &:link, &:visited {
-      color: $baseColor;
-      text-decoration: none;
-    }
-    &:hover, &:active {
-      opacity: 1;
-      color: $baseColor;
-      text-decoration: none;
-    }
-  }
-}
 //画像リンク
 a img {
   opacity: 1;
@@ -46,6 +30,23 @@ a img {
     backface-visibility: hidden;
     &:hover {
       opacity: .8;
+    }
+  }
+}
+//個別にリンクカラー等を変更
+header,
+footer,
+.clear_link_style {
+  a,
+  a img {
+    &:link, &:visited {
+      color: $baseColor;
+      text-decoration: none;
+    }
+    &:hover, &:active {
+      opacity: 1;
+      color: $baseColor;
+      text-decoration: none;
     }
   }
 }
@@ -119,7 +120,7 @@ a img {
     text-decoration: none;
   }
   &:hover, &:active {
-    opacity: 0.8;
+    opacity: .8;
     text-decoration: none;
   }
 

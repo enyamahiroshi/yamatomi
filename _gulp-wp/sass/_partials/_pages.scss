@@ -2,118 +2,28 @@
   コンテンツごと
 ---------------------------------------------------------------- */
 .kv {
-  padding-top: 27.733%;
-  height: 226.67vw;
-  text-align: center;
-  background-image: url(./assets/img/bg_kv_small.jpg);
-  background-position: center top;
-  background-size: cover;
-  position: relative;
   z-index: 1;
-  .kv_logo {
-    width: 76.533%;
-    margin: 0 auto;
+  position: relative;
+  &::before { //ロゴ共通表示
+    content: '';
+    width: 65.6%;
+    height: 128vw;
+    background-image: url(./assets/img/top/logo_kv.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 2;
   }
 }
 @include res_min( $break ) {
   .kv {
-    padding-top: 8.345%;
-    height: 65.8vw;
-    background-image: url(./assets/img/bg_kv_large.jpg);
-    .kv_logo {
-      width: 31.48%;
-    }
-  }
-}
-
-
-// コンセプト
-.sec_concept {
-  position: relative;
-  margin-top: -12.2667%;
-  padding-bottom: 80px;
-  z-index: 2;
-  .concept_title {
-    margin-bottom: 35px;
-    line-height: 1;
-    .concept_title_sub {
-      display: block;
-      width: 108px;
-    }
-    .concept_title_main {
-      display: block;
-      margin-top: 33px;
-      max-width: 600px;
-    }
-  }
-  .contents_block1 {
-    .inner {
-      padding: 0 15px;
-    }
-  }
-  .contents_block2 {
-    background-image: url(./assets/img/bg_concept_contents_block2_small.png);
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 96%;
-    margin-top: 10px;
-    padding-top: 60%;
-    .inner {
-      padding: 0 15px;
-    }
-  }
-}
-@include res_min( $break ) {
-  .sec_concept {
-    margin-top: -3.66%;
-    padding-bottom: 120px;
-    .concept_title {
-      padding-top: 4%;
-      margin-bottom: 64px;
-      width: 64.4%;
-      .concept_title_sub {
-        width: 108px;
-      }
-      .concept_title_main {
-        margin-top: 33px;
-        max-width: 600px;
-      }
-    }
-    .contents_block1 {
-      background-image: url(./assets/img/bg_concept_contents_block1.png);
-      background-repeat: no-repeat;
-      background-position: right top;
-      background-size: 36.75%;
-      padding-bottom: 74px;
-      @include res_min( 1366 ) {
-        background-size: 502px;
-      }
-      .inner {
-        padding: 0 5%;
-        margin: 0 auto;
-        max-width: calc(932px + 10%);
-      }
-      p {
-        margin-left: 0;
-        width: 64.4%;
-      }
-    }
-    .contents_block2 {
-      background-image: url(./assets/img/bg_concept_contents_block2_large.png);
-      background-size: 34.77%;
-    @include res_min( 1366 ) {
-      background-size: 475px;
-    }
-      padding-top: 0;
-      .inner {
-        padding: 0 5%;
-        margin: 0 auto;
-        max-width: calc(932px + 10%);
-      }
-      p {
-        margin-right: 0;
-        width: 64.4%;
-      }
+    &::before { //ロゴ共通表示
+      width: 25.5%;
+      height: 37.23vw;
     }
   }
 }
@@ -148,9 +58,6 @@
   }
   .about_block_text {
     margin-top: 30px;
-    p {
-      letter-spacing: 0;
-    }
   }
 }
 @include res_min( $break ) {
@@ -175,9 +82,6 @@
       margin-top: 0;
       flex-basis: 62.1%;
       padding-left: 46px;
-      p {
-        letter-spacing: .1em;
-      }
     }
   }
 }
@@ -225,7 +129,6 @@
     padding: 10px 18px;
     font-size: 1.3rem;
     line-height: 1.54;
-    letter-spacing: 0;
   }
 }
 @include res_min( $break ) {
@@ -255,7 +158,6 @@
       border-left: 1px solid $keyColor;
       padding: 5px 10px 5px 32px;
       font-size: 1.3rem;
-      letter-spacing: .1em;
     }
   }
 }
@@ -271,7 +173,6 @@
     font-family: $ff-en;
     font-size: 4rem;
     font-weight: 900;
-    letter-spacing: 0;
     line-height: 1;
     text-align: center;
     position: relative;
@@ -339,7 +240,6 @@
   margin-top: 12px;
   font-size: 1.4rem;
   line-height: 1.78;
-  letter-spacing: 0;
   .about_voice_title {
     padding-bottom: 15px;
     font-weight: 600;
@@ -392,7 +292,6 @@
       }
       p {
         margin-top: 18px;
-        letter-spacing: 0;
       }
     }
     .about_obuse_contents_img {
@@ -418,7 +317,6 @@
           justify-content: center;
           align-items: flex-start;
           line-height: 1.3;
-          letter-spacing: .05em;
           border-radius: 6px;
           span {
             font-size: 1.2rem;
@@ -481,7 +379,6 @@
         }
         p {
           margin-top: 15px;
-          letter-spacing: .1em;
         }
       }
       .about_obuse_contents_img {
@@ -529,7 +426,6 @@
     width: 80%;
     max-width: 600px;
     font-size: 2rem;
-    letter-spacing: .05em;
     color: #fff;
     font-weight: 600;
     &:link, &:visited {
@@ -595,7 +491,6 @@
     .data_youbi {
       margin-left: -.5em;
       font-size: 1.8rem;
-      letter-spacing: 0;
     }
     p {}
   }
@@ -643,7 +538,6 @@
     font-size: 1.8rem;
     font-weight: 900;
     color: #61E049;
-    letter-spacing: 0;
     overflow: hidden;
     position: relative;
     &::before {
@@ -675,8 +569,7 @@
 		.theme_block_contents_text {
       margin-top: 20px;
       p {
-        letter-spacing: 0;
-      }
+          }
 		}
 	}
 }
@@ -705,9 +598,6 @@
       .theme_block_contents_text {
         margin-top: 0;
         flex-basis: 61%;
-        p {
-          letter-spacing: .1em;
-        }
       }
     }
   }
@@ -732,8 +622,7 @@
     margin-top: 8px;
     line-height: 1.5;
     p {
-      letter-spacing: 0;
-      &:not(:first-child) {
+        &:not(:first-child) {
         margin-top: .8em;
       }
     }
@@ -752,7 +641,6 @@
     .details_block_data {
       margin-top: 0;
       p {
-        letter-spacing: .1em;
         &:not(:first-child) {
           margin-top: .5em;
         }
@@ -788,7 +676,6 @@
         font-size: 2.4rem;
         color: #F084CB;
         line-height: 1.2;
-        letter-spacing: 0.1em;
       }
 		}
 		.tgl_closs {
@@ -830,7 +717,6 @@
       font-size: 2.4rem;
       color: #192153;
       line-height: 1.2;
-      letter-spacing: 0.1em;
     }
     p {
       flex-basis: calc(100% - 54px);

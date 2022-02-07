@@ -1,0 +1,696 @@
+// ----------------------------------------------------------------
+// 共通
+// ----------------------------------------------------------------
+
+// ie11のinputに出る×印を消す
+input[type=text]::-ms-clear {
+  display: none;
+}
+input[type=password]::-ms-reveal {
+  display: none;
+}
+// iOSでinputが角丸になるのを防止
+input[type="button"],
+input[type="text"],
+input[type="submit"],
+input[type="email"],
+input[type="url"],
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+//chromeのオートコンプリートを消す
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px $c-gray1 inset;
+}
+
+
+form{
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  p{
+    margin: 0;
+  }
+}
+label{
+  display: block;
+  font-size: inherit;
+  margin: 0;
+}
+input,
+select,
+textarea{
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  font-size: inherit;
+  padding: 4px 5px;
+  margin-bottom: 10px;
+  background-color: $gray1;
+  border: 1px solid $gray1;
+  position: relative;
+  &:focus{
+    outline: none;
+    background-color:#fff !important;
+    border-color: $c-gray1 !important;
+  }
+}
+textarea{
+  height: 100%;
+}
+//セレクトボックス初期化・カスタマイズ
+select{
+  appearance: none;
+  position: relative;
+  &-ms-expand {
+    display: none;
+  }
+}
+
+@include res_min() {
+  form{
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.5em;
+  }
+  label{
+    margin: 0;
+  }
+}
+
+
+// ----------------------------------------------------------------
+//  コンタクトフォーム7
+// ----------------------------------------------------------------
+
+//入力必須項目です
+.about_req{
+  text-align: right;
+  font-size: 85%;
+  color: $baseColor;
+  margin-bottom: 5px;
+}
+@include res_min() {
+  .about_req{
+    margin-bottom: 10px;
+  }
+}
+
+// .form_tbl：dlでレイアウトする場合
+.form-area{
+  margin-bottom: 30px;
+  text-align: left;
+  //自動挿入される改行を削除
+  br{
+    display: none;
+  }
+  dt,dd{
+    font-size: 0.875rem;
+  }
+  dt{
+    padding: 2px 13px;
+    margin: 0 -10px;
+    label{
+      display: inline;
+    }
+    &::before{
+      content: "■";
+      margin-right: 3px;
+      font-family: $ff-en;
+      color: $baseColor;
+    }
+    //必須
+    &.req-cell{
+      background-color: #c7def0;
+    }
+    //任意
+    &.any-cell{
+      background-color: #e9e9e9;
+    }
+  }
+  dd{
+    padding: 12px 5px 15px;
+    //説明文や注意書き等
+    .desc{
+      font-size: 11px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    &:last-child{
+      padding-bottom: 0;
+    }
+  }
+}
+@include res_min() {
+  .form-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    border-top: 1px solid $baseColor;
+    dt,dd{
+      padding: 20px !important;
+
+    }
+    dt{
+      width: 33%;
+      margin: 0;
+      border-bottom: 1px solid $baseColor;
+      display: flex;
+      align-items: center;
+      &::before{
+        content: none;
+      }
+    }
+    dd{
+      width: 67%;
+      border-bottom: 1px solid $baseColor;
+      //説明文や注意書き等
+      .desc{
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+
+// inputなどを囲む
+.wpcf7-form-control-wrap{
+  position: relative;
+  //input設定
+  .wpcf7-form-control{
+    display: inline-block;
+    width: 100%;
+    padding: 5px 8px;
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.4;
+    border-color: $baseColor;
+    border-radius: 2px;
+    //必須の場合に付与されるクラス
+    &.wpcf7-validates-as-required{
+    }
+    //チェックボックス、ラジオボタンの場合に付与されるクラス
+    &.wpcf7-checkbox, &.wpcf7-radio{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px 0 0 0;
+      //ラベルで包括された項目名
+      .wpcf7-list-item{
+        display: inline-block;
+        margin: 0 12px 15px 0;
+        padding: 8px 15px;
+        border: 1px solid $baseColor;
+        border-radius: 10px;
+        input{
+          width: auto;
+          margin: 0 8px 0 0;
+        }
+        .wpcf7-list-item-label{
+          display: inline-block;
+        }
+      }
+    }
+    //セレクトボックス
+    &.wpcf7-select{
+      width: auto;
+    }
+    //テキストエリア
+    &.wpcf7-textarea{
+      height: calc( 4em + 1em );
+    }
+    //ファイル添付
+    &.wpcf7-file{
+      display: block;
+      width: auto;
+      margin: 2px 0;
+      padding: 5px 0 3px;
+      font-size: 13px;
+      border-radius: 6px;
+      pointer-events: visible !important;
+      cursor: pointer !important;
+    }
+    //同意ボタン
+    &.wpcf7-acceptance{
+      //ラベルで包括された項目名
+      .wpcf7-list-item{
+        display: block;
+        margin: 10px 0 20px;
+        padding: 20px 10px 20px 30px;
+        border: 10px solid #ff0909;
+        label{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          pointer-events: none;
+          input{
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 0 25px 0 0;
+            pointer-events: visible;
+          }
+          .wpcf7-list-item-label{
+            text-align: left;
+            font-size: 14px;
+            font-weight: normal;
+            a{
+              margin-right: 10px;
+              font-size: inherit;
+              pointer-events: visible;
+            }
+          }
+        }
+      }
+    }
+    //フォーカスされているもの
+    &:focus{
+      background-color: #f5f5f5;
+    }
+    //クラス名によってinputのサイズを調整する
+    &.size-S{ width: 30%; }
+    &.size-M{ width: 70%; }
+    &.size-L{ width: 100%; }
+  }
+}
+//添付ファイルをカスタマイズ
+label.your-file {
+//   display: inline-block;
+  margin-top: 5px;
+  font-size: 13px;
+  pointer-events: none;
+}
+@include res_min() {
+  .wpcf7-form-control-wrap{
+    //input設定
+    .wpcf7-form-control{
+      //チェックボックス、ラジオボタンの場合に付与されるクラス
+      &.wpcf7-checkbox, &.wpcf7-radio{
+        display: block;
+        padding: 0;
+        //ラベルで包括された項目名
+        .wpcf7-list-item{
+          display: block;
+          margin: 0 0 10px 0;
+          padding: 0;
+          border: none;
+          &:last-child{
+            margin-bottom: 0;
+          }
+          label{
+            display: inline;
+          }
+          input{
+            display: inline-block;
+            vertical-align: 1px;
+            margin: 0 10px 0 0;
+          }
+          .wpcf7-list-item-label{
+            display: inline-block;
+          }
+        }
+      }
+      //テキストエリア
+      &.wpcf7-textarea{
+        height: calc( 8em + 1em );
+      }
+      //ファイル添付
+      &.wpcf7-file{
+        display: block;
+        padding: 0;
+        font-size: 13px;
+        line-height: 1;
+        border: none;
+        cursor: default !important;
+        &:focus{
+          background-color:#fff !important;
+        }
+      }
+      //同意ボタン
+      &.wpcf7-acceptance{
+        //ラベルで包括された項目名
+        .wpcf7-list-item{
+          margin: 0 0 20px;
+          label{
+            pointer-events: visible;
+            input{
+              width: auto;
+              height: auto;
+              margin: 0 15px 0 0;
+            }
+            .wpcf7-list-item-label{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      //クラス名によってinputのサイズを調整する
+      &.size-S{ width: 30%; }
+      &.size-M{ width: 70%; }
+      &.size-L{ width: 100%; }
+    }
+  }
+  //添付ファイルをカスタマイズ
+  label.your-file {
+    font-size: 14px;
+    margin-top: 15px;
+  //   margin: 10px 0;
+  //   padding: 4px 15px;
+  //   border-radius: 6px;
+  //   cursor: pointer;
+  //   &::before{
+  //     margin-right: 6px;
+  //     font-size: 110%;
+  //   }
+  //   &:hover{
+  //     opacity: 0.7;
+  //   }
+  }
+}
+
+//------ ※このサイトのみ
+//当社をお知りになったきっかけ
+.why-block{
+  &>div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    .wpcf7-form-control{
+      padding: 0 3px;
+    }
+    .wpcf7-list-item{
+      white-space: nowrap !important;
+      margin-bottom: 0 !important;
+    }
+    p{
+      margin: 0;
+      font-size: 12px;
+      .desc{
+        display: block;
+        margin: 5px 0 0 !important;
+      }
+    }
+    .size-M{ width: 40% !important; }
+  }
+}
+@include res_min() {
+  .why-block{
+    &>div{
+      margin: 25px 0 0;
+      .wpcf7-list-item{
+        padding-right: 2px !important;
+      }
+      p{
+        font-size: 13px;
+        .desc{
+          display: block;
+          font-size: 11px;
+          margin: 5px 0 0 10px !important;
+        }
+      }
+      .size-M{ width: 50% !important; }
+    }
+  }
+}
+
+
+// 必須・任意
+.req,
+.any{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 50%;
+  line-height: 1;
+  color:#fff;
+  padding: 3px;
+  margin: 0 0 2px 6px;
+  white-space: nowrap;
+}
+.req{
+  background-color: $mainColor;
+}
+.any{
+  background-color: $baseColor;
+}
+@include res_min() {
+  .req,
+  .any{
+    font-size: 70%;
+    padding: 3px 4px;
+  }
+}
+
+
+//「姓：」+「input」のように横並びにするもの
+.flex-items{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .flex-label{
+    white-space: nowrap !important;
+    padding-right: 5px;
+    font-size: 80%;
+  }
+  .flex-input{
+    padding-right: 5px;
+  }
+}
+@include res_min() {
+  .flex-items{
+    .flex-label{
+      font-size: 90%;
+    }
+    .flex-input{
+      padding-right: 5px;
+    }
+  }
+}
+
+
+//セレクトボックスに下矢印をつけるカスタマイズ
+// .selectbox_bloc .wpcf7-form-control-wrap{
+//   position: relative;
+//   select{
+//     padding-right: 20px;
+//     background-color:#fff;
+//   }
+//   &::after{
+//     content: "\f107";
+//     font-family: $ff-icon;
+//     font-size: 90%;
+//     position: absolute;
+//     right: 10px;
+//     top: 3px;
+//     pointer-events: none;
+//     cursor: pointer;
+//   }
+// }
+// @include res_min() {
+//   .selectbox_bloc .wpcf7-form-control-wrap{
+//     select{
+//       padding-right: 40px;
+//     }
+//     &::after{
+//       right: 10px;
+//       top: 1px;
+//     }
+//   }
+// }
+
+
+// ボタン類
+.form-btn{
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+}
+input.wpcf7c-btn-confirm,
+input.wpcf7c-btn-back,
+input.wpcf7-submit{
+  display: inline-block;
+  width: 50%;
+  min-width: 180px;
+  padding: 14px 40px;
+  margin: 0 10px 20px;
+  text-align: center;
+  font-family: $ff-min;
+  font-size: inherit;
+  line-height: 1.4em;
+  letter-spacing: 0.1em;
+  border: none;
+  position: relative;
+  background-color: $mainColor;;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 1;
+  // border-radius: 3px;
+  color:#fff;
+  &:focus{
+    outline: none;
+    background-color: #2f89d3 !important;
+    border-color: #2f89d3 !important;
+  }
+  //同意ボタンが押されていないとき
+  &[disabled]{
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+}
+input.wpcf7-submit{
+  background-color: #2f89d3;
+  &:focus{
+    outline: none;
+    background-color: #2f89d3 !important;
+    border-color: #2f89d3 !important;
+  }
+}
+@include res_min() {
+  .form-btn{
+    margin: 40px auto 0;
+  }
+  input.wpcf7c-btn-confirm,
+  input.wpcf7c-btn-back,
+  input.wpcf7-submit{
+    width: auto;
+    min-width: 180px;
+    padding: 13px 40px;
+    &:hover{
+      opacity: 0.7;
+    }
+    //同意ボタンが押されていないとき
+    &[disabled]{
+      &:hover{
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+
+// AJAX LOADER
+.ajax-loader{
+  display: block !important;
+  text-align: center !important;
+  margin: 15px auto 0 !important;
+  background-image: url('./assets/img/form/ajax-loader.gif') !important;
+  background-size: cover !important;
+  width: 40px !important;
+  height: 5px !important;
+  // 以下、デフォルト
+  // visibility: hidden;
+	// display: inline-block;
+	// background-image: url('../../images/ajax-loader.gif');
+	// width: 16px;
+	// height: 16px;
+	// border: none;
+	// padding: 0;
+	// margin: 0 0 0 4px;
+	// vertical-align: middle;
+}
+
+// エラーメッセージ等
+//エラー等のメッセージ表示
+.screen-reader-response{
+}
+.wpcf7-response-output{
+  font-size: inherit !important;
+  text-align: center;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 0 15px !important;
+  &.wpcf7-validation-errors{
+    color: #ee0000 !important;
+  }
+}
+.wpcf7-not-valid-tip{
+  margin-top: 5px;
+  font-size: 80% !important;
+  color: #ee0000 !important;
+}
+//セレクトボックスの場合
+.selectbox_bloc{
+  .wpcf7-not-valid-tip{
+    display: inline;
+    padding: 0 5px;
+    background-color:#fff;
+  }
+}
+@include res_min() {
+  .screen-reader-response{}
+  .wpcf7-response-output{
+    text-align: center;
+  }
+  .wpcf7-not-valid-tip{
+    font-size: 85% !important;
+  }
+}
+
+
+//エラー時
+.invalid{}
+//内容確認時
+.failed{
+  .step_wrap{
+    margin-top: 100px !important;
+  }
+}
+//送信完了後
+.sent{
+  .form_inner{
+    display: none;
+  }
+}
+//送信成功
+.wpcf7-mail-sent-ok{
+  text-align: center;
+}
+@include res_min() {
+  //内容確認時
+  .failed{
+    .step_wrap{
+      margin-top: 60px !important;
+    }
+  }
+}
+
+
+// 追加プラグイン導入：Contact Form 7 add confirm
+
+//確認画面時
+.custom-wpcf7c-confirmed{
+  .wpcf7c-conf{
+    background-color: #efefef;
+  }
+  .wpcf7-acceptance{
+    filter: grayscale(100%);
+    opacity: 0.4;
+  }
+}
+
+//送信完了時　メッセージ以外は表示をしない
+.custom-wpcf7c-confirmed.sent{
+  padding: 30px 20px;
+  *:not(.wpcf7-response-output){
+    display: none;
+  }
+  .wpcf7-response-output{
+    margin: 0 !important;
+  }
+}
+@include res_min() {
+  .custom-wpcf7c-confirmed.sent{
+    padding: 30px 20px;
+    margin-bottom: 60px;
+    border: 8px solid #eee;
+  }
+}

@@ -7,7 +7,7 @@
 .editor-styles-wrapper {
   * {
     font-family: $ff-go !important;
-    color: $baseColor
+    color: $baseColor;
   }
 
   // 記事タイトル
@@ -168,12 +168,12 @@
   // その他装飾
   strong {
     font-weight: 600;
-    color: $baseColor
+    color: $baseColor;
   }
   em {
     font-weight: normal;
     font-style: italic;
-    color: $baseColor
+    color: $baseColor;
   }
   pre {
     margin: 1em 0;

@@ -41,9 +41,9 @@
 			<div class="pagenation">
 				<div class="prev"><?php if (get_previous_post( true )): ?><?php previous_post_link('%link'); ?><?php endif; ?></div>
 			<?php if( in_category('recruit_information') ): ?>
-				<div class="all"><a href="<?php echo esc_url(home_url()); ?>/category/recruit_information/" class="button button--01">採用のお知らせ一覧</a></div>
+				<div class="all"><a href="<?php echo esc_url( home_url() ); ?>/category/recruit_information/" class="button button--01">採用のお知らせ一覧</a></div>
 			<?php else: ?>
-				<div class="all"><a href="<?php echo esc_url(home_url()); ?>/category/news/" class="button button--01">お知らせ一覧</a></div>
+				<div class="all"><a href="<?php echo esc_url( home_url() ); ?>/category/news/" class="button button--01">お知らせ一覧</a></div>
 			<?php endif; ?>
 				<div class="next"><?php if (get_next_post( true )): ?><?php next_post_link('%link'); ?><?php endif; ?></div>
 			</div>
