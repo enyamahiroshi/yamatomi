@@ -210,11 +210,11 @@ body{
   font-size: 16px;
   font-size: 1.6rem;
   font-family: 'Noto Sans CJK JP', sans-serif;
-  line-height: 2;
+  line-height: 1.875;
 
   overflow-wrap: break-word;
 }
-.no-sp{
+.no_sp{
   display: none;
 }
 *,
@@ -233,8 +233,6 @@ h4,
 h5,
 h6{
   margin-bottom: 0;
-  font-weight: 400;
-  line-height: 1.6;
 }
 
 /* ------------------------------------
@@ -268,8 +266,13 @@ p:first-of-type{
 /* ------------------------------------
 //  画像
 // ----------------------------------*/
+figure{
+  text-align: center;
+}
+
 img,
 svg{
+  width: 100%;
   height: auto;
   vertical-align: bottom;
   line-height: 1;
@@ -446,10 +449,10 @@ svg{
   content: '─';
 }
 @media only screen and (min-width: 768px){
-  .no-pc{
+  .no_pc{
     display: none;
   }
-  .no-sp{
+  .no_sp{
     display: inline;
   }
 }

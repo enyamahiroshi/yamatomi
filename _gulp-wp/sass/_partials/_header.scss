@@ -80,7 +80,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
     }
   }
 }
-@include res_min( $break2 ) {
+@include res_min( $break4 ) {
   .site_header {
     padding-right: 26px;
     height: #{$header_height_PC + px};
@@ -149,7 +149,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
   z-index: 9998;
   transition:.15s;
 }
-@include res_min( $break2 ) {
+@include res_min( $break4 ) {
   .global_menu {
     opacity: 1;
     height: auto;
@@ -162,51 +162,55 @@ $header_height_PC: 100; // ヘッダーの高さ PC
   }
 }
 
-.menu {
-  // li
-  .menu_item {
-    .menu_link {
-      display: block;
-      padding: 13px 0;
-      border-bottom: 1px solid #A8B9C4;
-      background-image: url(./assets/img/common/icon_arrow1.svg);
-      background-repeat: no-repeat;
-      background-position: right 20px center;
-      background-size: auto 3px;
-      font-size: 1.8rem;
-      color: $mainColor;
-      line-height: 1;
-      span {
+.header_navi {
+  .menu {
+    // li
+    .menu_item {
+      .menu_link {
         display: block;
-        margin-top: 3px;
-        font-family: $ff-en;
-        font-size: 1.2rem;
-        font-weight: 300;
-        color: #668CA5;
-      }
-      &:link, &:visited {
-        background-color: #fff;
-      }
-      &:hover, &:active {
-        opacity: 1;
-        background-color: #D8E6EF;
+        padding: 13px 0;
+        border-bottom: 1px solid #A8B9C4;
+        background-image: url(./assets/img/common/icon_arrow1.svg);
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+        background-size: auto 3px;
+        font-size: 1.8rem;
+        color: $mainColor;
+        line-height: 1;
+        span {
+          display: block;
+          margin-top: 3px;
+          font-family: $ff-en;
+          font-size: 1.2rem;
+          font-weight: 300;
+          color: #668CA5;
+        }
+        &:link, &:visited {
+          background-color: #fff;
+        }
+        &:hover, &:active {
+          opacity: 1;
+          background-color: #D8E6EF;
+        }
       }
     }
   }
 }
-@include res_min( $break2 ) {
-  .menu {
-    @include flex(nowrap, center, center);
-    // li
-    .menu_item {
-      .menu_link {
-        padding: 13px 17px;
-        border-bottom: none;
-        background-image: none;
-        font-size: 1.7rem;
-        text-align: center;
-        span {
-          margin-top: 6px;
+@include res_min( $break4 ) {
+  .header_navi {
+    .menu {
+      @include flex(nowrap, center, center);
+      // li
+      .menu_item {
+        .menu_link {
+          padding: 13px 17px;
+          border-bottom: none;
+          background-image: none;
+          font-size: 1.7rem;
+          text-align: center;
+          span {
+            margin-top: 6px;
+          }
         }
       }
     }
@@ -270,7 +274,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
     }
   }
 }
-@include res_min( $break2 ) {
+@include res_min( $break4 ) {
   .menu_bar {
     display: none;
   }

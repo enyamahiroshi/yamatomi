@@ -17,7 +17,7 @@ body {
   font-family: $ff-go;
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 2;
+  line-height: 1.875;
   letter-spacing: 0;
   color: $baseColor;
   text-align: left;
@@ -30,14 +30,14 @@ body {
 }
 
 // SPで表示
-.no-pc {}
+.no_pc {}
 @include res_min( $break ) {
-  .no-pc { display: none; }
+  .no_pc { display: none; }
 }
 // PCで表示
-.no-sp { display: none; }
+.no_sp { display: none; }
 @include res_min( $break ) {
-  .no-sp { display: inline; }
+  .no_sp { display: inline; }
 }
 
 *,
@@ -50,8 +50,6 @@ body {
 //  見出し
 // ----------------------------------*/
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 400;
-  line-height: 1.6;
   margin-bottom: 0;
 }
 
@@ -88,8 +86,12 @@ p {
 /* ------------------------------------
 //  画像
 // ----------------------------------*/
+figure {
+  text-align: center;
+}
 img,
 svg {
+  width: 100%;
   height: auto;
   vertical-align: bottom;
   line-height: 1;

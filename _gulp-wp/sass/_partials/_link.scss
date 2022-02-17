@@ -20,19 +20,6 @@ a {
   // transform使用時にchromeでズレが生じるのを防ぐ
   backface-visibility: hidden;
 }
-//画像リンク
-a img {
-  opacity: 1;
-}
-@include res_min( $break ) {
-  a img {
-    transition: opacity .1s linear 0s;
-    backface-visibility: hidden;
-    &:hover {
-      opacity: .8;
-    }
-  }
-}
 //個別にリンクカラー等を変更
 header,
 footer,
@@ -53,122 +40,182 @@ footer,
 
 
 /* ----------------------------------------------------------------
-  アイコンタイプ
----------------------------------------------------------------- */
-// 左に > アイコン
-.link_type_arrow_left1 {
-  padding: 0 0 0 18px;
-  position: relative;
-  &::before {
-    content: '';
-    width: 7px;
-    height: 100%;
-    background-image: url(./assets/img/common/ico_arrow_r_white.svg);
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 100% auto;
-    position: absolute;
-    top: .4em;
-    left: 0;
-  }
-}
-
-
-/* ----------------------------------------------------------------
   ボタンタイプ
 ---------------------------------------------------------------- */
-.button1 {
-  display: inline-block;
-  padding: 7px 15px 8px;
-  min-width: 180px;
-  font-size: 1.3rem;
+.button_wrap {
+  margin-top: 20px;
   text-align: center;
-  border-radius: 999px;
+}
+@include res_min( $break ) {
+  .button_wrap {
+    margin-top: 60px;
+    @include flex(wrap, center, stretch);
+  }
+}
+
+.button {
+  // 共通設定
+  justify-content: center;
+  align-items: center;
+  padding: 22px 60px;
+  margin: 10px auto 0;
+  &:first-of-type {
+    margin-top: 0;
+  }
+  width: 84%;
+  background-color: $mainColor;
+  line-height: 1.5;
+  text-align: center;
   position: relative;
   &::before {
     content: '';
-    width: 7px;
+    width: 32px;
     height: 100%;
-    background-image: url(./assets/img/common/ico_arrow_r_white.svg);
+    background-image: url(./assets/img/common/icon_arrow3-s.svg);
     background-repeat: no-repeat;
-    background-position: right center;
-    background-size: auto 10px;
+    background-size: 100%;
+    background-position: center;
     position: absolute;
     top: 0;
-    right: 18px;
+    right: 20px;
   }
   &:link, &:visited {
     color: #fff;
-    background-color: transparent;
-    border: 2px solid #fff;
     text-decoration: none;
-  }
-}
-
-.button2 {
-  display: inline-block;
-  padding: 12px 55px 12px 23px;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 9999px;
-  font-size: 1.4rem;
-  font-weight: 600;
-  background-repeat: no-repeat;
-  background-position: right 23px center;
-  &:link, &:visited {
-    color: $mainColor;
-    text-decoration: none;
+    opacity: 1;
   }
   &:hover, &:active {
-    opacity: .8;
     text-decoration: none;
+    opacity: .8;
+  }
+  // BASE 基本
+  &__base {
+  }
+  // small
+  &__small {
+  }
+  // large
+  &__large {
+    padding: 38px 50px;
+    width: 100%;
+    &::before {
+      right: 10px;
+    }
+  }
+  // large light
+  &__large_light {
+    padding: 38px 50px;
+    width: 100%;
+    background-color: #215678;
+    &::before {
+      right: 10px;
+    }
+  }
+  // 白
+  &__base_white {
+    background-color: #fff;
+    &::before {
+      background-image: url(./assets/img/common/icon_arrow4-s.svg);
+    }
+    &:link, &:visited {
+      color: $mainColor;
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
+  // 送信等
+  &__base_red {
+    background-color: #DB5555;
+  }
+  // 戻る等
+  &__base_reverse {
+    &::before {
+      left: 20px;
+      right: auto;
+      transform: scale(-1,1);
+    }
+  }
+  // 四角いアイコン
+  &__base_product {
+    &::before {
+      width: 16px;
+      background-image: url(./assets/img/common/icon_box.svg);
+      left: 22px;
+      right: auto;
+    }
+  }
+  // 主にfooter内で使用
+  &__light {
+    padding: 11px 0;
+    width: 252px;
+    background-color: #DBE4EB;
+    font-size: 1.7rem;
+    &::before {
+      content: none;
+    }
+    &:link, &:visited {
+      color: $mainColor;
+    }
   }
 
-  &.button2__download {
-    background-image: url(./assets/img/common/ico_download_ex.svg);
-    background-size: 20px auto;
-  }
-  &.button2__blank {
-    background-image: url(./assets/img/common/ico_blank.svg);
-    background-size: 14px auto;
+}
+@include res_min( $break ) {
+  .button {
+    // 共通設定
+    width: auto;
+    margin: 0 10px;
+    min-width: 320px;
+    // small
+    &__small {
+      min-width: 0;
+      width: 240px;
+    }
+    // large
+    &__large {
+      padding: 58px 50px;
+      min-width: 400px;
+      &::before {
+        right: 20px;
+      }
+    }
+    // large light
+    &__large_light {
+      padding: 58px 50px;
+      min-width: 400px;
+      &::before {
+        right: 20px;
+      }
+    }
+    // 主にfooter内で使用
+    &__light {
+      min-width: 252px;
+    }
+
   }
 }
 
-.button3 {
+
+// download
+.button_download {
   display: block;
-  height: 70px;
-  margin-top: 17px;
-  padding: 22px 1em;
-  background-color: $mainColor;
-  text-align: center;
-  border-radius: 999px;
+  padding: 15px 3em 15px 20px;
+  background-image: url(./assets/img/common/icon_download.svg);
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: auto 13px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
   &:link, &:visited {
+    background-color: #215678;
     color: #fff;
-    text-decoration: none;
-  }
-  @include flex(nowrap, center, center);
-  i {
-    margin: 0 11px 0 0;
-    img {
-      width: 34px;
-    }
-  }
-  span {
-    font-size: 1.6rem;
-    font-weight: 600;
   }
 }
 @include res_min( $break ) {
-  .button3 {
-    height: 60px;
-    margin-top: 25px;
-    padding: 16px 1em;
-    i {
-      margin-right: 12px;
-    }
-    span {
-      font-size: 1.8rem;
-    }
+  .button_download {
+    padding: 14px 4em 14px 36px;
+    background-position: right 26px center;
+    font-size: 1.6rem;
   }
 }
 

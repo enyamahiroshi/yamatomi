@@ -2,3 +2,147 @@
   リスト
 ---------------------------------------------------------------- */
 
+// シンプルな記事リスト
+.list_post_type-simple {
+  border-top: 1px solid #A8B9C4;
+	.item {
+    padding: 12px 55px 8px 0;
+    border-bottom: 1px solid #A8B9C4;
+    position: relative;
+    &::before {
+      content: '';
+      width: 20px;
+      height: 100%;
+      background-image: url(./assets/img/common/icon_arrow4-s.svg);
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: 100%;
+      position: absolute;
+      right: 18px;
+      top: 0;
+    }
+    .item_meta {
+      @include flex(nowrap, flex-start, center);
+      .item_meta_date {
+        margin-right: 16px;
+        font-size: 1.4rem;
+        color: $mainColor;
+      }
+    }
+    .item_meta_title {
+      font-weight: 600;
+      color: $mainColor;
+    }
+	}
+}
+@include res_min( $break ) {
+  .list_post_type-simple {
+    .item {
+      padding: 40px 100px 50px 0;
+      &::before {
+        width: 29px;
+        background-image: url(./assets/img/common/icon_arrow4.svg);
+        right: 29px;
+      }
+    }
+  }
+}
+
+
+// サムネイル付き記事リスト
+.list_post_type-thumbnail {
+	.item {
+    margin-top: 18px;
+    .item_link {
+      display: block;
+      .item_meta {
+        margin-top: 3px;
+        .item_meta_date {
+          font-size: 1.4rem;
+          color: $mainColor;
+        }
+        .item_meta_titles {
+          @include flex(nowrap, flex-start, flex-start);
+          .label01 {
+            white-space: nowrap;
+            margin-top: 5px;
+            margin-right: 8px;
+          }
+          .item_meta_title {
+            font-weight: 600;
+            color: $mainColor;
+          }
+        }
+        .table_simple {
+          margin-top: 3px;
+          font-size: 1.4rem;
+          color: #43647A;
+        }
+      }
+    }
+	}
+}
+@include res_min( $break ) {
+  .list_post_type-thumbnail {
+    @include flex(wrap, flex-start, stretch);
+    .item {
+      margin: 11px 11px 0 0;
+    }
+  }
+}
+
+
+// コンテンツバナーリスト
+.list_contents_type-banner {
+  .item {
+    margin-top: 6px;
+    .item_link {
+      display: block;
+      position: relative;
+      &::before {
+        content: '';
+        width: 42px;
+        height: 42px;
+        background-image: url(./assets/img/common/icon_more-l-w.svg);
+        background-size: cover;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .contents_title {
+        color: #fff;
+        text-align: left;
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+@include res_min( $break ) {
+  .list_contents_type-banner {
+    @include flex(wrap, space-between, stretch);
+    .item {
+      flex-basis: calc(50% - 20px);
+      margin-top: 0;
+      &:nth-of-type( n + 3 ) {
+        margin-top: 40px;
+      }
+      .item_link {
+        &::before {
+          width: 68px;
+          height: 68px;
+          right: 30px;
+        }
+        .contents_title {
+          left: 50px;
+          span {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+}
