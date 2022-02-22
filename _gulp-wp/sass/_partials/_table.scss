@@ -3,8 +3,10 @@
 ---------------------------------------------------------------- */
 
 //
-.table_simple {
+.table-simple {
   th {
+    vertical-align: top;
+    white-space: nowrap;
     &::after {
       content: '：';
     }

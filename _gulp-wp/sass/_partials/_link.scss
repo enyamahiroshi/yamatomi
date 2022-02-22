@@ -42,19 +42,29 @@ footer,
 /* ----------------------------------------------------------------
   ボタンタイプ
 ---------------------------------------------------------------- */
-.button_wrap {
+.button-wrap {
   margin-top: 20px;
   text-align: center;
+  // 帯に色があるパターン
+  &--band {
+    padding: 30px 0;
+    background-color: #F1F5FA;
+  }
 }
 @include res_min( $break ) {
-  .button_wrap {
+  .button-wrap {
     margin-top: 60px;
     @include flex(wrap, center, stretch);
+     // 帯に色があるパターン
+    &--band {
+      padding: 54px 0;
+    }
   }
 }
 
 .button {
   // 共通設定
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 22px 60px;
@@ -103,7 +113,7 @@ footer,
     }
   }
   // large light
-  &__large_light {
+  &__large-light {
     padding: 38px 50px;
     width: 100%;
     background-color: #215678;
@@ -111,8 +121,19 @@ footer,
       right: 10px;
     }
   }
+  // large light PDF
+  &__large-light-pdf {
+    padding: 38px 50px;
+    width: 100%;
+    background-color: #215678;
+    &::before {
+      width: 18px;
+      background-image: url(./assets/img/common/icon_pdf.svg);
+      right: 15px;
+    }
+  }
   // 白
-  &__base_white {
+  &__base-white {
     background-color: #fff;
     &::before {
       background-image: url(./assets/img/common/icon_arrow4-s.svg);
@@ -124,11 +145,11 @@ footer,
     }
   }
   // 送信等
-  &__base_red {
+  &__base-red {
     background-color: #DB5555;
   }
   // 戻る等
-  &__base_reverse {
+  &__base-reverse {
     &::before {
       left: 20px;
       right: auto;
@@ -136,7 +157,7 @@ footer,
     }
   }
   // 四角いアイコン
-  &__base_product {
+  &__base-product {
     &::before {
       width: 16px;
       background-image: url(./assets/img/common/icon_box.svg);
@@ -174,15 +195,27 @@ footer,
     &__large {
       padding: 58px 50px;
       min-width: 400px;
+      max-height: 140px;
       &::before {
         right: 20px;
       }
     }
     // large light
-    &__large_light {
+    &__large-light {
       padding: 58px 50px;
       min-width: 400px;
+      max-height: 140px;
       &::before {
+        right: 20px;
+      }
+    }
+     // large light PDF
+    &__large-light-pdf {
+      padding: 58px 50px;
+      min-width: 400px;
+      max-height: 140px;
+      &::before {
+        width: 23px;
         right: 20px;
       }
     }
@@ -196,7 +229,7 @@ footer,
 
 
 // download
-.button_download {
+.button--download {
   display: block;
   padding: 15px 3em 15px 20px;
   background-image: url(./assets/img/common/icon_download.svg);
@@ -212,10 +245,30 @@ footer,
   }
 }
 @include res_min( $break ) {
-  .button_download {
+  .button--download {
     padding: 14px 4em 14px 36px;
     background-position: right 26px center;
     font-size: 1.6rem;
+  }
+}
+
+
+// 拡大
+.button--expansion {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  background-image: url(./assets/img/common/icon_expansion.svg);
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  min-width: 117px;
+  height: 34px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  &:link, &:visited {
+    background-color: #215678;
+    color: #fff;
   }
 }
 

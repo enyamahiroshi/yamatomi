@@ -5,7 +5,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
 /* ----------------------------------------------------------------
   ヘッダーのレイアウト
 ---------------------------------------------------------------- */
-.site_header {
+.site-header {
   transition: .15s;
   position: fixed;
   left: 0;
@@ -18,27 +18,27 @@ $header_height_PC: 100; // ヘッダーの高さ PC
   height: #{$header_height_SP + px};
   text-align: left;
   @include flex(nowrap, flex-end, stretch);
-  .header_logo {
+  .site-header__logo {
     padding: 7px 0;
     line-height: 1;
     white-space: nowrap;
     &:hover {
       opacity: .8;
     }
-    .header_logo_mark {
+    .site-header__logo__mark {
       img {
         width: auto;
         height: 32px;
       }
     }
   }
-  .header_logo_compamy_name {
+  .site-header__logo__compamy-name {
     margin-top: 4px;
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 1;
   }
-  .button_search {
+  .button-search {
     margin-left: auto;
     flex: 0 1 57px;
     font-size: 1.2rem;
@@ -56,7 +56,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
       margin-bottom: 6px;
     }
   }
-  .button_inquery {
+  .button__inquery {
     flex: 0 1 97px;
     height: 100%;
     font-size: 1.2rem;
@@ -78,28 +78,31 @@ $header_height_PC: 100; // ヘッダーの高さ PC
       display: block;
       margin-bottom: 4px;
     }
+    &:hover {
+      opacity: .8;
+    }
   }
 }
 @include res_min( $break4 ) {
-  .site_header {
+  .site-header {
     padding-right: 26px;
     height: #{$header_height_PC + px};
     align-items: center;
-    .header_logo {
+    .site-header__logo {
       padding: 0;
       @include flex(nowrap, flex-start, flex-end);
-      .header_logo_mark {
+      .site-header__logo__mark {
         img {
           width: 137px;
           height: auto;
         }
       }
     }
-    .header_logo_compamy_name {
+    .site-header__logo__compamy-name {
       margin: 0 0 9px 26px;
       font-size: 2rem;
     }
-    .button_search {
+    .button-search {
       flex: 0 0 110px;
       font-size: 1.5rem;
       line-height: 1;
@@ -109,7 +112,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
         margin-right: 6px;
       }
     }
-    .button_inquery {
+    .button__inquery {
       flex-basis: auto;
       padding: 14px 32px 17px;
       height: auto;
@@ -135,7 +138,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
 /* ----------------------------------------------------------------
   メニューのスタイル
 ---------------------------------------------------------------- */
-.global_menu {
+.global-menu {
   opacity: 0;
   width: 100%;
   height: 100vh;
@@ -150,7 +153,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
   transition:.15s;
 }
 @include res_min( $break4 ) {
-  .global_menu {
+  .global-menu {
     opacity: 1;
     height: auto;
     padding: 0;
@@ -162,11 +165,11 @@ $header_height_PC: 100; // ヘッダーの高さ PC
   }
 }
 
-.header_navi {
+.header-navi {
   .menu {
     // li
-    .menu_item {
-      .menu_link {
+    .menu__item {
+      .menu__item__link {
         display: block;
         padding: 13px 0;
         border-bottom: 1px solid #A8B9C4;
@@ -197,12 +200,12 @@ $header_height_PC: 100; // ヘッダーの高さ PC
   }
 }
 @include res_min( $break4 ) {
-  .header_navi {
+  .header-navi {
     .menu {
       @include flex(nowrap, center, center);
       // li
-      .menu_item {
-        .menu_link {
+      .menu__item {
+        .menu__item__link {
           padding: 13px 17px;
           border-bottom: none;
           background-image: none;
@@ -218,12 +221,12 @@ $header_height_PC: 100; // ヘッダーの高さ PC
 }
 
 // カレントページ設定
-.blog .menu .menu_item .menu_link[href*='news'],
-.brand .menu .menu_item .menu_link[href*='brand'],
-.product .menu .menu_item .menu_link[href*='product'],
-.case_study .menu .menu_item .menu_link[href*='case_study'],
-.company .menu .menu_item .menu_link[href*='company'],
-.recruit .menu .menu_item .menu_link[href*='recruit'] {
+.blog .menu .menu__item .menu__item__link[href*='news'],
+.brand .menu .menu__item .menu__item__link[href*='brand'],
+.product .menu .menu__item .menu__item__link[href*='product'],
+.case-study .menu .menu__item .menu__item__link[href*='case-study'],
+.company .menu .menu__item .menu__item__link[href*='company'],
+.recruit .menu .menu__item .menu__item__link[href*='recruit'] {
   &:link, &:visited {
     background-color: #D8E6EF;
   }
@@ -247,7 +250,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
   height: #{$header_height_SP + px};
   position: relative;
 
-  .menu_bar_line {
+  .menu-bar-line {
     width: 38px;
     height: 2px;
     background-color: transparent;
@@ -290,14 +293,14 @@ body.is__open {
 }
 
 // メニュー
-.global_menu.is__open {
+.global-menu.is__open {
   opacity: 1;
   pointer-events: visible;
 }
 
 // 開閉トグルのデザイン
 .menu_bar.is__open {
-  .menu_bar_line {
+  .menu-bar-line {
     background-color: transparent !important;
     &::before,
     &::after {

@@ -1,458 +1,113 @@
 @charset 'UTF-8';
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  font: inherit;
-  font-size: 100%;
+.post-body *{
+  line-height: 2;
 }
-
-html{
-  line-height: 1;
-}
-
-ol,
-ul{
-  list-style: none;
-}
-
-table{
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-caption,
-th,
-td{
-  vertical-align: middle;
-  text-align: left;
-  font-weight: 400;
-}
-
-q,
-blockquote{
-  quotes: none;
-}
-
-q:before,
-q:after,
-blockquote:before,
-blockquote:after{
-  content: '';
-  content: none;
-}
-
-sub,
-sup{
-  font-weight: 400;
-  font-size: 50%;
-}
-
-a img{
-  border: none;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
-  display: block;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary{
-  display: block;
-}
-
-input[type=button]:not([disabled]),
-input[type=submit]:not([disabled]),
-input[type=reset]:not([disabled]),
-button:not([disabled]){
-  cursor: pointer;
-}
-
-[hidden]{
-  display: none !important;
-}
-
-button{
-  padding: 0;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-
-  -webkit-appearance: none;
-          appearance: none;
-}
-
-/* ------------------------------------
-//  base
-// ----------------------------------*/
-*{
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-html{
-  width: 100%;
-  height: 100%;
-  font-size: 62.5%;
-}
-
-body{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  color: #3b3b3b;
-  text-align: left;
-  word-wrap: break-word;
-  letter-spacing: 0;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  font-family: 'Noto Sans CJK JP', sans-serif;
-  line-height: 1.875;
-
-  overflow-wrap: break-word;
-}
-.no_sp{
-  display: none;
-}
-*,
-*:before,
-*:after{
-  box-sizing: border-box;
-}
-
-/* ------------------------------------
-//  見出し
-// ----------------------------------*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-  margin-bottom: 0;
-}
-
-/* ------------------------------------
-//  フォント
-// ----------------------------------*/
-em,
-strong{
-  font-weight: 600;
-  font-style: normal;
-}
-
-/* ------------------------------------
-//  リスト
-// ----------------------------------*/
-ol,
-ul{
-  list-style: none;
-}
-
-/* ------------------------------------
-//  段落設定
-// ----------------------------------*/
-p{
-  margin: 2em auto 0;
-  text-align: left;
-}
-p:first-of-type{
-  margin-top: 0;
-}
-
-/* ------------------------------------
-//  画像
-// ----------------------------------*/
-figure{
-  text-align: center;
-}
-
-img,
-svg{
-  width: 100%;
-  height: auto;
-  vertical-align: bottom;
-  line-height: 1;
-}
-
-.editor-styles-wrapper *{
-  color: #3b3b3b;
-  font-family: 'Noto Sans CJK JP', sans-serif !important;
-}
-.editor-styles-wrapper .editor-post-title__block .editor-post-title__input{
-  color: #3b3b3b !important;
-  font-weight: 500 !important;
-}
-.editor-styles-wrapper h1,
-.editor-styles-wrapper h2,
-.editor-styles-wrapper h3,
-.editor-styles-wrapper h4,
-.editor-styles-wrapper h5,
-.editor-styles-wrapper h6{
-  margin-top: 1em !important;
-  font-weight: bolder !important;
-  line-height: 1.8 !important;
-}
-.editor-styles-wrapper h1{
-  font-size: 28px !important;
-  font-size: 2.8rem !important;
-}
-.editor-styles-wrapper h2{
-  font-size: 24px !important;
-  font-size: 2.4rem !important;
-}
-.editor-styles-wrapper h3{
-  font-size: 20px !important;
-  font-size: 2rem !important;
-}
-.editor-styles-wrapper h4{
-  font-size: 16px !important;
-  font-size: 1.6rem !important;
-}
-.editor-styles-wrapper h5{
-  font-size: 16px !important;
-  font-size: 1.6rem !important;
-}
-.editor-styles-wrapper h6{
-  font-size: 16px !important;
-  font-size: 1.6rem !important;
-}
-.editor-styles-wrapper p,
-.editor-styles-wrapper div{
-  margin: 1em 0 0;
+.post-body p{
   font-size: inherit;
 }
-.editor-styles-wrapper img{
-  margin: 1em 0;
+.post-body img{
+  margin: 2em 0;
   max-width: 100%;
   width: auto;
   height: auto;
-  vertical-align: top;
+  vertical-align: bottom;
 }
-.editor-styles-wrapper .alignnone{
-  display: block;
-  float: none;
-}
-.editor-styles-wrapper .alignleft{
-  float: left;
-  margin: 0 1em 1em 0;
-}
-.editor-styles-wrapper .aligncenter{
-  display: block;
-  float: none;
-  margin: 1em auto;
-  text-align: center;
-}
-.editor-styles-wrapper .alignright{
-  float: right;
-  margin: 0 0 1em 1em;
-}
-.editor-styles-wrapper .alignleft:before,
-.editor-styles-wrapper .alignleft:after,
-.editor-styles-wrapper .alignrightalignright:before,
-.editor-styles-wrapper .alignright:after{
+.post-body .alignleft:before,
+.post-body .alignleft:after,
+.post-body .alignrightalignright:before,
+.post-body .alignright:after{
   display: table;
   content: ' ';
 }
-.editor-styles-wrapper .alignleft:after,
-.editor-styles-wrapper .alignrightalignright:after{
+.post-body .alignleft:after,
+.post-body .alignrightalignright:after{
   clear: both;
 }
-.editor-styles-wrapper .alignleft,
-.editor-styles-wrapper .alignright{
+.post-body .alignleft,
+.post-body .alignright{
   *zoom: 1;
 }
-.editor-styles-wrapper ul,
-.editor-styles-wrapper ol{
-  margin: 1em 0;
+.post-body ul,
+.post-body ol{
+  margin: 2em 0;
   padding: 0;
+  padding-left: 1.5em;
 }
-.editor-styles-wrapper ul{
+.post-body ul{
   list-style: disc outside;
 }
-.editor-styles-wrapper ol{
+.post-body ol{
   list-style: decimal outside;
 }
-.editor-styles-wrapper dl{
-  margin: 1em 0;
+.post-body dl{
+  margin: 2em 0;
 }
-.editor-styles-wrapper dl dt{
+.post-body dl dt{
   margin-bottom: .5em;
 }
-.editor-styles-wrapper dl dd{
+.post-body dl dd{
   margin-bottom: .5em;
 }
-.editor-styles-wrapper dl:last-child,
-.editor-styles-wrapper dl dt:last-child,
-.editor-styles-wrapper dl dd:last-child{
+.post-body dl:last-child,
+.post-body dl dt:last-child,
+.post-body dl dd:last-child{
   margin-bottom: 0;
 }
-.editor-styles-wrapper ul ul,
-.editor-styles-wrapper ul ol,
-.editor-styles-wrapper ul dl,
-.editor-styles-wrapper ol ol,
-.editor-styles-wrapper ol ul,
-.editor-styles-wrapper ol dl,
-.editor-styles-wrapper dl dl,
-.editor-styles-wrapper dl ul,
-.editor-styles-wrapper dl ol{
-  margin: 1em;
+.post-body ul ul,
+.post-body ul ol,
+.post-body ul dl,
+.post-body ol ol,
+.post-body ol ul,
+.post-body ol dl,
+.post-body dl dl,
+.post-body dl ul,
+.post-body dl ol{
+  margin: 2em 1em;
 }
-.editor-styles-wrapper table{
-  margin: 1em 0;
+.post-body table{
+  margin: 2em 0;
   max-width: 100%;
   width: auto;
 }
-.editor-styles-wrapper th,
-.editor-styles-wrapper td{
+.post-body th,
+.post-body td{
   padding: .7em .8em;
   border: 1px solid #b3b3b3;
   background: #f6f6f6;
   line-height: 1.5em;
 }
-.editor-styles-wrapper td{
+.post-body td{
   background: #fdfdfd;
 }
-.editor-styles-wrapper iframe{
-  margin: 1em auto;
+.post-body iframe{
+  margin: 2em auto;
   max-width: 100%;
 }
-.editor-styles-wrapper strong{
+.post-body strong{
   color: #3b3b3b;
-  font-weight: 600;
+  font-weight: 400;
 }
-.editor-styles-wrapper em{
+.post-body em{
   color: #3b3b3b;
   font-weight: normal;
   font-style: italic;
 }
-.editor-styles-wrapper pre{
-  margin: 1em 0;
+.post-body pre{
+  margin: 2em 0;
   padding: 1em 1.5em;
   background: #ededed;
   white-space: pre-wrap;
 }
-.editor-styles-wrapper hr{
+.post-body hr{
   border: 1px solid #ccc;
 }
-.editor-styles-wrapper blockquote{
+.post-body blockquote{
   padding: 1em 1.5em;
   color: #555;
   font-style: italic;
 }
-.editor-styles-wrapper blockquote cite:before{
+.post-body blockquote cite:before{
   margin: 0 1em;
   color: #999;
   content: '─';
-}
-@media only screen and (min-width: 768px){
-  .no_pc{
-    display: none;
-  }
-  .no_sp{
-    display: inline;
-  }
 }

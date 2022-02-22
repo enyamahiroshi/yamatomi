@@ -2,41 +2,36 @@
 /********************************************************************************
  デフォルトの「投稿」ポストの編集
 *********************************************************************************/
-function edit_admin_menus() {
-  global $menu;
-  global $submenu;
-  $menu[5][0] = 'ニュース';
-  $submenu['edit.php'][5][0] = 'すべての記事';
+global $mylabel; // 投稿 default
+$mylabel = 'ニュース';
+function custom_post_labels( $labels ) {
+	$labels->name = $GLOBALS['mylabel']; // 投稿
+	$labels->singular_name = $GLOBALS['mylabel']; // 投稿
+	$labels->add_new = '新規追加'; // 新規追加
+	$labels->add_new_item =  $GLOBALS['mylabel'].'を追加'; // 新規投稿を追加
+	$labels->edit_item = '投稿の編集'; // 投稿の編集
+	$labels->new_item = '新規'.$GLOBALS['mylabel']; // 新規投稿
+	$labels->view_item = $GLOBALS['mylabel'].'を表示'; // 投稿を表示
+	$labels->search_items = $GLOBALS['mylabel'].'を検索'; // 投稿を検索
+	$labels->not_found = $GLOBALS['mylabel'].'が見つかりませんでした。'; // 投稿が見つかりませんでした。
+	$labels->not_found_in_trash = 'ゴミ箱内に'.$GLOBALS['mylabel'].'が見つかりませんでした。'; // ゴミ箱内に投稿が見つかりませんでした。
+	$labels->parent_item_colon = ''; // (なし)
+	$labels->all_items = $GLOBALS['mylabel'].'一覧'; // 投稿一覧
+	$labels->archives = $GLOBALS['mylabel'].'アーカイブ'; // 投稿アーカイブ
+	$labels->insert_into_item = $GLOBALS['mylabel'].'に挿入'; // 投稿に挿入
+	$labels->uploaded_to_this_item = 'この'.$GLOBALS['mylabel'].'へのアップロード'; // この投稿へのアップロード
+	$labels->featured_image = 'アイキャッチ画像'; // アイキャッチ画像
+	$labels->set_featured_image = 'アイキャッチ画像を設定'; // アイキャッチ画像を設定
+	$labels->remove_featured_image = 'アイキャッチ画像を削除'; // アイキャッチ画像を削除
+	$labels->use_featured_image = 'アイキャッチ画像として使用'; // アイキャッチ画像として使用
+	$labels->filter_items_list = $GLOBALS['mylabel'].'リストの絞り込み'; // 投稿リストの絞り込み
+	$labels->items_list_navigation = $GLOBALS['mylabel'].'リストナビゲーション'; // 投稿リストナビゲーション
+	$labels->items_list = $GLOBALS['mylabel'].'リスト'; // 投稿リスト
+	$labels->menu_name = $GLOBALS['mylabel']; // 投稿
+	$labels->name_admin_bar = $GLOBALS['mylabel']; // 投稿
+	return $labels;
 }
-add_action('admin_menu', 'edit_admin_menus');
-
-// カテゴリー、タグを表示しない
-function my_unregister_taxonomies()
-{
-	global $wp_taxonomies;
-	/*
-	* 投稿機能から「カテゴリー」を削除
-	*/
-	// if (!empty($wp_taxonomies['category']->object_type)) {
-	// 	foreach ($wp_taxonomies['category']->object_type as $i => $object_type) {
-	// 		if ($object_type == 'post') {
-	// 			unset($wp_taxonomies['category']->object_type[$i]);
-	// 		}
-	// 	}
-	// }
-	/*
-	* 投稿機能から「タグ」を削除
-	*/
-	if (!empty($wp_taxonomies['post_tag']->object_type)) {
-		foreach ($wp_taxonomies['post_tag']->object_type as $i => $object_type) {
-			if ($object_type == 'post') {
-				unset($wp_taxonomies['post_tag']->object_type[$i]);
-			}
-		}
-	}
-	return true;
-}
-add_action('init', 'my_unregister_taxonomies');
+add_filter( 'post_type_labels_post', 'custom_post_labels' );
 
 
 /********************************************************************************
@@ -47,13 +42,13 @@ add_action('init', 'my_unregister_taxonomies');
 global
 $cpSlug,      // カスタム投稿のスラッグ名 10
 $cpName,      // カスタム投稿の表示名 5
-$cpTaxSlug,   // カスタム投稿のタクソノミーのスラッグ名（ _category or _tag ） 7
+$cpTaxSlug,   // カスタム投稿のタクソノミーのスラッグ名（ -category or -tag ） 7
 $cpTaxName,   // カスタム投稿のタクソノミーの表示名（ カテゴリー か タグ ） 3
 $rewriteslug; // リライトルールを書き換えて sample/カテゴリー名/… という自然なURLにする場合 5
 
 $cpSlug       = 'product';
 $cpName       = '製品案内';
-$cpTaxSlug    = $GLOBALS['cpSlug'].'_category';
+$cpTaxSlug    = $GLOBALS['cpSlug'].'-category';
 $cpTaxName    = $GLOBALS['cpName'].'カテゴリー';
 $rewriteslug  = 'category';
 
@@ -77,7 +72,7 @@ add_action( 'init', function() {
 		'menu_position'       => 5,
 		'supports'            => array( // 管理画面から投稿できる項目を設定
 		'title', // タイトル表示を有効に
-		// 'editor', // 本文の表示を有効に
+		'editor', // 本文の表示を有効に
 		// 'custom-fields', カスタムフィールド
 		'thumbnail', // アイキャッチ画像
 		'author', // 作成者
@@ -97,6 +92,10 @@ add_action( 'init', function() {
 	register_taxonomy( $GLOBALS['cpTaxSlug'], $GLOBALS['cpSlug'], $args );
 	/* ▲カスタムタクソノミーを作成 */
 });
+
+/* リライトルールを変更（カスタムタクソノミー） */
+add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]', 'top');
+add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&paged=$matches[2]', 'top');
 // 投稿画面にてタクソノミー検索を可能にする
 add_action('restrict_manage_posts', function() {
 global $post_type;
@@ -113,11 +112,6 @@ if ( $GLOBALS['cpSlug'] == $post_type ) {
 	<?php
 }
 });
-/* リライトルールを変更する場合（カスタムタクソノミーの分） */
-/* --
-add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]', 'top');
-add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&paged=$matches[2]', 'top');
--- */
 // ▲▲▲▲▲▲▲▲▲▲ ------- ここまでカスタム投稿タイプ設定のセット ------- ▲▲▲▲▲▲▲▲▲▲
 
 
@@ -125,13 +119,13 @@ add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/page/?
 global
 $cpSlug2,      // カスタム投稿のスラッグ名 10
 $cpName2,      // カスタム投稿の表示名 5
-$cpTaxSlug2,   // カスタム投稿のタクソノミーのスラッグ名（ _category or _tag ） 7
+$cpTaxSlug2,   // カスタム投稿のタクソノミーのスラッグ名（ -category or -tag ） 7
 $cpTaxName2,   // カスタム投稿のタクソノミーの表示名（ カテゴリー か タグ ） 3
 $rewriteslug2; // リライトルールを書き換えて sample/カテゴリー名/… という自然なURLにする場合 5
 
 $cpSlug2       = 'case-study';
 $cpName2       = '施工事例';
-$cpTaxSlug2    = $GLOBALS['cpSlug2'].'_category';
+$cpTaxSlug2    = $GLOBALS['cpSlug2'].'-category';
 $cpTaxName2    = $GLOBALS['cpName2'].'カテゴリー';
 $rewriteslug2  = 'category';
 
@@ -155,7 +149,7 @@ add_action( 'init', function() {
 		'menu_position'       => 5,
 		'supports'            => array( // 管理画面から投稿できる項目を設定
 		'title', // タイトル表示を有効に
-		// 'editor', // 本文の表示を有効に
+		'editor', // 本文の表示を有効に
 		// 'custom-fields', カスタムフィールド
 		'thumbnail', // アイキャッチ画像
 		'author', // 作成者
@@ -163,20 +157,23 @@ add_action( 'init', function() {
 	);
 	register_post_type( $GLOBALS['cpSlug2'], $args );
 	/* ▼カスタムタクソノミーを作成 */
-	// $args = array(
-	// 	'label'        => $GLOBALS['cpTaxName2'],
-	// 	'public'       => true,
-	// 	'show_ui'      => true,
-	// 	'show_in_rest' => true, // Gutenberg 有効化
-	// 	'query_var'    => true,
-	// 	'rewrite'      => array( 'slug' => $GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'], ), //urlを任意に指定する場合 → array( 'slug' => 'aaa/bbb', default： true )
-	// 	'hierarchical' => true, //階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
-	// );
-	// register_taxonomy( $GLOBALS['cpTaxSlug2'], $GLOBALS['cpSlug2'], $args );
+	$args = array(
+		'label'        => $GLOBALS['cpTaxName2'],
+		'public'       => true,
+		'show_ui'      => true,
+		'show_in_rest' => true, // Gutenberg 有効化
+		'query_var'    => true,
+		'rewrite'      => array( 'slug' => $GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'], ), //urlを任意に指定する場合 → array( 'slug' => 'aaa/bbb', default： true )
+		'hierarchical' => true, //階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
+	);
+	register_taxonomy( $GLOBALS['cpTaxSlug2'], $GLOBALS['cpSlug2'], $args );
 	/* ▲カスタムタクソノミーを作成 */
 });
+
+/* リライトルールを変更（カスタムタクソノミー） */
+add_rewrite_rule($GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]', 'top');
+add_rewrite_rule($GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&paged=$matches[2]', 'top');
 // 投稿画面にてタクソノミー検索を可能にする
-/*
 add_action('restrict_manage_posts', function() {
 global $post_type;
 if ( $GLOBALS['cpSlug2'] == $post_type ) {
@@ -192,12 +189,6 @@ if ( $GLOBALS['cpSlug2'] == $post_type ) {
 	<?php
 }
 });
-*/
-/* リライトルールを変更する場合（カスタムタクソノミーの分） */
-/* --
-add_rewrite_rule($GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]', 'top');
-add_rewrite_rule($GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&paged=$matches[2]', 'top');
--- */
 // ▲▲▲▲▲▲▲▲▲▲ ------- ここまでカスタム投稿タイプ設定のセット ------- ▲▲▲▲▲▲▲▲▲▲
 
 
@@ -206,13 +197,13 @@ add_rewrite_rule($GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'].'/([^/]+)/page
 global
 $cpSlug3,      // カスタム投稿のスラッグ名 10
 $cpName3,      // カスタム投稿の表示名 5
-$cpTaxSlug3,   // カスタム投稿のタクソノミーのスラッグ名（ _category or _tag ） 7
+$cpTaxSlug3,   // カスタム投稿のタクソノミーのスラッグ名（ -category or -tag ） 7
 $cpTaxName3,   // カスタム投稿のタクソノミーの表示名（ カテゴリー か タグ ） 3
 $rewriteslug3; // リライトルールを書き換えて sample/カテゴリー名/… という自然なURLにする場合 5
 
 $cpSlug3       = 'download';
 $cpName3       = 'ダウンロード';
-$cpTaxSlug3    = $GLOBALS['cpSlug3'].'_category';
+$cpTaxSlug3    = $GLOBALS['cpSlug3'].'-category';
 $cpTaxName3    = $GLOBALS['cpName3'].'カテゴリー';
 $rewriteslug3  = 'category';
 
@@ -256,8 +247,11 @@ add_action( 'init', function() {
 	// register_taxonomy( $GLOBALS['cpTaxSlug3'], $GLOBALS['cpSlug3'], $args );
 	/* ▲カスタムタクソノミーを作成 */
 });
+
+/* リライトルールを変更（カスタムタクソノミー） */
+add_rewrite_rule($GLOBALS['cpSlug3'].'/'.$GLOBALS['rewriteslug3'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]', 'top');
+add_rewrite_rule($GLOBALS['cpSlug3'].'/'.$GLOBALS['rewriteslug3'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&paged=$matches[2]', 'top');
 // 投稿画面にてタクソノミー検索を可能にする
-/*
 add_action('restrict_manage_posts', function() {
 global $post_type;
 if ( $GLOBALS['cpSlug3'] == $post_type ) {
@@ -273,18 +267,12 @@ if ( $GLOBALS['cpSlug3'] == $post_type ) {
 	<?php
 }
 });
-*/
-/* リライトルールを変更する場合（カスタムタクソノミーの分） */
-/* --
-add_rewrite_rule($GLOBALS['cpSlug3'].'/'.$GLOBALS['rewriteslug3'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]', 'top');
-add_rewrite_rule($GLOBALS['cpSlug3'].'/'.$GLOBALS['rewriteslug3'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&paged=$matches[2]', 'top');
--- */
 // ▲▲▲▲▲▲▲▲▲▲ ------- ここまでカスタム投稿タイプ設定のセット ------- ▲▲▲▲▲▲▲▲▲▲
 
 
 // カスタム投稿に編集者属性を与える
 function allowAuthorEditing() {
-  add_post_type_support( $GLOBALS['cpSlug, cpSlug2, cpSlug3'], 'author' );
+  add_post_type_support( $GLOBALS['$cpSlug, $cpSlug2, $cpSlug3'], 'author' );
 }
 add_action('init','allowAuthorEditing');
 

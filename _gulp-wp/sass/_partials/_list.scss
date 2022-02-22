@@ -1,9 +1,69 @@
 /* ----------------------------------------------------------------
   リスト
 ---------------------------------------------------------------- */
+// カテゴリーリスト
+.term-list {
+  .term-list__item,
+  .cat-item {
+    &:not(:first-of-type) {
+      margin-top: 5px;
+    }
+  }
+  .term-list__item__link,
+  .cat-item a {
+    display: flex;
+    align-items: center;
+    padding: 2px 7px;
+    line-height: 1.5;
+    &:link, &:visited {
+      background-color: #D8E6EF;
+      color: $mainColor;
+    }
+    &:hover, &:active {
+      opacity: 1;
+      background-color: $mainColor;
+      color: #fff;
+    }
+  }
+
+  // カレント
+  .term-list__item__link.current,
+  .cat-item a.current,
+  .current-cat a {
+    &:link, &:visited {
+      background-color: $mainColor;
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+}
+@include res_min( $break ) {
+  .term-list {
+    @include flex(wrap, flex-start, stretch);
+    .term-list__item,
+    .cat-item {
+      flex-basis: 23.5%;
+      margin: 0 2% 0 0;
+      &:not(:first-of-type) {
+        margin-top: 0;
+      }
+      &:nth-of-type(4n) {
+        margin-right: 0;
+      }
+      &:nth-of-type(n+5) {
+        margin-top: 23px;
+      }
+    }
+    .term-list__item__link,
+    .cat-item a {
+      padding: 1px 7px;
+    }
+  }
+}
+
 
 // シンプルな記事リスト
-.list_post_type-simple {
+.list-post-type--simple {
   border-top: 1px solid #A8B9C4;
 	.item {
     padding: 12px 55px 8px 0;
@@ -21,22 +81,22 @@
       right: 18px;
       top: 0;
     }
-    .item_meta {
+    .item__link__meta {
       @include flex(nowrap, flex-start, center);
-      .item_meta_date {
+      .item__link__meta__date {
         margin-right: 16px;
         font-size: 1.4rem;
         color: $mainColor;
       }
     }
-    .item_meta_title {
+    .item__link__meta__titles__title {
       font-weight: 600;
       color: $mainColor;
     }
 	}
 }
 @include res_min( $break ) {
-  .list_post_type-simple {
+  .list-post-type--simple {
     .item {
       padding: 40px 100px 50px 0;
       &::before {
@@ -50,30 +110,30 @@
 
 
 // サムネイル付き記事リスト
-.list_post_type-thumbnail {
+.list-post-type--thumbnail {
 	.item {
     margin-top: 18px;
-    .item_link {
+    .item__link {
       display: block;
-      .item_meta {
+      .item__link__meta {
         margin-top: 3px;
-        .item_meta_date {
+        .item__link__meta__date {
           font-size: 1.4rem;
           color: $mainColor;
         }
-        .item_meta_titles {
+        .item__link__meta__titles {
           @include flex(nowrap, flex-start, flex-start);
           .label01 {
             white-space: nowrap;
             margin-top: 5px;
             margin-right: 8px;
           }
-          .item_meta_title {
+          .item__link__meta__titles__title {
             font-weight: 600;
             color: $mainColor;
           }
         }
-        .table_simple {
+        .table-simple {
           margin-top: 3px;
           font-size: 1.4rem;
           color: #43647A;
@@ -83,7 +143,7 @@
 	}
 }
 @include res_min( $break ) {
-  .list_post_type-thumbnail {
+  .list-post-type--thumbnail {
     @include flex(wrap, flex-start, stretch);
     .item {
       margin: 11px 11px 0 0;
@@ -92,11 +152,74 @@
 }
 
 
+// 施工事例記事リスト
+.list-post-type--thumbnail.list--case-study {
+	.item {
+    .item__link {
+      display: block;
+      padding: 20px;
+      background-color: #F1F5FA;
+      background-image: url(./assets/img/common/icon_more-s-b.svg);
+      background-repeat: no-repeat;
+      background-position: right 15px bottom 15px;
+      background-size: 35px;
+      .item__link__thumbnail {
+        height: 0;
+        padding-top: 40%;
+        background-color: $mainColor;
+        background-position: center;
+        background-size: cover;
+      }
+      .item__link__meta {
+        margin-top: 8px;
+        .item__link__meta__date-category {
+          @include flex(nowrap, flex-start, center);
+          .item__link__meta__date {
+            white-space: nowrap;
+            margin-right: 8px;
+          }
+        }
+        .table-simple {
+          td {
+            padding-right: 35px;
+          }
+        }
+      }
+    }
+	}
+}
+@include res_min( $break ) {
+  .list-post-type--thumbnail.list--case-study {
+    @include flex(wrap, flex-start, stretch);
+    .item {
+      flex-basis: calc(50% - 20px / 2);
+      margin: 20px 20px 0 0;
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+      .item__link {
+        padding: 40px 45px 30px;
+        background-position: right 45px bottom 40px;
+        background-size: 50px;
+        .item__link__meta {
+          margin-top: 13px;
+          .table-simple {
+            td {
+              padding-right: 55px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 // コンテンツバナーリスト
-.list_contents_type-banner {
+.list-contents-type-banner {
   .item {
     margin-top: 6px;
-    .item_link {
+    .item__link {
       display: block;
       position: relative;
       &::before {
@@ -110,7 +233,7 @@
         top: 50%;
         transform: translateY(-50%);
       }
-      .contents_title {
+      .contents-title {
         color: #fff;
         text-align: left;
         position: absolute;
@@ -122,7 +245,7 @@
   }
 }
 @include res_min( $break ) {
-  .list_contents_type-banner {
+  .list-contents-type-banner {
     @include flex(wrap, space-between, stretch);
     .item {
       flex-basis: calc(50% - 20px);
@@ -130,17 +253,113 @@
       &:nth-of-type( n + 3 ) {
         margin-top: 40px;
       }
-      .item_link {
+      .item__link {
         &::before {
           width: 68px;
           height: 68px;
           right: 30px;
         }
-        .contents_title {
+        .contents-title {
           left: 50px;
           span {
             font-size: 4rem;
           }
+        }
+      }
+    }
+  }
+}
+
+
+// ページネーション（the_posts_pagenationで出力）↓
+// <nav class="navigation pagination" aria-label="投稿">
+// <h2 class="screen-reader-text">投稿ナビゲーション</h2>
+// <div class="nav-links">
+//   <ul class='page-numbers'>
+//     <li><span aria-current="page" class="page-numbers current">1</span></li>
+//     <li><a class="page-numbers" href="//localhost:3000/news/page/2/">2</a></li>
+//     <li><a class="page-numbers" href="//localhost:3000/news/page/3/">3</a></li>
+//     <li><a class="next page-numbers" href="//localhost:3000/news/page/2/">次へ</a></li>
+//   </ul>
+// </div>
+// </nav>
+.navigation.pagination {
+  margin-top: 20px;
+  .nav-links {
+    .page-numbers { // UL
+      @include flex(wrap, center, stretch);
+      & > li {
+        flex-basis: 32px;
+        height: 32px;
+        margin: 10px 0 0;
+      }
+      .page-numbers { // li span, li a
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 100%;
+        font-family: $ff-en;
+        font-size: 1.8rem;
+        line-height: 1;
+        &::before {
+          content: '0';
+        }
+        // カレント
+        &.current {
+          color: $mainColor;
+        }
+        // リンク有り
+        &:link, &:visited {
+          color: #ACC5D5;
+        }
+        &:hover, &:active {
+          opacity: 1;
+          color: $mainColor;
+        }
+      }
+      // 前後へ
+      .page-numbers.prev,
+      .page-numbers.next {
+        width: 32px;
+        height: 100%;
+        background-image: url(./assets/img/common/icon_arrow6.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 17px auto;
+        &::before {
+          content: none;
+        }
+        &:hover, &:active {
+          opacity: .4;
+        }
+      }
+      .page-numbers.prev {
+        transform: scale(-1,1);
+      }
+    }
+  }
+}
+@include res_min( $break ) {
+  .navigation.pagination {
+    margin-top: 60px;
+    .nav-links {
+      .page-numbers { // UL
+        @include flex(wrap, center, stretch);
+        & > li {
+          flex-basis: 45px;
+          height: 45px;
+          margin: 10px 0 0;
+        }
+        .page-numbers { // li span, li a
+          width: 45px;
+          font-size: 2.4rem;
+        }
+        // 前後へ
+        .page-numbers.prev,
+        .page-numbers.next {
+          width: 45px;
+          background-size: 21px auto;
         }
       }
     }

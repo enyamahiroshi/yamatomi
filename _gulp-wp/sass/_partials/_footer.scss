@@ -1,23 +1,26 @@
 /* ----------------------------------------------------------------
   フッターのレイアウト
 ---------------------------------------------------------------- */
-.site_footer {
+.site-footer {
   padding: 25px 20px 29px;
   margin-top: 30px;
   background-color: $mainColor;
+  .breadcrumb-navi + & {
+    margin-top: 0;
+  }
 }
 @include res_min( $break ) {
-  .site_footer {
+  .site-footer {
     padding-top: 116px;
     padding-bottom: 22px;
     margin-top: 100px;
-    .inner_medium {
+    .inner-medium {
       @include maxW();
     }
   }
 }
 
-.site_footer_contents {
+.site-footer__contents {
   color: #fff;
   line-height: 1.8;
   p {
@@ -25,22 +28,22 @@
   }
 }
 @include res_min( $break ) {
-  .site_footer_contents {
+  .site-footer__contents {
     @include flex(nowrap, space-between, stretch);
   }
 }
 
-.footer_info {
-	.footer_info_logo {
+.site-footer__contents__info {
+	.site-footer__contents__info__logo {
     font-size: 2rem;
     font-weight: 600;
 	}
-	.footer_info_address {
+	.site-footer__contents__info__address {
     margin-top: 14px;
     font-size: 1.5rem;
     opacity: .8;
 	}
-	.footer_info_tel {
+	.site-footer__contents__info__tel {
     font-family: $ff-en;
     font-size: 2rem;
     font-weight: 400;
@@ -52,18 +55,18 @@
       font-size: 1.4rem;
     }
 	}
-	.button_wrap {
+	.button-wrap {
     margin-top: 20px;
     text-align: left;
 	}
 }
 @include res_min( $break ) {
-  .footer_info {
+  .site-footer__contents__info {
     flex-basis: 39%;
-    .footer_info_address {
+    .site-footer__contents__info__address {
       margin-top: 22px;
     }
-    .button_wrap {
+    .button-wrap {
       justify-content: flex-start;
       .button {
         margin-left: 0;
@@ -72,14 +75,14 @@
   }
 }
 
-.footer_navi {
+.site-footer__contents__footer-navi {
   margin-top: 25px;
 	.menu {
     @include flex(wrap, flex-start, stretch);
-		.menu_item {
+		.menu__item {
       margin-top: 3px;
       min-width: 6em;
-			.menu_link {
+			.menu__item__link {
         &:link, &:visited {
           color: #fff;
         }
@@ -94,6 +97,7 @@
     margin-top: 15px;
 		.product_menu_title {
       font-size: 1.7rem;
+      color: #fff;
       overflow: hidden;
       position: relative;
       &::before {
@@ -109,8 +113,8 @@
 		.menu {
       display: block;
       margin-top: 12px;
-			.menu_item {
-				.menu_link {
+			.menu__item {
+				.menu__item__link {
           font-size: 1.4rem;
           opacity: .8;
 				}
@@ -119,9 +123,9 @@
 		.menu_other {
       margin-top: 15px;
       @include flex(wrap, flex-start, stretch);
-			.menu_item {
+			.menu__item {
         margin-right: 2em;
-				.menu_link {
+				.menu__item__link {
           font-size: 1.5rem;
           &:link, &:visited {
             color: #fff;
@@ -136,11 +140,11 @@
 	}
 }
 @include res_min( $break ) {
-  .footer_navi {
+  .site-footer__contents__footer-navi {
     flex-basis: 61%;
     margin-top: 0;
     .menu {
-      .menu_item {
+      .menu__item {
         margin-top: 0;
         margin-right: 2em;
         min-width: 1em;
@@ -151,12 +155,12 @@
       .menu {
         margin-top: 5px;
         @include flex(wrap, flex-start, stretch);
-        .menu_item {
+        .menu__item {
           flex-basis: 37%;
           margin-top: 3px;
           margin-right: 0;
           padding-right: 1em;
-          .menu_link {
+          .menu__item__link {
             font-size: 1.5rem;
           }
         }

@@ -1,9 +1,13 @@
 /* ----------------------------------------------------------------
   各ページ共通
 ---------------------------------------------------------------- */
+.screen-reader-text {
+  display: none;
+}
+
+
 //メインコンテンツ
 .site_main {
-  padding: 70px 20px 0;
   padding: 70px 0 0;
 }
 @include res_min( $break ) {
@@ -15,30 +19,37 @@
 
 // section + inner
 .sec {
-  padding-left: 20px;
-  padding-right: 20px;
-  &:first-of-type {
-    margin-top: 40px;
+  padding: 30px 20px;
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+  // 下層のsec一番上の設定
+  .page-header + & {
+    padding-top: 40px;
   }
 }
 @include res_min( $break ) {
   .sec {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 100px 0;
+    &:last-of-type {
+      padding-bottom: 0;
+    }
 
-    .inner_small {
+    // 下層のsec一番上の設定
+    .page-header + & {
+      padding-top: 80px;
+    }
+
+    .inner-small {
       @include maxW($break2);
     }
-    .inner_medium {
+    .inner-medium {
       @include maxW();
     }
-    .inner_wide {
+    .inner-wide {
       padding-left: 4%;
       padding-right: 4%;
-    }
-
-    &:first-of-type {
-      margin-top: 55px;
     }
   }
 }
@@ -46,22 +57,22 @@
 
 // layout
 @include res_min( $break ) {
-  .layout_wrap1 {
+  .layout-wrap1 {
     @include flex(nowrap, space-between, stretch);
 
-    .layout_head {
+    .layout-head {
       flex-basis: 28%;
     }
-    .layout_body {
+    .layout-body {
       flex-basis: 72%;
     }
   }
 
-  .layout_head {
-    .contents_title {
+  .layout-head {
+    .contents-title {
       text-align: left;
     }
-    .button_wrap {
+    .button-wrap {
       margin-top: 37px;
     }
     .button {
@@ -73,7 +84,7 @@
 
 
 // ページタイトル
-.page_header {
+.page-header {
   padding-top: 36px;
   position: relative;
   z-index: 1;
@@ -90,7 +101,7 @@
     top: 0;
     z-index: -1;
   }
-  .page_header_title {
+  .page-header__title {
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.4;
@@ -105,12 +116,12 @@
   }
 }
 @include res_min( $break ) {
-  .page_header {
+  .page-header {
     padding-top: 88px;
     &::before {
       height: 140px;
     }
-    .page_header_title {
+    .page-header__title {
       span {
         font-size: 6.4rem;
       }
@@ -120,7 +131,7 @@
 
 
 // title
-.contents_title {
+.contents-title {
   text-align: center;
   font-size: 1.6rem;
   font-weight: 600;
@@ -134,21 +145,33 @@
   }
 }
 @include res_min( $break ) {
-  .contents_title {
+  .contents-title {
     span {
       font-size: 6.4rem;
     }
   }
 }
 
+.contents-title--small {
+  margin: 2em 0 1em;
+  font-size: 2rem;
+  font-weight: 600;
+  color: $mainColor;
+}
+@include res_min( $break ) {
+  .contents-title--small {
+    font-size: 2.4rem;
+  }
+}
+
 
 // コンテンツリード
-.contents_leading {
+.contents-leading {
   padding-top: 25px;
   text-align: center;
 }
 @include res_min( $break ) {
-  .contents_leading {
+  .contents-leading {
     padding-top: 50px;
     font-size: 1.8rem;
     line-height: 2.333;
@@ -189,6 +212,7 @@
   }
 }
 
+
 // マーカー
 .marker {
   background-color: #FFE2D9;
@@ -207,5 +231,86 @@
   .anchor {
     padding-top: 80px;
     margin-top: -80px;
+  }
+}
+
+
+// page top
+.page-top {
+  width: 12px;
+  height: auto;
+  position: fixed;
+  right: 15px;
+  bottom: 65px;
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 0.7 !important;
+  }
+  // アクティブ
+  &.is-active {
+    opacity: 1;
+  }
+}
+@include res_min( $break ) {
+  .page-top {
+    right: 20px;
+    bottom: 25px;
+  }
+}
+
+
+// パンくず
+.breadcrumb-navi {
+  margin: 50px auto 15px;
+  @include maxW();
+  .breadcrumb-navi__item {
+    font-size: 1.2rem;
+    &:not(:last-of-type) {
+      &::after {
+        content: '';
+        width: 4px;
+        height: 4px;
+        display: block;
+        margin: 8px 0;
+        background-color: #6B8CA2;
+        border-radius: 50%;
+      }
+    }
+    .breadcrumb-navi__item__text {
+      color: #6B8CA2;
+    }
+    .breadcrumb-navi__item__link {
+      &:link, &:visited {
+        .breadcrumb-navi__item__text {
+          color: $mainColor;
+        }
+      }
+      &:hover, &:active {
+        .breadcrumb-navi__item__text {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+@include res_min( $break ) {
+  .breadcrumb-navi {
+    margin: 75px auto 15px;
+    .breadcrumb-navi__lists {
+      @include flex(wrap, flex-start, stretch);
+    }
+    .breadcrumb-navi__item {
+      &:not(:last-of-type) {
+        &::after {
+          width: 7px;
+          height: 7px;
+          display: inline-block;
+          margin: 0 18px 1px;
+          background-color: #6B8CA2;
+        }
+      }
+    }
   }
 }

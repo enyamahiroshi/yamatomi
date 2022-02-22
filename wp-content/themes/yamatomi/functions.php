@@ -5,6 +5,7 @@ get_template_part( 'setting/custom-post-type' );
 get_template_part( 'setting/customize-dashbord' );
 get_template_part( 'setting/customize-plugins' );
 get_template_part( 'setting/customize-block-editer' );
+get_template_part( 'block/breadcrumb' );
 
 /* -------------------------------------------------------------
 //  メインループの表示件数を制御
@@ -42,17 +43,17 @@ function my_pre_get_posts( $query ) {
   // $query->set('posts_per_page', 2); //表示件数
   // }
   // //カスタム投稿タイプのアーカイブ
-  // if($query -> is_post_type_archive()){
-  // $query -> set('posts_per_page', 20); //表示件数
-  //   // $query -> set('order', 'ASC'); //昇順
-  //   // $query -> set('orderby', 'date'); //日
-  // }
+  if($query -> is_post_type_archive()){
+  $query -> set('posts_per_page', 10); //表示件数
+    // $query -> set('order', 'ASC'); //昇順
+    // $query -> set('orderby', 'date'); //日
+  }
   // //カスタムタクソノミーのアーカイブ
-  // if($query -> is_tax()){
-  // $query -> set('posts_per_page', 20); //表示件数
-  //   // $query -> set('order', 'ASC'); //昇順
-  //   // $query -> set('orderby', 'date'); //日
-  // }
+  if($query -> is_tax()){
+  $query -> set('posts_per_page', 10); //表示件数
+    // $query -> set('order', 'ASC'); //昇順
+    // $query -> set('orderby', 'date'); //日
+  }
 }
 
 /* -------------------------------------------------------------
@@ -113,7 +114,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 add_theme_support('menus');
 // liに付与されるclassやidを消す
 add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
-add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
+add_filter('nav_menu__item_id', 'my_css_attributes_filter', 100, 1);
 function my_css_attributes_filter($var) {
   // ただし以下のid,classは残す
   return is_array($var) ? array_intersect($var, array(

@@ -3,16 +3,15 @@
 <?php
   $page = get_post( get_the_ID() );
   $slug = $page->post_name;
+  $strUp = strtoupper($slug);
 ?>
-<header class="sr-fadeIn2 page-header page-header--<?php echo $slug; ?>">
-  <h1 class="page-header__title"><?php echo the_title(); ?><span><?php echo $slug; ?></span></h1>
-</header>
+  <header class="page-header">
+    <h1 class="page-header__title"><span><?php echo $strUp; ?></span><?php echo the_title(); ?></h1>
+  </header>
 
-<main class="main-wrap">
-
-  <section class="sec">
-    <div class="inner">
-		<?php echo the_content(); ?>
+  <section class="sec sec--page">
+    <div class="inner-medium">
+    <?php echo the_content(); ?>
     </div>
   </section>
 

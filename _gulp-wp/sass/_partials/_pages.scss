@@ -1,4 +1,18 @@
 /* ----------------------------------------------------------------
+  COMMON
+---------------------------------------------------------------- */
+// 製品案内個別等
+.sec--post {}
+@include res_min( $break ) {
+  .sec--post {
+    .page-header + & {
+      padding-top: 60px;
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
   TOP
 ---------------------------------------------------------------- */
 .kv {
@@ -30,8 +44,7 @@
 
 
 // イントロ
-.sec_intro {
-  padding-top: 30px;
+.sec--intro {
   padding-bottom: 147px;
   margin-top: 24px;
   background-image: url(./assets/img/top/bg_intro.svg), url(./assets/img/common/bk_concrete_green.jpg);
@@ -41,17 +54,17 @@
   * {
     text-align: center;
   }
-  .inner_wide {
+  .inner-wide {
     @include flex(nowrap, flex-start, stretch);
     flex-direction: column;
   }
-  .intro_title {
+  .intro-title {
     order: 2;
     margin-top: 8px;
     font-size: 1.8rem;
     font-weight: 600;
   }
-  .intro_sub_title {
+  .intro-sub-title {
     order: 1;
     font-family: $ff-en;
     font-size: 3.6rem;
@@ -62,7 +75,7 @@
       font-size: 2rem;
     }
   }
-  .intro_body {
+  .intro-body {
     order: 3;
     margin-top: 22px;
     padding-left: 2em;
@@ -70,23 +83,22 @@
   }
 }
 @include res_min( $break ) {
-  .sec_intro {
-    padding-top: 100px;
+  .sec--intro {
     padding-bottom: 180px;
     margin-top: 74px;
     background-position: center bottom, center;
-    .intro_title {
+    .intro-title {
       margin-top: 3px;
       font-size: 2rem;
     }
-    .intro_sub_title {
+    .intro-sub-title {
       font-size: 8rem;
       small {
         margin-bottom: 0;
         font-size: 3.6rem;
       }
     }
-    .intro_body {
+    .intro-body {
       margin-top: 65px;
       padding-left: 0;
       padding-right: 0;
@@ -98,19 +110,15 @@
 
 
 // product
-.sec_product {
-  margin-top: 30px;
-}
+.sec--product {}
 @include res_min( $break ) {
-  .sec_product {
-    margin-top: 100px;
-  }
+  .sec--product {}
 }
 
 
 // ブロックリンク
-.product_link {
-	.link_item {
+.product-link {
+	.link-item {
     margin-top: 6px;
     a {
       display: block;
@@ -144,29 +152,29 @@
     }
 
     // 個別
-    &.link_item__product01 a {
+    &.link-item--product01 a {
       padding: 90px 0;
       background-image: url(./assets/img/top/top_product01.jpg);
     }
-    &.link_item__product02 a {
+    &.link-item--product02 a {
       padding: 90px 0;
       background-image: url(./assets/img/top/top_product02.jpg);
     }
-    &.link_item__product03 a {
+    &.link-item--product03 a {
       padding: 90px 0;
       background-image: url(./assets/img/top/top_product03.jpg);
     }
-    &.link_item__product04 a {
+    &.link-item--product04 a {
       padding: 54px 0;
       font-size: 2rem;
       background-image: url(./assets/img/top/top_product04.jpg);
     }
-    &.link_item__product05 a {
+    &.link-item--product05 a {
       padding: 54px 0;
       font-size: 2rem;
       background-image: url(./assets/img/top/top_product05.jpg);
     }
-    &.link_item__product06 a {
+    &.link-item--product06 a {
       padding: 54px 0;
       font-size: 2rem;
       background-image: url(./assets/img/top/top_product06.jpg);
@@ -174,10 +182,10 @@
 	}
 }
 @include res_min( $break ) {
-  .product_link {
+  .product-link {
     margin-top: 45px;
     @include flex(wrap, flex-start, stretch);
-    .link_item {
+    .link-item {
       flex-basis: calc(33.333% - 6.667px);
       margin: 10px 10px 0 0;
       &:nth-of-type(3n) {
@@ -201,29 +209,29 @@
       }
 
       // 個別
-      &.link_item__product01 a {
+      &.link-item--product01 a {
         padding: 0;
         height: 440px;
       }
-      &.link_item__product02 a {
+      &.link-item--product02 a {
         padding: 0;
         height: 440px;
       }
-      &.link_item__product03 a {
+      &.link-item--product03 a {
         padding: 0;
         height: 440px;
       }
-      &.link_item__product04 a {
+      &.link-item--product04 a {
         padding: 0;
         height: 240px;
         font-size: 3rem;
       }
-      &.link_item__product05 a {
+      &.link-item--product05 a {
         padding: 0;
         height: 240px;
         font-size: 3rem;
       }
-      &.link_item__product06 a {
+      &.link-item--product06 a {
         padding: 0;
         height: 240px;
         font-size: 3rem;
@@ -234,18 +242,16 @@
 
 
 // brand
-.sec_brand {
-  padding-top: 30px;
-  margin-top: 30px;
+.sec--brand {
   background-image: url(./assets/img/top/bg_brand.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: auto 82%;
   color: #fff;
-  .contents_title {
+  .contents-title {
     color: #fff;
   }
-  .img_brand {
+  .img-brand {
     margin-top: 30px;
     text-align: center;
     img {
@@ -254,24 +260,22 @@
   }
 }
 @include res_min( $break ) {
-  .sec_brand {
-    .img_brand {
+  .sec--brand {
+    .img-brand {
       img {
         width: 417px;
       }
     }
   }
   @include res_min( $break3 ) {
-    .sec_brand {
-      padding-top: 100px;
+    .sec--brand {
       padding-bottom: 130px;
-      margin-top: 100px;
       background-size: cover;
       position: relative;
-      .button_wrap {
+      .button-wrap {
         margin-top: 50px;
       }
-      .img_brand {
+      .img-brand {
         margin-top: 0;
         position: absolute;
         left: 63%;
@@ -285,16 +289,18 @@
 }
 
 // SDGs
-.sec_sdgs {
-  margin-top: 27px;
+.sec--sdgs {
+  padding-top: 0;
+  padding-bottom: 20px;
   p {
     margin-top: 5px;
   }
 }
 @include res_min( $break ) {
-  .sec_sdgs {
-    margin-top: 22px;
-    .img_sdgs {
+  .sec--sdgs {
+    padding-top: 30px;
+    padding-bottom: 75px;
+    .img-sdgs {
       img {
         width: 412px;
       }
@@ -308,10 +314,7 @@
 
 
 // case study
-.sec_case-study {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-top: 20px;
+.sec--case-study {
   background-image: url(./assets/img/common/bk_concrete_blue.jpg);
   background-position: center;
   background-size: cover;
@@ -327,16 +330,14 @@
     top: 0;
     z-index: -1;
   }
-  .list_post_type-thumbnail {
+  .list-post-type--thumbnail {
     padding: 0 28px;
   }
 }
 @include res_min( $break ) {
-  .sec_case-study {
-    padding-top: 100px;
+  .sec--case-study {
     padding-bottom: 120px;
-    margin-top: 77px;
-    .list_post_type-thumbnail {
+    .list-post-type--thumbnail {
       margin-top: 5px;
       padding: 0;
       .item {
@@ -351,21 +352,19 @@
 
 
 // NEWS
-.sec_news {
-  padding-top: 30px;
-  padding-bottom: 30px;
+.sec--news {
   background-image: url(./assets/img/common/bk_concrete_blue.jpg);
   background-position: center;
   background-size: cover;
-  .list_post_type-simple {
+  .list-post-type--simple {
     margin-top: 30px;
   }
 }
 @include res_min( $break ) {
-  .sec_news {
+  .sec--news {
     padding-top: 100px;
     padding-bottom: 120px;
-    .list_post_type-simple {
+    .list-post-type--simple {
       margin-top: 20px;
       margin-left: 112px;
     }
@@ -374,20 +373,18 @@
 
 
 // コンテンツバナーリンク
-.sec_contents-navi {
-  margin-top: 30px;
+.sec--contents-navi {
 }
 @include res_min( $break ) {
-  .sec_contents-navi {
-    margin-top: 100px;
+  .sec--contents-navi {
   }
 }
 
 
 // ダウンロードナビ
-.sec_download-navi {
-  margin-top: 30px;
-  .inner_wide {
+.sec--download-navi {
+  padding-top: 0;
+  .inner-wide {
     padding: 30px 20px;
     background-image: url(./assets/img/common/bk_concrete_blue.jpg);
     background-position: center;
@@ -395,12 +392,521 @@
   }
 }
 @include res_min( $break ) {
-  .sec_download-navi {
-    padding-left: 4%;
-    padding-right: 4%;
-    margin-top: 100px;
-    .inner_wide {
+  .sec--download-navi {
+    padding: 0 4%;
+    .inner-wide {
       padding: 60px 0 140px;
+    }
+  }
+}
+
+// page ナビ
+.sec--page-navi {
+  padding-top: 0;
+}
+@include res_min( $break ) {
+  .sec--page-navi {
+    padding-top: 0;
+    margin-top: 80px;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  NEWS - archive
+---------------------------------------------------------------- */
+// news だけ カテゴリー一覧を5列 にする
+@include res_min( $break ) {
+  .term-list {
+    .cat-item {
+      flex-basis: 18%;
+      margin: 0 2.5% 0 0;
+      &:nth-of-type(4n) {
+        margin-right: 2.5%;
+      }
+      &:nth-of-type(5n) {
+        margin-right: 0;
+      }
+      &:nth-of-type(n+5) {
+        margin-top: 0;
+      }
+      &:nth-of-type(n+6) {
+        margin-top: 23px;
+      }
+    }
+  }
+}
+
+.sec--archive-post {
+  padding-top: 40px;
+}
+@include res_min( $break ) {
+  .sec--archive-post {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    .sec--archive-list + & {
+      margin-top: 0;
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  NEWS - entry
+---------------------------------------------------------------- */
+.post-header {
+  margin-bottom: 20px;
+  .post__meta {
+    @include flex(nowrap, flex-start, center);
+    .post__meta__date {
+      margin-right: 16px;
+      font-size: 1.4rem;
+      color: $mainColor;
+    }
+  }
+  .post__title {
+    padding-bottom: 18px;
+    margin-top: 10px;
+    border-bottom: 1px solid #A8B9C4;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.7;
+    color: $mainColor;
+  }
+}
+@include res_min( $break ) {
+  .post-header {
+    margin-bottom: 30px;
+    .post__title {
+      padding-bottom: 24px;
+      font-size: 3rem;
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  custom post type - archive
+---------------------------------------------------------------- */
+// 共通
+.sec--archive-list {
+  .page-header + & {
+   padding-bottom: 0;
+  }
+}
+@include res_min( $break ) {
+  .sec--archive-list {
+    .page-header + & {
+      padding-top: 57px;
+     padding-bottom: 0;
+    }
+  }
+}
+
+// product
+.sec--archive-product {
+  padding-bottom: 30px !important;
+  .sec--archive-list + & {
+    margin-top: 40px;
+  }
+  // 背景設定
+  &:nth-of-type(even) { // 直前に sec--archive-list があるため2番目以降となる
+    background-image: url(./assets/img/common/bk_concrete_blue.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255,255,255,.4);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+}
+@include res_min( $break ) {
+  .sec--archive-product {
+    padding-bottom: 100px !important;
+    .sec--archive-list + & {
+      margin-top: 60px;
+    }
+    // 背景設定
+    &:nth-of-type(even) { // 直前に sec--archive-list があるため2番目以降となる
+      background-image: url(./assets/img/common/bk_concrete_blue.jpg);
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      z-index: 1;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,.4);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+// product archive title
+.archive-product__title {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: $mainColor;
+}
+@include res_min( $break ) {
+  .archive-product__title {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+
+// product archive list
+.archive-product__list {
+  margin-top: 20px;
+	.archive-product__list__item {
+    &:not(:first-of-type) {
+      margin-top: 10px;
+    }
+		.archive-product__list__item__link {
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 2em 1em;
+      line-height: 1.5;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(107,140,162,.2);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+      &::after {
+        content: '';
+        width: 33px;
+        height: 33px;
+        background-image: url(./assets/img/common/icon_more-s-w.svg);
+        background-size: cover;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      }
+		}
+	}
+}
+@include res_min( $break ) {
+  .archive-product__list {
+    margin-top: 50px;
+    // 基本：左寄せの場合(記事が4件以上)
+    @include flex(wrap, flex-start, stretch);
+    .archive-product__list__item {
+      flex-basis: calc(33.333% - 20px / 3);
+      margin: 0 10px 0 0;
+      &:not(:first-of-type) {
+        margin-top: 0;
+      }
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+      &:nth-of-type(n+4) {
+        margin-top: 10px;
+      }
+      .archive-product__list__item__link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 230px;
+        padding: 0 2em;
+        font-size: 2rem;
+        &::after {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+    // 中央寄せの場合(記事が3件以下)
+    &--center {
+      justify-content: center;
+      .archive-product__list__item {
+        margin: 0 0 0 10px;
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+// case study
+.sec--archive-case-study {
+  padding-top: 22px;
+}
+@include res_min( $break ) {
+  .sec--archive-case-study {
+    padding-top: 40px;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  custom post type - entry
+---------------------------------------------------------------- */
+// 共通
+.kv--sub {
+  padding: 20px;
+  background-image: url(./assets/img/common/bk_concrete_blue.jpg);
+  background-position: center;
+  background-size: cover;
+}
+@include res_min( $break ) {
+  .kv--sub {
+    padding: 90px 0 56px;
+    .inner-medium {
+      @include maxW();
+      position: relative;
+    }
+  }
+}
+
+// product
+.product-post-header {
+  padding: 25px 20px;
+  margin-top: 45px;
+  background-color: #fff;
+  color: $mainColor;
+  position: relative;
+  &::before {
+    content: 'PRODUCT';
+    font-family: $ff-en;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #215678;
+    position: absolute;
+    left: 10px;
+    top: -1em;
+  }
+	.post-title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.46;
+    br {
+      display: none;
+    }
+	}
+	.post-sub-title {
+    margin-top: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.46;
+	}
+  .post-date {
+    margin-top: 15px;
+    font-weight: 600;
+    line-height: 1;
+    color: #6B8CA2;
+  }
+	.post-category {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 10px;
+    background-color: #B1C4D1;
+    font-size: 1.2rem;
+    line-height: 1.46;
+	}
+}
+@include res_min( $break ) {
+  .product-post-header {
+    padding: 43px 50px 35px;
+    margin-top: 0;
+    position: absolute;
+    left: 0;
+    top: -27px;
+    &::before {
+      font-size: 2rem;
+      left: 12px;
+    }
+    .post-title {
+      font-size: 2.6rem;
+    }
+    .post-sub-title {
+      font-size: 1.8rem;
+      line-height: 1.2;
+    }
+    .post-date {
+      margin-top: 25px;
+      font-size: 1.8rem;
+    }
+    .post-category {
+      padding: 8px 16px;
+      margin-top: 15px;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.post-cf-images {
+  padding: 30px 20px;
+  background-color: #F1F5FA;
+  .post-cf-images__item {
+    &:not(:first-of-type) {
+      margin-top: 30px;
+    }
+    .post-cf-images__item__pic {
+      padding: 20px;
+      border: 2px solid #BED7E8;
+      background-color: #fff;
+      .slider__item__image__img {
+      }
+    }
+    .post-cf-images__item__pic__caption {
+      margin-top: 8px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: $mainColor;
+    }
+    .button--expansion {
+      margin-top: 10px;
+    }
+  }
+}
+@include res_min( $break ) {
+  .post-cf-images {
+    padding: 90px 13.7%;
+    @include flex(nowrap, center, stretch);
+    .post-cf-images__item {
+      flex-basis: 48%;
+      &:not(:first-of-type) {
+        margin-top: 0;
+        margin-left: 4%;
+      }
+      .post-cf-images__item__pic {
+        padding: calc(100% - 4px) 0 0;
+        width: 100%;
+        height: 0;
+        position: relative;
+        overflow: hidden;
+        .slider__item__image__img {
+          width: calc(100% - 40px);
+          height: auto;
+          position: absolute;
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+.post-cf-details {
+  border-top: 2px solid #A8B9C4;
+  width: 100%;
+  th, td {
+    padding: 15px 0;
+    border-bottom: 2px solid #A8B9C4;
+  }
+  th {
+    padding-right: 1em;
+    width: 33.333%;
+    border-right: 2px solid #A8B9C4;
+    font-weight: 600;
+    color: $mainColor;
+  }
+  td {
+    padding-left: 1em;
+  }
+}
+@include res_min( $break ) {
+  .post-cf-details {
+    th, td {
+      padding: 25px 0;
+    }
+    th {
+      padding-right: 35px;
+      width: 18.5%;
+    }
+    td {
+      padding-left: 35px;
+    }
+  }
+}
+
+.post-cf-icon {
+  margin: 30px 0 40px;
+  margin-right: -10px;
+  @include flex(wrap, flex-start, stretch);
+  .icon-item {
+    flex-basis: 80px;
+    flex-basis: calc(33.333% - 20px / 3);
+    max-width: 80px;
+    margin: 10px 10px 0 0;
+  }
+}
+@include res_min( $break ) {
+  .post-cf-icon {
+    justify-content: center;
+    margin: 50px 0 60px;
+    margin-right: 0;
+    .icon-item {
+      flex-basis: 80px;
+      margin: 10px 5px 0;
+    }
+  }
+}
+
+.post-cf-characteristic {
+  width: 100%;
+  th {
+    padding: 15px 3px;
+    border: 1px solid #0F3954;
+    border-right-color: #A8B9C4;
+    &:last-of-type {
+      border-right-color: #0F3954;
+    }
+    background-color: #0F3954;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+  }
+  td {
+    padding: 20px 3px;
+    border: 1px solid #A8B9C4;
+    border-top: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: $mainColor;
+    text-align: center;
+  }
+}
+@include res_min( $break ) {
+  .post-cf-characteristic {
+    table-layout: fixed;
+    th {
+      padding: 27px 10px;
+    }
+    td {
+      padding: 25px 10px;
+      font-size: 2.6rem;
     }
   }
 }
@@ -409,28 +915,144 @@
 /* ----------------------------------------------------------------
   download
 ---------------------------------------------------------------- */
-.post_download {
+.sec--download {
+}
+@include res_min( $break ) {
+  .sec--download {
+  }
+}
+
+.post-download {
   padding: 25px 0 35px;
   border-bottom: 1px solid #A8B9C4;
   &:first-of-type {
     border-top: 1px solid #A8B9C4;
   }
-  .post_download_title {
+  .post-download__title {
     font-weight: 600;
     color: $mainColor;
   }
-  .button_download {
+  .button--download {
     margin-top: 15px;
   }
 }
 @include res_min( $break ) {
-  .post_download {
+  .post-download {
     padding: 35px 0 40px;
-    .button_download {
+    .button--download {
       margin-top: 20px;
       &:first-of-type {
         margin-top: 25px;
       }
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  contact
+---------------------------------------------------------------- */
+.sec--page-contact-head {
+  padding-bottom: 0;
+}
+.sec--page-contact-body {
+}
+@include res_min( $break ) {
+  .sec--page-contact-head {
+    padding-bottom: 0;
+  }
+  .sec--page-contact-body {
+    padding-top: 30px;
+  }
+}
+
+.contact-by-tel {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  @include flex(nowrap, flex-start, center);
+  em {
+    margin-right: 5px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+  a {
+    font-size: 2.4rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+@include res_min( $break ) {
+  .contact-by-tel {
+    margin-top: 4px;
+    margin-bottom: 84px;
+    em {
+      margin-right: 5px;
+      font-size: 1.6rem;
+    }
+    a {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+// step
+.step-contact {
+  @include flex(nowrap, space-between, center);
+  .step-contact__label {
+    flex-basis: calc(33.333% - 8px);
+    padding: 5px 0;
+    background-color: #D6D6D6;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    &.current {
+      background-color: $mainColor;
+    }
+  }
+}
+@include res_min( $break ) {
+  .step-contact {
+    margin: 0 auto;
+    max-width: 590px;
+    .step-contact__label {
+      flex-basis: calc(33.333% - 16px);
+      background-color: #D6D6D6;
+      text-align: center;
+      font-weight: 600;
+      color: #fff;
+      &.current {
+        background-color: $mainColor;
+      }
+    }
+  }
+}
+
+
+// thanks
+.thanks-content {
+  margin-bottom: 40px;
+  em {
+    display: block;
+    font-size: 2.2rem;
+    line-height: 1.7;
+  }
+  p {
+    margin-top: 1em;
+    font-weight: 600;
+  }
+}
+@include res_min( $break ) {
+  .thanks-content {
+    padding-top: 50px;
+    margin-bottom: 150px;
+    text-align: center;
+    em {
+      font-size: 2.8rem;
+    }
+    p {
+      margin-top: 80px;
+      text-align: center;
     }
   }
 }
