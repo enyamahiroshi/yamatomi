@@ -388,6 +388,46 @@ footer,
 /* ----------------------------------------------------------------
   その他
 ---------------------------------------------------------------- */
+// アンカーリンク
+.anchor-navi {
+  padding: 0 20px;
+  margin: 20px auto 40px;
+  .button--anchor {
+    display: block;
+    padding: 3px 25px 3px 10px;
+    margin-top: 10px;
+    background-color: #6B8CA2;
+    background-image: url(./assets/img/common/ico_arrow-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: right 11px center;
+    background-size: 4px;
+    color: #fff;
+  }
+}
+@include res_min( $break ) {
+  .anchor-navi {
+    padding: 0 20px;
+    margin: 70px auto 0;
+    @include maxW($break3);
+    @include flex(wrap, center, stretch);
+    .button--anchor {
+      padding: 8px 25px 8px 17px;
+      margin: 10px 10px 0;
+      min-width: 240px;
+    }
+  }
+}
+
+
+// アイコンリンク
+.icon-link {
+  display: inline-block;
+  line-height: 1;
+  img {
+    vertical-align: bottom;
+  }
+}
+
 
 // blank
 .link_blank {

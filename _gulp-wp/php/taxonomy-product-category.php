@@ -40,22 +40,22 @@
       <h2 class="archive-product__title">環境保全コンクリートブロック</h2>
       <ul class="archive-product__list archive-product__list--left">
         <li class="archive-product__list__item">
-          <a href="./annevin_bioporous_splitton/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-1.jpg);" class="archive-product__list__item__link">アニーヴンポーラススプリットン<br>（アニーヴンシリーズ）</a>
+          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-1.jpg);" class="archive-product__list__item__link">アニーヴンポーラススプリットン<br>（アニーヴンシリーズ）</a>
         </li>
         <li class="archive-product__list__item">
-          <a href="./annevin_bioporous_splitton/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-2.jpg);" class="archive-product__list__item__link">ポーラススプリットン</a>
+          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-2.jpg);" class="archive-product__list__item__link">ポーラススプリットン</a>
         </li>
         <li class="archive-product__list__item">
-          <a href="./annevin_bioporous_splitton/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-3.jpg);" class="archive-product__list__item__link">アニーヴンポーラススプリットン<br>（アニーヴンシリーズ）</a>
+          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-3.jpg);" class="archive-product__list__item__link">アニーヴンポーラススプリットン<br>（アニーヴンシリーズ）</a>
         </li>
         <li class="archive-product__list__item">
-          <a href="./annevin_bioporous_splitton/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-4.jpg);" class="archive-product__list__item__link">グリーンハーモニー ＢＰ</a>
+          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-4.jpg);" class="archive-product__list__item__link">グリーンハーモニー ＢＰ</a>
         </li>
         <li class="archive-product__list__item">
-          <a href="./annevin_bioporous_splitton/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-5.jpg);" class="archive-product__list__item__link">フラワーストーンIL</a>
+          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-5.jpg);" class="archive-product__list__item__link">フラワーストーンIL</a>
         </li>
         <li class="archive-product__list__item">
-          <a href="./annevin_bioporous_splitton/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-6.jpg);" class="archive-product__list__item__link">フラワーストーン</a>
+          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-6.jpg);" class="archive-product__list__item__link">フラワーストーン</a>
         </li>
       </ul>
     </div>

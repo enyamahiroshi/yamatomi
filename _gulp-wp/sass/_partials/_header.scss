@@ -221,12 +221,16 @@ $header_height_PC: 100; // ヘッダーの高さ PC
 }
 
 // カレントページ設定
-.blog .menu .menu__item .menu__item__link[href*='news'],
-.brand .menu .menu__item .menu__item__link[href*='brand'],
-.product .menu .menu__item .menu__item__link[href*='product'],
-.case-study .menu .menu__item .menu__item__link[href*='case-study'],
-.company .menu .menu__item .menu__item__link[href*='company'],
-.recruit .menu .menu__item .menu__item__link[href*='recruit'] {
+.blog .header-navi .menu .menu__item .menu__item__link[href*='news'],
+.category .header-navi .menu .menu__item .menu__item__link[href*='news'],
+.single-post .header-navi .menu .menu__item .menu__item__link[href*='news'],
+.brand .header-navi .menu .menu__item .menu__item__link[href*='brand'],
+.product .header-navi .menu .menu__item .menu__item__link[href*='product'],
+.tax-product-category .header-navi .menu .menu__item .menu__item__link[href*='product'],
+.case-study .header-navi .menu .menu__item .menu__item__link[href*='case-study'],
+.tax-case-study-category .header-navi .menu .menu__item .menu__item__link[href*='case-study'],
+.company .header-navi .menu .menu__item .menu__item__link[href*='company'],
+.recruit .header-navi .menu .menu__item .menu__item__link[href*='recruit'] {
   &:link, &:visited {
     background-color: #D8E6EF;
   }

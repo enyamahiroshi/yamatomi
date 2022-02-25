@@ -12,6 +12,16 @@
 }
 
 
+// 共通ブロック： .secレベル
+.sec--contents-block {
+}
+@include res_min( $break ) {
+  .sec--contents-block {
+    padding: 70px 0 0;
+  }
+}
+
+
 /* ----------------------------------------------------------------
   TOP
 ---------------------------------------------------------------- */
@@ -381,8 +391,8 @@
 }
 
 
-// ダウンロードナビ
-.sec--download-navi {
+// ナビボックス
+.sec--navi-block {
   padding-top: 0;
   .inner-wide {
     padding: 30px 20px;
@@ -390,12 +400,18 @@
     background-position: center;
     background-size: cover;
   }
+  .button-wrap {
+    margin-top: 30px;
+  }
 }
 @include res_min( $break ) {
-  .sec--download-navi {
+  .sec--navi-block {
     padding: 0 4%;
     .inner-wide {
-      padding: 60px 0 140px;
+      padding: 100px 0 140px;
+    }
+    .button-wrap {
+      margin-top: 50px;
     }
   }
 }
@@ -408,6 +424,740 @@
   .sec--page-navi {
     padding-top: 0;
     margin-top: 80px;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  BRAND
+---------------------------------------------------------------- */
+.sec.sec--brand-kv {
+  padding-top: 30px;
+  padding-bottom: 110px;
+  background-image: url(./assets/img/brand/bg_brand_kv.svg);
+  background-repeat: repeat-x;
+  background-position: right 31% bottom;
+  background-size: auto 240px;
+  .brand-kv__content {
+    .brand-kv__content__catchcopy {
+      display: block;
+      font-family: $ff-en;
+      font-size: 3.2rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: $mainColor;
+    }
+    .brand-kv__content__title {
+      margin-top: 20px;
+      display: block;
+      font-weight: 600;
+      color: $mainColor;
+    }
+    .brand-kv__content__text {
+      margin-top: 15px;
+      font-size: 1.4rem;
+    }
+  }
+  .brand-kv__image {
+    padding-top: 25px;
+    img {
+      width: 80%;
+      max-width: 417px;
+    }
+  }
+}
+@include res_min( $break ) {
+  .sec.sec--brand-kv {
+    padding-top: 80px;
+    padding-bottom: 140px;
+    background-position: center bottom;
+    .inner-medium {
+      @include flex(nowrap, space-between, center);
+      flex-direction: row-reverse;
+    }
+    .brand-kv__content {
+      flex-basis: 65.25%;
+      padding-left: 8.5%;
+      .brand-kv__content__catchcopy {
+        font-size: 7.4rem;
+        font-size: 3.8vw;
+        line-height: 1;
+      }
+      .brand-kv__content__title {
+        margin-top: 55px;
+        font-size: 2rem;
+        line-height: 1.8;
+      }
+      .brand-kv__content__text {
+        margin-top: 20px;
+        font-size: 1.6rem;
+        line-height: 1.875;
+      }
+    }
+    .brand-kv__image {
+      flex-basis: 34.75%;
+      padding-top: 0;
+      text-align: left;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.sec--brand-sdgs {
+  padding-bottom: 0;
+  .inner-medium {}
+  .sdgs-text {
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: $mainColor;
+    }
+    p {
+      margin-top: 10px;
+    }
+  }
+  .sdgs-image {
+    margin-top: 25px;
+    .img-sdgs {
+      img {
+        max-width: 412px;
+      }
+    }
+    p {
+      margin-top: 5px;
+    }
+  }
+}
+@include res_min( $break ) {
+  .sec--brand-sdgs {
+    padding-bottom: 0;
+    .inner-medium {
+      @include flex(nowrap, flex-start, center);
+    }
+    .sdgs-text {
+      flex-basis: 65.5%;
+      padding-right: 5.667%;
+      h2 {
+        font-size: 2.6rem;
+      }
+    }
+    .sdgs-image {
+      flex-basis: 34.5%;
+      max-width: 412px;
+      margin-top: 0;
+    }
+  }
+}
+
+.sec--separate-block {
+  // 基本レイアウトは開発理念ページのブロック
+  padding-top: 40px;
+  padding-bottom: 40px !important;
+  margin-top: 60px;
+  position: relative;
+  &::before { // カラー背景
+    content: '';
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    position: absolute;
+    top: 60px;
+    z-index: -2;
+  }
+	.inner-wide {
+		.separate-block-content {
+      padding: 15px 20px 20px;
+      margin: 0 10px;
+      background-color: #fff;
+      box-shadow: 0 0 30px rgba(0,0,0,.2);
+			.separate-block-content__head {
+				.separate-block-content__head__title {
+          font-weight: 600;
+          line-height: 1.5;
+          color: $mainColor;
+          span {
+            display: block;
+            margin-bottom: 2px;
+            font-family: $ff-en;
+            font-size: 4.6rem;
+            font-weight: 400;
+            line-height: 1.4;
+          }
+				}
+				.separate-block-content__head__catchcopy {
+          display: block;
+          margin-top: 25px;
+          font-size: 1.8rem;
+          line-height: 1.7;
+          color: #215678;
+				}
+			}
+			.separate-block-content__text {
+        margin-top: 20px;
+        font-size: 1.4rem;
+        line-height: 1.6;
+			}
+			.button-wrap {
+        margin-top: 15px;
+				.button {
+          padding: 10px 60px 10px 15px;
+          width: 100%;
+          text-align: left;
+				}
+			}
+		}
+		.separate-block-image {
+      width: calc(100% - 60px);
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+		}
+	}
+  // 個別
+  &--ecology {
+    margin-top: 40px;
+    &::before {
+      background-color: #EEF6F6;
+      right: 0;
+    }
+    .separate-block-image {
+      background-image: url(./assets/img/brand/img_brand_ecology.jpg);
+      background-position: center;
+      left: 0;
+    }
+  }
+  &--environment {
+    &::before {
+      background-color: #FCFCE1;
+      left: 0;
+    }
+    .separate-block-image {
+      background-image: url(./assets/img/brand/img_brand_environment.jpg);
+      background-position: center;
+      right: 0;
+    }
+  }
+  &--structure {
+    margin-bottom: 80px;
+    &::before {
+      background-color: #F1F5FA;
+      right: 0;
+    }
+    .separate-block-image {
+      background-image: url(./assets/img/brand/img_brand_structure.jpg);
+      background-position: center;
+      left: 0;
+    }
+  }
+}
+// 採用情報ページのスタッフブロック
+.staff-message {
+  .sec--separate-block--staff {
+    &::before { // イメージ背景
+      background-image: url(./assets/img/common/bk_concrete_blue.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+    }
+    .inner-wide {
+      .separate-block-content {
+        padding: 40px 50px 70px;
+        .separate-block-content__head {
+          display: block;
+          .separate-block-content__head__staff-name {
+            span {
+              margin-right: 16px;
+              font-size: 1.4rem;
+              align-items: center;
+              color: #6B8CA2;
+            }
+            em {
+              font-size: 2rem;
+              color: $mainColor;
+            }
+          }
+          .separate-block-content__head__staff-title {
+            display: block;
+            margin-top: 20px;
+            color: $mainColor;
+          }
+        }
+      }
+    }
+    .separate-block-image {
+      background-position: center;
+    }
+    &:first-of-type {
+     margin-top: 40px;
+    }
+    &:last-of-type {
+     margin-bottom: 80px;
+    }
+    &:nth-of-type(odd) {
+      &::before {
+        right: 0;
+      }
+      .separate-block-image {
+        left: 0;
+      }
+    }
+    &:nth-of-type(even) {
+      &::before {
+        left: 0;
+      }
+      .separate-block-image {
+        right: 0;
+      }
+    }
+  }
+}
+@include res_min( $break ) {
+  .sec--separate-block {
+    padding-top: 107px;
+    padding-bottom: 107px !important;
+    margin-top: 140px;
+    &::before { // カラー背景
+      width: 96%;
+      height: 65%;
+      top: auto;
+      bottom: -60px;
+    }
+    .inner-wide {
+      .separate-block-content {
+        padding: 45px 50px 50px;
+        margin: 0;
+        width: 54%;
+        box-shadow: none;
+        .separate-block-content__head {
+          @include flex();
+          align-items: center;
+          .separate-block-content__head__title {
+            margin-right: 60px;
+            span {
+              margin-bottom: 1px;
+              font-size: 4.8rem;
+            }
+          }
+          .separate-block-content__head__catchcopy {
+            margin-top: 0;
+          }
+        }
+        .separate-block-content__text {
+          font-size: 1.6rem;
+          line-height: 1.875;
+        }
+        .button-wrap {
+          margin-top: 12px;
+          justify-content: flex-start;
+          .button {
+            padding: 22px 60px;
+            margin: 0;
+            max-width: 480px;
+            text-align: center;
+          }
+        }
+      }
+      .separate-block-image {
+        width: 62%;
+      }
+    }
+    // 個別
+    &--ecology {
+      margin-top: 90px;
+      &::before { // カラー背景
+        right: 4%;
+      }
+      .inner-wide {
+        padding-right: 7.5%;
+        .separate-block-content {
+          margin-left: auto;
+        }
+        .separate-block-image {
+          left: 4%;
+        }
+      }
+    }
+    &--environment {
+      &::before { // カラー背景
+        left: 4%;
+      }
+      .inner-wide {
+        padding-left: 7.5%;
+        .separate-block-content {
+          margin-right: auto;
+        }
+        .separate-block-image {
+          right: 4%;
+        }
+      }
+    }
+    &--structure {
+      &::before { // カラー背景
+        right: 4%;
+      }
+      margin-bottom: 140px;
+      .inner-wide {
+        padding-right: 7.5%;
+        .separate-block-content {
+          margin-left: auto;
+        }
+        .separate-block-image {
+          left: 4%;
+        }
+      }
+    }
+  }
+  // 採用情報ページのスタッフブロック
+  .staff-message {
+    .sec--separate-block--staff {
+      padding-top: 60px;
+      padding-bottom: 60px !important;
+      .inner-wide {
+        .separate-block-content {
+          width: 41%;
+          .separate-block-content__head {
+            .separate-block-content__head__staff-name {
+              span {
+                margin-right: 22px;
+              }
+              em {
+                font-size: 2.4rem;
+              }
+            }
+          }
+          .separate-block-content__text {
+            margin-top: 24px;
+          }
+        }
+      }
+      .separate-block-image {
+        background-position: center;
+        width: 57.8%;
+      }
+      &:first-of-type {
+      margin-top: 60px;
+      }
+      &:last-of-type {
+      margin-bottom: 140px;
+      }
+      &:nth-of-type(odd) {
+        &::before {
+          right: 4%;
+        }
+        .inner-wide {
+          padding-right: 11.5%;
+          .separate-block-content {
+            margin-left: auto;
+          }
+          .separate-block-image {
+            left: 4%;
+          }
+        }
+      }
+      &:nth-of-type(even) {
+        &::before {
+          left: 4%;
+        }
+        .inner-wide {
+          padding-left: 11.5%;
+          .separate-block-content {
+            margin-right: auto;
+          }
+          .separate-block-image {
+            right: 4%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  COMPANY
+---------------------------------------------------------------- */
+// 共通：採用情報でも使用
+.sec--separate-kv {
+  padding-top: 30px !important;
+  padding-left: 0;
+  padding-right: 0;
+  background-image: url(./assets/img/common/bk_concrete_blue.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 80%;
+  position: relative;
+  .inner-wide {
+    @include flex();
+    flex-direction: column;
+  }
+  .separate-kv__content {
+    order: 2;
+    padding: 30px 30px 20px;
+    margin: -30px 20px 0;
+    background-color: #fff;
+    .separate-kv__content__heading { // 見出し
+      margin-top: -10px;
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: $mainColor;
+      span {
+        display: block;
+        margin-bottom: 2px;
+        font-family: $ff-en;
+        font-size: 4.6rem;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+    }
+    .separate-kv__content__title { // 記事タイトル
+      display: block;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: $mainColor;
+    }
+    .separate-kv__content__text {
+      font-size: 1.5rem;
+      line-height: 1.7;
+    }
+    .separate-kv__content__sign {
+      margin-top: 20px;
+      font-size: 1.8rem;
+      line-height: 1.7;
+    }
+  }
+  .separate-kv__image {
+    order: 1;
+    height: 0;
+    padding-top: 40%;
+    background-size: cover;
+  }
+}
+@include res_min( $break ) {
+  .sec--separate-kv {
+    background-position: center bottom;
+    background-size: 100% 42%;
+    .inner-wide {
+      display: block;
+    }
+    .separate-kv__content {
+      width: 36.5%;
+      padding: 45px 50px 70px;
+      margin: 0;
+      position: absolute;
+      left: 7%;
+      top: 50%;
+      transform: translateY(-50%);
+      .separate-kv__content__heading { // 見出し
+        margin-top: 0;
+        span {
+          margin-bottom: 1px;
+          font-size: 4.8rem;
+        }
+      }
+      .separate-kv__content__text {
+        font-size: 1.6rem;
+        line-height: 1.875;
+      }
+      .separate-kv__content__sign {
+        margin-top: 80px;
+        font-size: 2rem;
+      }
+    }
+    .separate-kv__image {
+      width: 67.5%;
+      padding-top: 27%;
+      margin-left: auto;
+      position: relative;
+      z-index: -1;
+    }
+  }
+}
+
+// MV 個別
+.sec--separate-kv--company {
+  .separate-kv__image {
+    padding-top: 62%;
+    background-image: url(./assets/img/company/img_company_president.jpg);
+  }
+}
+@include res_min( $break ) {
+  .sec--separate-kv--company {
+    padding: 70px 0 !important;
+    margin-top: -20px;
+    .separate-kv__content {
+      padding-bottom: 50px;
+    }
+    .separate-kv__image {
+      padding-top: 41.5%;
+      background-image: url(./assets/img/company/img_company_president.jpg);
+    }
+  }
+}
+
+
+// 沿革
+.table-type2--history {
+  tbody tr:first-of-type td,
+  tbody tr td.cell-history-month:first-of-type  {
+    border-top: none;
+  }
+  .cell-history-year {
+    width: 25%;
+    font-weight: 600;
+    color: $mainColor;
+    white-space: nowrap;
+  }
+  .cell-history-month {
+    padding-right: 20px;
+    width: 20%;
+    font-weight: 600;
+    color: $mainColor;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .cell-data {
+    width: 55%;
+  }
+}
+@include res_min( $break ) {
+  .table-type2--history {
+    .cell-history-year {
+    width: 11%;
+    }
+    .cell-history-month {
+      width: 7%;
+      padding-right: 24px;
+    }
+    .cell-data {
+      width: 82%;
+    }
+  }
+}
+
+.company-map {
+  padding: 30px 20px 25px;
+  &:not(:first-of-type) {
+    margin-top: 10px;
+  }
+  background-color: #F1F5FA;
+	.company-map__title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    color: $mainColor;
+	}
+	.company-map__include {
+    iframe {
+      max-width: 100%;
+      height: 50vw;
+    }
+    margin-top: 15px;
+	}
+	.company-map__info {
+    margin-top: 5px;
+    line-height: 1.7;
+  }
+}
+@include res_min( $break ) {
+  .company-map {
+    padding: 40px 50px 35px;
+    .company-map__title {
+      font-size: 2.4rem;
+    }
+    .company-map__include {
+      iframe {
+        height: 410px;
+      }
+      margin-top: 20px;
+    }
+    .company-map__info {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  RECRUIT
+---------------------------------------------------------------- */
+// MV 個別
+.sec--separate-kv--recruit {
+  padding: 50px 0  20px !important;
+  .separate-kv__image {
+    padding-top: 40%;
+    background-image: url(./assets/img/recruit/img_recruit_mv01.jpg);
+  }
+}
+@include res_min( $break ) {
+  .sec--separate-kv--recruit {
+    padding-bottom: 60px !important;
+  }
+}
+
+
+@include res_min( $break ) {
+  .kv-sub {
+    @include flex();
+    .kv-sub__image {
+      flex-basis: 50%;
+    }
+  }
+}
+
+
+.table-type2--recruit {
+  .cell-label {
+    width: 25%;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    span {
+      margin-left: 4px;
+      font-size: 2.4rem;
+      vertical-align: -.12em;
+    }
+  }
+  .cell-data {
+    width: 75%;
+  }
+}
+@include res_min( $break ) {
+  .table-type2--recruit {
+    .cell-label {
+      width: 18%;
+      font-size: 1.6rem;
+      span {
+        margin-left: 10px;
+        font-size: 3rem;
+        vertical-align: -.16em;
+      }
+    }
+    .cell-data {
+      width: 82%;
+    }
+  }
+}
+
+
+.button-wrap--recruit {
+  .image_button {
+    margin-top: 10px;
+  }
+}
+@include res_min( $break ) {
+  .button-wrap--recruit {
+    .image_button {
+      margin: 0 10px;
+      max-width: 400px;
+    }
   }
 }
 
@@ -813,39 +1563,6 @@
           transform: translateY(-50%);
         }
       }
-    }
-  }
-}
-
-.post-cf-details {
-  border-top: 2px solid #A8B9C4;
-  width: 100%;
-  th, td {
-    padding: 15px 0;
-    border-bottom: 2px solid #A8B9C4;
-  }
-  th {
-    padding-right: 1em;
-    width: 33.333%;
-    border-right: 2px solid #A8B9C4;
-    font-weight: 600;
-    color: $mainColor;
-  }
-  td {
-    padding-left: 1em;
-  }
-}
-@include res_min( $break ) {
-  .post-cf-details {
-    th, td {
-      padding: 25px 0;
-    }
-    th {
-      padding-right: 35px;
-      width: 18.5%;
-    }
-    td {
-      padding-left: 35px;
     }
   }
 }

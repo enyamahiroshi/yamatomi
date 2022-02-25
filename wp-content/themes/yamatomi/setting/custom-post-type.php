@@ -66,6 +66,7 @@ add_action( 'init', function() {
 		'labels'              => $labels,
 		'public'              => true, // ユーザーが内容を投稿する場合true(通常はtrue)
 		'show_in_rest'        => true, // Gutenberg 有効化
+		'rewrite'             => array('with_front' => false), // https://www.flapism.jp/wordpress/85/
 		'has_archive'         => true, // アーカイブページを作成するか否かを設定(trueでindexページを作成)
 		'hierarchical'        => true, // 階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
 		'exclude_from_search' => false, // WPの検索機能から検索した際、検索対象に含めるか否かを設定（※trueの場合は検索対象に含めない）
@@ -73,7 +74,7 @@ add_action( 'init', function() {
 		'supports'            => array( // 管理画面から投稿できる項目を設定
 		'title', // タイトル表示を有効に
 		'editor', // 本文の表示を有効に
-		// 'custom-fields', カスタムフィールド
+		// 'custom-fields', //カスタムフィールド
 		'thumbnail', // アイキャッチ画像
 		'author', // 作成者
 		)
@@ -86,16 +87,42 @@ add_action( 'init', function() {
 		'show_ui'      => true,
 		'show_in_rest' => true, // Gutenberg 有効化
 		'query_var'    => true,
-		'rewrite'      => array( 'slug' => $GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'], ), //urlを任意に指定する場合 → array( 'slug' => 'aaa/bbb', default： true )
+		// 'rewrite'      => array( 'slug' => $GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'], ), //urlを任意に指定する場合 → array( 'slug' => 'aaa/bbb', true )
 		'hierarchical' => true, //階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
 	);
 	register_taxonomy( $GLOBALS['cpTaxSlug'], $GLOBALS['cpSlug'], $args );
 	/* ▲カスタムタクソノミーを作成 */
 });
 
+// リライトルールを追加
+function custom_rewrite_rule() {
+  // ニュースのタクソノミー追加
+  add_rewrite_rule($GLOBALS['cpSlug'].'/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&feed=$matches[2]', 'top');
+  add_rewrite_rule($GLOBALS['cpSlug'].'/(.+?)/(feed|rdf|rss|rss2|atom)/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&feed=$matches[2]', 'top');
+  // 年別
+  add_rewrite_rule($GLOBALS['cpSlug'].'/(.+?)/date/([0-9]{4})/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&year=$matches[2]', 'top');
+  // 年別（ページング）
+  add_rewrite_rule($GLOBALS['cpSlug'].'/(.+?)/date/([0-9]{4})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&year=$matches[2]&paged=$matches[3]', 'top');
+  // 月別
+  add_rewrite_rule($GLOBALS['cpSlug'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]', 'top');
+  // 月別（ページング）
+  add_rewrite_rule($GLOBALS['cpSlug'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&paged=$matches[4]', 'top');
+  // 日別
+  add_rewrite_rule($GLOBALS['cpSlug'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]', 'top');
+  // 日別（ページング）
+  add_rewrite_rule($GLOBALS['cpSlug'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&paged=$matches[5]', 'top');
+  // 一覧
+  add_rewrite_rule($GLOBALS['cpSlug'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]', 'top');
+  // 一覧（ページング）
+  add_rewrite_rule($GLOBALS['cpSlug'].'/([^/]+)/page/([0-9]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&paged=$matches[2]', 'top');
+}
+add_action('init', 'custom_rewrite_rule');
+
+
 /* リライトルールを変更（カスタムタクソノミー） */
-add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]', 'top');
-add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&paged=$matches[2]', 'top');
+// add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]', 'top');
+// add_rewrite_rule($GLOBALS['cpSlug'].'/'.$GLOBALS['rewriteslug'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug'].'=$matches[1]&paged=$matches[2]', 'top');
+
 // 投稿画面にてタクソノミー検索を可能にする
 add_action('restrict_manage_posts', function() {
 global $post_type;
@@ -143,6 +170,7 @@ add_action( 'init', function() {
 		'labels'              => $labels,
 		'public'              => true, // ユーザーが内容を投稿する場合true(通常はtrue)
 		'show_in_rest'        => true, // Gutenberg 有効化
+		'rewrite'             => array('with_front' => false), // https://www.flapism.jp/wordpress/85/
 		'has_archive'         => true, // アーカイブページを作成するか否かを設定(trueでindexページを作成)
 		'hierarchical'        => true, // 階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
 		'exclude_from_search' => false, // WPの検索機能から検索した際、検索対象に含めるか否かを設定（※trueの場合は検索対象に含めない）
@@ -150,7 +178,7 @@ add_action( 'init', function() {
 		'supports'            => array( // 管理画面から投稿できる項目を設定
 		'title', // タイトル表示を有効に
 		'editor', // 本文の表示を有効に
-		// 'custom-fields', カスタムフィールド
+		// 'custom-fields', //カスタムフィールド
 		'thumbnail', // アイキャッチ画像
 		'author', // 作成者
 		)
@@ -163,16 +191,37 @@ add_action( 'init', function() {
 		'show_ui'      => true,
 		'show_in_rest' => true, // Gutenberg 有効化
 		'query_var'    => true,
-		'rewrite'      => array( 'slug' => $GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'], ), //urlを任意に指定する場合 → array( 'slug' => 'aaa/bbb', default： true )
+		// 'rewrite'      => array( 'slug' => $GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'], ), //urlを任意に指定する場合 → array( 'slug' => 'aaa/bbb', default： true )
 		'hierarchical' => true, //階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
 	);
 	register_taxonomy( $GLOBALS['cpTaxSlug2'], $GLOBALS['cpSlug2'], $args );
 	/* ▲カスタムタクソノミーを作成 */
 });
 
-/* リライトルールを変更（カスタムタクソノミー） */
-add_rewrite_rule($GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]', 'top');
-add_rewrite_rule($GLOBALS['cpSlug2'].'/'.$GLOBALS['rewriteslug2'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&paged=$matches[2]', 'top');
+// リライトルールを追加
+function custom_rewrite_rule2() {
+  // ニュースのタクソノミー追加
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&feed=$matches[2]', 'top');
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/(.+?)/(feed|rdf|rss|rss2|atom)/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&feed=$matches[2]', 'top');
+  // 年別
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/(.+?)/date/([0-9]{4})/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&year=$matches[2]', 'top');
+  // 年別（ページング）
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/(.+?)/date/([0-9]{4})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&year=$matches[2]&paged=$matches[3]', 'top');
+  // 月別
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]', 'top');
+  // 月別（ページング）
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&paged=$matches[4]', 'top');
+  // 日別
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]', 'top');
+  // 日別（ページング）
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&paged=$matches[5]', 'top');
+  // 一覧
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]', 'top');
+  // 一覧（ページング）
+  add_rewrite_rule($GLOBALS['cpSlug2'].'/([^/]+)/page/([0-9]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug2'].'=$matches[1]&paged=$matches[2]', 'top');
+}
+add_action('init', 'custom_rewrite_rule2');
+
 // 投稿画面にてタクソノミー検索を可能にする
 add_action('restrict_manage_posts', function() {
 global $post_type;
@@ -221,6 +270,7 @@ add_action( 'init', function() {
 		'labels'              => $labels,
 		'public'              => true, // ユーザーが内容を投稿する場合true(通常はtrue)
 		'show_in_rest'        => true, // Gutenberg 有効化
+		'rewrite'             => array('with_front' => false), // https://www.flapism.jp/wordpress/85/
 		'has_archive'         => true, // アーカイブページを作成するか否かを設定(trueでindexページを作成)
 		'hierarchical'        => true, // 階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
 		'exclude_from_search' => false, // WPの検索機能から検索した際、検索対象に含めるか否かを設定（※trueの場合は検索対象に含めない）
@@ -228,7 +278,7 @@ add_action( 'init', function() {
 		'supports'            => array( // 管理画面から投稿できる項目を設定
 		'title', // タイトル表示を有効に
 		// 'editor', // 本文の表示を有効に
-		// 'custom-fields', カスタムフィールド
+		// 'custom-fields', //カスタムフィールド
 		'thumbnail', // アイキャッチ画像
 		'author', // 作成者
 		)
@@ -248,9 +298,30 @@ add_action( 'init', function() {
 	/* ▲カスタムタクソノミーを作成 */
 });
 
-/* リライトルールを変更（カスタムタクソノミー） */
-add_rewrite_rule($GLOBALS['cpSlug3'].'/'.$GLOBALS['rewriteslug3'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]', 'top');
-add_rewrite_rule($GLOBALS['cpSlug3'].'/'.$GLOBALS['rewriteslug3'].'/([^/]+)/page/?([0-9]{1,})/?$',	'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&paged=$matches[2]', 'top');
+// リライトルールを追加
+// function custom_rewrite_rule3() {
+//   // ニュースのタクソノミー追加
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&feed=$matches[2]', 'top');
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/(.+?)/(feed|rdf|rss|rss2|atom)/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&feed=$matches[2]', 'top');
+//   // 年別
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/(.+?)/date/([0-9]{4})/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&year=$matches[2]', 'top');
+//   // 年別（ページング）
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/(.+?)/date/([0-9]{4})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&year=$matches[2]&paged=$matches[3]', 'top');
+//   // 月別
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]', 'top');
+//   // 月別（ページング）
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&paged=$matches[4]', 'top');
+//   // 日別
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]', 'top');
+//   // 日別（ページング）
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/(.+?)/date/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/page/?([0-9]{1,})/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&paged=$matches[5]', 'top');
+//   // 一覧
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/([^/]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]', 'top');
+//   // 一覧（ページング）
+//   add_rewrite_rule($GLOBALS['cpSlug3'].'/([^/]+)/page/([0-9]+)/?$', 'index.php?'.$GLOBALS['cpTaxSlug3'].'=$matches[1]&paged=$matches[2]', 'top');
+// }
+// add_action('init', 'custom_rewrite_rule3');
+
 // 投稿画面にてタクソノミー検索を可能にする
 add_action('restrict_manage_posts', function() {
 global $post_type;

@@ -172,6 +172,25 @@
   }
 }
 
+
+// カレントページ設定
+.blog .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='news'],
+.category .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='news'],
+.single-post .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='news'],
+.brand .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='brand'],
+.product .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='product'],
+.tax-product-category .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='product'],
+.case-study .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='case-study'],
+.tax-case-study-category .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='case-study'],
+.company .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='company'],
+.recruit .site-footer__contents__footer-navi > .menu .menu__item .menu__item__link[href*='recruit'] {
+  &:link, &:visited {
+    text-decoration: underline;
+    opacity: .8;
+  }
+}
+
+
 .copyright {
   margin-top: 15px;
   font-size: 1.2rem;

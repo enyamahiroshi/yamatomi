@@ -1,6 +1,25 @@
 /* ----------------------------------------------------------------
   リスト
 ---------------------------------------------------------------- */
+// list-dot
+.list-dot {
+  li {
+    padding-left: calc(1em + 2px);
+    position: relative;
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: #43647A;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 12px;
+    }
+  }
+}
+
+
 // カテゴリーリスト
 .term-list {
   .term-list__item,
@@ -316,6 +335,13 @@
         &:hover, &:active {
           opacity: 1;
           color: $mainColor;
+        }
+        // dot
+        &.dots {
+          color: #ACC5D5;
+          &::before {
+            content: none;
+          }
         }
       }
       // 前後へ

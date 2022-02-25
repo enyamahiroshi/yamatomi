@@ -74,26 +74,26 @@
       <p class="contents-leading">自然に溶け込み、共生するコンクリートブロックをつくっています。</p>
       <nav class="product-link">
         <div class="link-item link-item--product01">
-          <a href="<?php echo esc_url( home_url() ); ?>/">環境保全<small>コンクリートブロック</small></a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/category/environmental-conservation-concrete-block/">環境保全<small>コンクリートブロック</small></a>
         </div>
         <div class="link-item link-item--product02">
-          <a href="<?php echo esc_url( home_url() ); ?>/">景観機能<small>コンクリートブロック</small></a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/category/landscape-function-concrete-block/">景観機能<small>コンクリートブロック</small></a>
         </div>
         <div class="link-item link-item--product03">
-          <a href="<?php echo esc_url( home_url() ); ?>/">構造機能<small>コンクリートブロック</small></a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/category/structural-unction-concrete-block/">構造機能<small>コンクリートブロック</small></a>
         </div>
         <div class="link-item link-item--product04">
-          <a href="<?php echo esc_url( home_url() ); ?>/">基礎ブロック</a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/category/basal-block/">基礎ブロック</a>
         </div>
         <div class="link-item link-item--product05">
-          <a href="<?php echo esc_url( home_url() ); ?>/">大型積みブロック</a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/category/large-sized-blocking-block/">大型積みブロック</a>
         </div>
         <div class="link-item link-item--product06">
-          <a href="<?php echo esc_url( home_url() ); ?>/">舗石・車止め・<br>ガーデニング製品</a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/category/paved-stone-car-stop-gardening-products/">舗石・車止め・<br>ガーデニング製品</a>
         </div>
       </nav>
       <nav class="button-wrap">
-        <a href="<?php echo esc_url( home_url() ); ?>/" class="button button__base">製品案内一覧へ</a>
+        <a href="<?php echo esc_url( home_url() ); ?>/product/" class="button button__base">製品案内一覧へ</a>
       </nav>
     </div>
   </section>
@@ -104,7 +104,7 @@
       <h2 class="contents-title"><span>BRAND</span>山富産業の開発理念</h2>
       <p class="contents-leading">草木を共に育て、その地の優しさを表現する。<br>そこには自然と同化する美しさがあります。</p>
       <nav class="button-wrap">
-        <a href="<?php echo esc_url( home_url() ); ?>/" class="button button__base-white">開発理念へ</a>
+        <a href="<?php echo esc_url( home_url() ); ?>/brand/" class="button button__base-white">開発理念へ</a>
       </nav>
       <figure class="img-brand">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_brand.png" alt="環境保全機能（生体機能） 景観機能 構造機能" width="834" height="780">
@@ -137,7 +137,7 @@
           <section class="list-post-type--thumbnail">
             <?php // 各記事 ?>
             <article class="item">
-              <a href="" class="item__link">
+              <a href="./case-study/structural-unction-concrete-block/49/" class="item__link">
                 <figure class="item__link__thumbnail">
                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_case-study_thumb01.jpg" alt="">
                 </figure>
@@ -145,7 +145,7 @@
                   <div class="item__link__meta__date">2021.09.13</div>
                   <div class="item__link__meta__titles">
                     <div class="label01">使用製品</div>
-                    <div class="item__link__meta__titles__title">スプリットン05スプリットン05スプリットン05スプリットン05スプリットン05</div>
+                    <div class="item__link__meta__titles__title">スプリットン０５ 施工事例</div>
                   </div>
                   <table class="table-simple">
                     <tr>
@@ -162,7 +162,7 @@
             </article><?php // eof 各記事 ?>
             <?php // 各記事 ?>
             <article class="item">
-              <a href="" class="item__link">
+              <a href="./case-study/structural-unction-concrete-block/49/" class="item__link">
                 <figure class="item__link__thumbnail">
                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_case-study_thumb01.jpg" alt="">
                 </figure>
@@ -170,7 +170,7 @@
                   <div class="item__link__meta__date">2021.09.13</div>
                   <div class="item__link__meta__titles">
                     <div class="label01">使用製品</div>
-                    <div class="item__link__meta__titles__title">スプリットン05</div>
+                    <div class="item__link__meta__titles__title">スプリットン０５ 施工事例</div>
                   </div>
                   <table class="table-simple">
                     <tr>
@@ -187,7 +187,7 @@
             </article><?php // eof 各記事 ?>
             <?php // 各記事 ?>
             <article class="item">
-              <a href="" class="item__link">
+              <a href="./case-study/structural-unction-concrete-block/49/" class="item__link">
                 <figure class="item__link__thumbnail">
                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_case-study_thumb01.jpg" alt="">
                 </figure>
@@ -195,7 +195,7 @@
                   <div class="item__link__meta__date">2021.09.13</div>
                   <div class="item__link__meta__titles">
                     <div class="label01">使用製品</div>
-                    <div class="item__link__meta__titles__title">スプリットン05</div>
+                    <div class="item__link__meta__titles__title">スプリットン０５ 施工事例</div>
                   </div>
                   <table class="table-simple">
                     <tr>
@@ -238,7 +238,7 @@
                 <div class="item__link__meta__date">2021.09.13</div>
                 <div class="label02">お知らせ</div>
               </div>
-              <a href="" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
+              <a href="./news/exhibition/55/" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
             </article><?php // eof 各記事 ?>
             <?php // 各記事 ?>
             <article class="item">
@@ -246,7 +246,7 @@
                 <div class="item__link__meta__date">2021.09.13</div>
                 <div class="label02">お知らせ</div>
               </div>
-              <a href="" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
+              <a href="./news/exhibition/55/" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
             </article><?php // eof 各記事 ?>
             <?php // 各記事 ?>
             <article class="item">
@@ -254,7 +254,7 @@
                 <div class="item__link__meta__date">2021.09.13</div>
                 <div class="label02">お知らせ</div>
               </div>
-              <a href="" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
+              <a href="./news/exhibition/55/" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
             </article><?php // eof 各記事 ?>
           </section>
         </div>
@@ -284,12 +284,12 @@
   </section>
 
   <?php // download-navi ?>
-  <section class="sec sec--download-navi">
+  <section class="sec sec--navi-block">
     <div class="inner-wide">
       <h2 class="contents-title"><span>DOWNLOAD</span>各種資料ダウンロード</h2>
       <p class="contents-leading">各種製品資料（CAD・仕様書）のダウンロードはこちらから。</p>
       <nav class="button-wrap">
-        <a href="<?php echo esc_url( home_url() ); ?>/" class="button button__large-light">初めての方はこちら</a>
+        <a href="<?php echo esc_url( home_url() ); ?>/download/" class="button button__large-light">初めての方はこちら</a>
         <a href="<?php echo esc_url( home_url() ); ?>/download/" class="button button__large">登録済の方はこちら</a>
       </nav>
     </div>

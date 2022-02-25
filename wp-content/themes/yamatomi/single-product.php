@@ -3,30 +3,29 @@
 	<section class="kv--sub">
 		<div class="inner-medium">
 			<div class="slider2">
-				<div class="slider__item">
-					<div class="slider__item__image">
-						<img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-slide.jpg" alt="">
-					</div>
-				</div>
-				<div class="slider__item">
-					<div class="slider__item__image">
-						<img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-slide.jpg" alt="">
-					</div>
-				</div>
-				<div class="slider__item">
-					<div class="slider__item__image">
-						<img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-slide.jpg" alt="">
-					</div>
-				</div>
-				<div class="slider__item">
-					<div class="slider__item__image">
-						<img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-slide.jpg" alt="">
-					</div>
-				</div>
+			<?php // CF:スライダー表示
+			for ($i=1; $i<=4; $i++) {
+				${"scf_slide_img".$i} = "scf_slide_img".$i;
+				${"slimg".$i} = SCF::get(${"scf_slide_img".$i});
+				if ( isset( ${"slimg".$i} ) && !empty( ${"slimg".$i} ) ) {
+					${"slideIMG".$i} = wp_get_attachment_url(${"slimg".$i});
+					echo '<div class="slider__item">';
+					echo '<div class="slider__item__image">';
+					echo '<img class="slider__item__image__img" src="'.$slideIMG1.'" alt="">';
+					echo '</div>';
+					echo '</div>';
+				}
+			}
+			?>
 			</div>
 			<header class="product-post-header">
 				<h1 class="post-title"><?php the_title(); ?></h1>
-				<div class="post-sub-title">【深目地】</div>
+				<?php
+				$subtitle = SCF::get('scf_product_subtitle');
+				if( !empty($subtitle) ) {
+					echo '<div class="post-sub-title">'.$subtitle.'</div>';
+				}
+				?>
 				<div class="post-category">
 					<?php
 						$taxonomy = 'product-category';
@@ -47,7 +46,12 @@
 				<?php the_content(); ?>
 			</section>
 
-			<?php // CF:画像表示 ?>
+			<?php // CF:画像表示
+			$scf_slide_img1 = SCF::get('scf_slide_img1');
+			$scf_slide_img2 = SCF::get('scf_slide_img2');
+			$scf_slide_img3 = SCF::get('scf_slide_img3');
+			$scf_slide_img4 = SCF::get('scf_slide_img4');
+			?>
 			<section class="post-cf-images">
 				<?php // item ?>
 				<div class="post-cf-images__item">
@@ -69,7 +73,7 @@
 
 			<?php // CF:詳細データ ?>
 			<h2 class="contents-title--small">アニーヴンビオポーラススプリットンデータ</h2>
-			<table class="post-cf-details">
+			<table class="table-type1">
 				<tr>
 					<th>用途・工法</th>
 					<td>河川護岸、法面、土留<br>ポーラス コンクリート積（張）</td>
@@ -131,7 +135,7 @@
   </section>
 
   <?php // download-navi ?>
-  <section class="sec sec--download-navi">
+  <section class="sec sec--navi-block">
     <div class="inner-wide">
       <h2 class="contents-title"><span>DOWNLOAD</span>各種資料ダウンロード</h2>
       <p class="contents-leading">各種製品資料のダウンロードはこちらから。</p>

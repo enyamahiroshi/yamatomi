@@ -41,22 +41,22 @@
             <p class="product_menu_title">製品案内</p>
             <ul class="menu">
               <li class="menu__item">
-                <a href="<?php echo esc_url( home_url() ); ?>/" class="menu__item__link">環境保全コンクリートブロック</a>
+                <a href="<?php echo esc_url( home_url() ); ?>/product/category/environmental-conservation-concrete-block" class="menu__item__link">環境保全コンクリートブロック</a>
               </li>
               <li class="menu__item">
-                <a href="<?php echo esc_url( home_url() ); ?>/" class="menu__item__link">景観機能コンクリートブロック</a>
+                <a href="<?php echo esc_url( home_url() ); ?>/product/category/landscape-function-concrete-block/" class="menu__item__link">景観機能コンクリートブロック</a>
               </li>
               <li class="menu__item">
-                <a href="<?php echo esc_url( home_url() ); ?>/" class="menu__item__link">構造機能コンクリートブロック</a>
+                <a href="<?php echo esc_url( home_url() ); ?>/product/category/structural-unction-concrete-block/" class="menu__item__link">構造機能コンクリートブロック</a>
               </li>
               <li class="menu__item">
-                <a href="<?php echo esc_url( home_url() ); ?>/" class="menu__item__link">基礎ブロック</a>
+                <a href="<?php echo esc_url( home_url() ); ?>/product/category/basal-block/" class="menu__item__link">基礎ブロック</a>
               </li>
               <li class="menu__item">
-                <a href="<?php echo esc_url( home_url() ); ?>/" class="menu__item__link">大型積みブロック</a>
+                <a href="<?php echo esc_url( home_url() ); ?>/product/category/large-sized-blocking-block/" class="menu__item__link">大型積みブロック</a>
               </li>
               <li class="menu__item">
-                <a href="<?php echo esc_url( home_url() ); ?>/" class="menu__item__link">舗石・車止め・ガーデニング製品</a>
+                <a href="<?php echo esc_url( home_url() ); ?>/product/category/paved-stone-car-stop-gardening-products/" class="menu__item__link">舗石・車止め・ガーデニング製品</a>
               </li>
             </ul>
             <ul class="menu_other">

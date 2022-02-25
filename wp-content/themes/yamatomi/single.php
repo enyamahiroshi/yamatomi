@@ -19,7 +19,7 @@
     </div>
 		<div class="inner-wide">
 			<nav class="button-wrap button-wrap--band">
-        <a href="<?php echo esc_url( home_url() ); ?>/" class="button button__base">トップページへ戻る</a>
+        <a href="<?php echo esc_url( home_url() ); ?>/news/" class="button button__base">ニュース一覧へ戻る</a>
       </nav>
 		</div>
   </section>

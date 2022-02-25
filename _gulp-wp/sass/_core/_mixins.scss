@@ -35,7 +35,7 @@
 }
 
 //flexbox
-@mixin flex($wrap: wrap, $justify: flex-start, $alignitems: center){
+@mixin flex($wrap: nowrap, $justify: flex-start, $alignitems: stretch){
   display: flex;
   flex-wrap: $wrap;
   justify-content: $justify;

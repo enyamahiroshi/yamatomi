@@ -8,6 +8,14 @@ get_template_part( 'setting/customize-block-editer' );
 get_template_part( 'block/breadcrumb' );
 
 /* -------------------------------------------------------------
+//  タイトルタグ
+// ------------------------------------------------------------*/
+function metaTitleTag() {
+  add_theme_support( 'title-tag' );
+}
+add_action( 'after_setup_theme', 'metaTitleTag' );
+
+/* -------------------------------------------------------------
 //  メインループの表示件数を制御
 // ------------------------------------------------------------*/
 // 表示件数制御
@@ -22,7 +30,7 @@ function my_pre_get_posts( $query ) {
   //   $query -> set('posts_per_page', 10); //表示件数
   // }
   if($query->is_home()){ // アーカイブページ
-    $query->set( 'posts_per_page', 10); //表示件数
+    $query->set( 'posts_per_page', 2); //表示件数
   }
   // if($query->is_month()){ // 月別アーカイブ
   //   $query->set('posts_per_page', -1); //表示件数

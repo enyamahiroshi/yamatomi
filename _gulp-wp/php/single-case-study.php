@@ -44,7 +44,7 @@
     <div class="inner-small">
 
 			<?php // CF:詳細データ ?>
-			<table class="post-cf-details">
+			<table class="table-type1">
 				<tr>
 					<th>使用製品</th>
 					<td>スプリットン０５</td>

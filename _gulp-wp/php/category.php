@@ -9,7 +9,7 @@
       <nav class="news-list">
         <ul class="term-list">
           <li class="cat-item">
-            <a href="<?php echo esc_url( home_url() ); ?>/news/" class="current">ALL</a>
+            <a href="<?php echo esc_url( home_url() ); ?>/news/">ALL</a>
           </li>
           <?php
             $args = array(
