@@ -26,8 +26,10 @@ $header_height_PC: 100; // ヘッダーの高さ PC
       opacity: .8;
     }
     .site-header__logo__mark {
+      text-align: left;
       img {
         width: auto;
+        max-width: none;
         height: 32px;
       }
     }

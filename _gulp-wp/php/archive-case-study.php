@@ -59,114 +59,17 @@
                 <div class="item__link__meta__titles__title"><?php the_title(); ?></div>
               </div>
               <table class="table-simple">
-                <tr>
-                  <th>工事名</th>
-                  <td>元災公共土木施設災害復旧工事元災公共土木施設災害復旧工事</td>
-                </tr>
-                <tr>
-                  <th>施工日</th>
-                  <td>令和2年</td>
-                </tr>
-              </table>
-            </div>
-          </a>
-        </article>
-        <article class="item">
-          <a href="<?php the_permalink(); ?>" class="item__link">
-            <div class="item__link__thumbnail" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);"></div>
-            <div class="item__link__meta">
-              <div class="item__link__meta__date-category">
-                <div class="item__link__meta__date"><?php the_time('Y.m.d'); ?></div>
-                <div class="label02"><?php echo $taxonomy_terms_cat_name; ?></div>
-              </div>
-              <div class="item__link__meta__titles">
-                <div class="label01">使用製品</div>
-                <div class="item__link__meta__titles__title"><?php the_title(); ?></div>
-              </div>
-              <table class="table-simple">
-                <tr>
-                  <th>工事名</th>
-                  <td>元災公共土木施設災害復旧工事元災公共土木施設災害復旧工事</td>
-                </tr>
-                <tr>
-                  <th>施工日</th>
-                  <td>令和2年</td>
-                </tr>
-              </table>
-            </div>
-          </a>
-        </article>
-        <article class="item">
-          <a href="<?php the_permalink(); ?>" class="item__link">
-            <div class="item__link__thumbnail" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);"></div>
-            <div class="item__link__meta">
-              <div class="item__link__meta__date-category">
-                <div class="item__link__meta__date"><?php the_time('Y.m.d'); ?></div>
-                <div class="label02"><?php echo $taxonomy_terms_cat_name; ?></div>
-              </div>
-              <div class="item__link__meta__titles">
-                <div class="label01">使用製品</div>
-                <div class="item__link__meta__titles__title"><?php the_title(); ?></div>
-              </div>
-              <table class="table-simple">
-                <tr>
-                  <th>工事名</th>
-                  <td>元災公共土木施設災害復旧工事元災公共土木施設災害復旧工事</td>
-                </tr>
-                <tr>
-                  <th>施工日</th>
-                  <td>令和2年</td>
-                </tr>
-              </table>
-            </div>
-          </a>
-        </article>
-        <article class="item">
-          <a href="<?php the_permalink(); ?>" class="item__link">
-            <div class="item__link__thumbnail" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);"></div>
-            <div class="item__link__meta">
-              <div class="item__link__meta__date-category">
-                <div class="item__link__meta__date"><?php the_time('Y.m.d'); ?></div>
-                <div class="label02"><?php echo $taxonomy_terms_cat_name; ?></div>
-              </div>
-              <div class="item__link__meta__titles">
-                <div class="label01">使用製品</div>
-                <div class="item__link__meta__titles__title"><?php the_title(); ?></div>
-              </div>
-              <table class="table-simple">
-                <tr>
-                  <th>工事名</th>
-                  <td>元災公共土木施設災害復旧工事元災公共土木施設災害復旧工事</td>
-                </tr>
-                <tr>
-                  <th>施工日</th>
-                  <td>令和2年</td>
-                </tr>
-              </table>
-            </div>
-          </a>
-        </article>
-        <article class="item">
-          <a href="<?php the_permalink(); ?>" class="item__link">
-            <div class="item__link__thumbnail" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);"></div>
-            <div class="item__link__meta">
-              <div class="item__link__meta__date-category">
-                <div class="item__link__meta__date"><?php the_time('Y.m.d'); ?></div>
-                <div class="label02"><?php echo $taxonomy_terms_cat_name; ?></div>
-              </div>
-              <div class="item__link__meta__titles">
-                <div class="label01">使用製品</div>
-                <div class="item__link__meta__titles__title"><?php the_title(); ?></div>
-              </div>
-              <table class="table-simple">
-                <tr>
-                  <th>工事名</th>
-                  <td>元災公共土木施設災害復旧工事元災公共土木施設災害復旧工事</td>
-                </tr>
-                <tr>
-                  <th>施工日</th>
-                  <td>令和2年</td>
-                </tr>
+                <?php
+                $scf_tbl_datas = SCF::get('scf_tbl_data');
+                  echo '<tr>';
+                  echo '<th>'.$scf_tbl_datas[3]['scf_tbl_data_label'].'</th>';
+                  echo '<td>'.$scf_tbl_datas[3]['scf_tbl_data_text'].'</td>';
+                  echo '</tr>';
+                  echo '<tr>';
+                  echo '<th>'.$scf_tbl_datas[4]['scf_tbl_data_label'].'</th>';
+                  echo '<td>'.$scf_tbl_datas[4]['scf_tbl_data_text'].'</td>';
+                  echo '</tr>';
+                ?>
               </table>
             </div>
           </a>
@@ -179,9 +82,9 @@
       the_posts_pagination(
         array(
           'mid_size' => 1, // 現在ページの左右に表示するページ番号の数
-          'prev_text'     => '', // 「前へ」リンクのテキスト
-          'next_text'     => '', // 「次へ」リンクのテキスト
-          'type'     => 'list', // 戻り値の指定 (plain/list)
+          'prev_text' => '', // 「前へ」リンクのテキスト
+          'next_text' => '', // 「次へ」リンクのテキスト
+          'type' => 'list', // 戻り値の指定 (plain/list)
         )
       ); ?>
     </div>

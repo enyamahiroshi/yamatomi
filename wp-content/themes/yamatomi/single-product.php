@@ -7,11 +7,11 @@
 			for ($i=1; $i<=4; $i++) {
 				${"scf_slide_img".$i} = "scf_slide_img".$i;
 				${"slimg".$i} = SCF::get(${"scf_slide_img".$i});
-				if ( isset( ${"slimg".$i} ) && !empty( ${"slimg".$i} ) ) {
-					${"slideIMG".$i} = wp_get_attachment_url(${"slimg".$i});
+				if ( ${"slimg".$i} ) {
+					$slideIMG = wp_get_attachment_url(${"slimg".$i});
 					echo '<div class="slider__item">';
 					echo '<div class="slider__item__image">';
-					echo '<img class="slider__item__image__img" src="'.$slideIMG1.'" alt="">';
+					echo '<img class="slider__item__image__img" src="'.$slideIMG.'" alt="">';
 					echo '</div>';
 					echo '</div>';
 				}
@@ -47,89 +47,110 @@
 			</section>
 
 			<?php // CF:画像表示
-			$scf_slide_img1 = SCF::get('scf_slide_img1');
-			$scf_slide_img2 = SCF::get('scf_slide_img2');
-			$scf_slide_img3 = SCF::get('scf_slide_img3');
-			$scf_slide_img4 = SCF::get('scf_slide_img4');
+			for ($i=1; $i<=2; $i++){
+				${"pImgs".$i} = "scf_larger_img".$i;
+				${"pImg".$i} = SCF::get(${"pImgs".$i});
+				if ( ${"pImg".$i} ) {
+					${"pImgIMGthumb".$i} = wp_get_attachment_image(${"pImg".$i}, "thumbnail");
+					${"pImgIMG".$i} = wp_get_attachment_url(${"pImg".$i});
+				}
+				${"pTitles".$i} = "scf_larger_title".$i;
+				${"pTitle".$i} = SCF::get(${"pTitles".$i});
+			}
+			if ($pImgIMG1 || $pImgIMG2):
 			?>
 			<section class="post-cf-images">
-				<?php // item ?>
+			<?php // CF:画像表示
+			for ($i=1; $i<=2; $i++):
+			?>
 				<div class="post-cf-images__item">
 					<figure class="post-cf-images__item__pic">
-						<img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-image01.jpg" alt="">
+						<img class="post-cf-images__item__img" src="<?php echo ${"pImgIMGthumb".$i}; ?>" alt="">
 					</figure>
-					<p class="post-cf-images__item__pic__caption">製品説明</p>
-					<a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-image01.jpg" class="button--expansion">画像拡大</a>
+					<?php if (${"pTitle".$i}): ?>
+						<p class="post-cf-images__item__pic__caption"><?php echo ${"pTitle".$i}; ?></p>
+					<?php endif; ?>
+					<a href="<?php echo ${"pImgIMG".$i}; ?>" class="button--expansion">画像拡大</a>
 				</div>
-				<?php // item ?>
-				<div class="post-cf-images__item">
-					<figure class="post-cf-images__item__pic">
-						<img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-image02.jpg" alt="">
-					</figure>
-					<p class="post-cf-images__item__pic__caption">内部構造</p>
-					<a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-image01.jpg" class="button--expansion">画像拡大</a>
-				</div>
+			<?php endfor; ?>
 			</section>
+			<?php endif; ?>
 
 			<?php // CF:詳細データ ?>
-			<h2 class="contents-title--small">アニーヴンビオポーラススプリットンデータ</h2>
+			<?php
+			$scf_tbl_datas = SCF::get('scf_tbl_data');
+			if( $scf_tbl_datas[0]['scf_tbl_data_label'] ):
+			?>
+			<h2 class="contents-title--small"><?php the_title(); ?>データ</h2>
 			<table class="table-type1">
-				<tr>
-					<th>用途・工法</th>
-					<td>河川護岸、法面、土留<br>ポーラス コンクリート積（張）</td>
-				</tr>
-				<tr>
-					<th>自然環境保全機能</th>
-					<td>植生　生物生息　景観構築</td>
-				</tr>
-				<tr>
-					<th>構造</th>
-					<td>練り積み、張工、積工</td>
-				</tr>
-				<tr>
-					<th>圧縮強度</th>
-					<td>18Ｎ以上（強度重視タイプ）</td>
-				</tr>
-				<tr>
-					<th>ポーラス層空隙率</th>
-					<td>16％以上（強度重視タイプ）</td>
-				</tr>
-				<tr>
-					<th>適用勾配</th>
-					<td>1：0.3～</td>
-				</tr>
-				<tr>
-					<th>適用高さ（H）</th>
-					<td>～7m</td>
-				</tr>
-				<tr>
-					<th>適用流速（m/s）</th>
-					<td>～8m/s</td>
-				</tr>
-				<tr>
-					<th>構造の特長</th>
-					<td>隔壁２層構造<br>ポーラスコンクリート（２層構造、割ブロック）</td>
-				</tr>
+				<?php
+				foreach ($scf_tbl_datas as $out_data) {
+					echo '<tr>';
+					echo '<th>'.$out_data['scf_tbl_data_label'].'</th>';
+					echo '<td>'.$out_data['scf_tbl_data_text'].'</td>';
+					echo '</tr>';
+				}
+				?>
 			</table>
+			<?php endif; ?>
 
 			<?php // CF:環境に対する特性 ?>
+			<?php
+			for($i=1; $i<=5; $i++){
+				${"tokuseinum".$i} = "scf_tokusei".$i;
+				${"tokusei".$i} = SCF::get(${"tokuseinum".$i});
+				switch(${"tokusei".$i}) {
+					case 'true':
+						${"tokuseiData".$i} = '〇';
+						break;
+					case 'false':
+						${"tokuseiData".$i} = '-';
+						break;
+					default :
+						${"tokuseiData".$i} = '';
+						break;
+				}
+			}
+			if($tokuseiData1 || $tokuseiData2 || $tokuseiData3 || $tokuseiData4 || $tokuseiData5):
+			?>
 			<h2 class="contents-title--small">環境に対する特性</h2>
 			<table class="post-cf-characteristic">
 				<tr>
+				<?php if($tokuseiData1): ?>
 					<th>法面の植生</th>
+				<?php endif; ?>
+				<?php if($tokuseiData2): ?>
 					<th>水際の植生</th>
+				<?php endif; ?>
+				<?php if($tokuseiData3): ?>
 					<th>水生生物の生息空間</th>
+				<?php endif; ?>
+				<?php if($tokuseiData4): ?>
 					<th>横断方向の連続性</th>
+				<?php endif; ?>
+				<?php if($tokuseiData5): ?>
 					<th>景観への配慮</th>
+				<?php endif; ?>
 				</tr>
 				<tr>
-					<td>〇</td>
-					<td>-</td>
-					<td>〇</td>
-					<td>-</td>
-					<td>〇</td>
+				<?php if($tokuseiData1): ?>
+					<td><?php echo $tokuseiData1; ?></td>
+				<?php endif; ?>
+				<?php if($tokuseiData2): ?>
+					<td><?php echo $tokuseiData2; ?></td>
+				<?php endif; ?>
+				<?php if($tokuseiData3): ?>
+					<td><?php echo $tokuseiData3; ?></td>
+				<?php endif; ?>
+				<?php if($tokuseiData4): ?>
+					<td><?php echo $tokuseiData4; ?></td>
+				<?php endif; ?>
+				<?php if($tokuseiData5): ?>
+					<td><?php echo $tokuseiData5; ?></td>
+				<?php endif; ?>
 				</tr>
 			</table>
+			<?php endif; ?>
 
     </div><?php // .inner ?>
   </section>
@@ -140,7 +161,18 @@
       <h2 class="contents-title"><span>DOWNLOAD</span>各種資料ダウンロード</h2>
       <p class="contents-leading">各種製品資料のダウンロードはこちらから。</p>
       <nav class="button-wrap">
-        <a href="<?php echo esc_url( home_url() ); ?>/" class="button button__large-light-pdf">カタログPDFダウンロード</a>
+				<?php
+				$pdfs = get_post_meta($post->ID, 'scf_catalog', false);
+				$judge = array_filter($pdfs);
+				if($judge) {
+					foreach($pdfs as $pdf) {
+						$url = wp_get_attachment_url($pdf);
+						$path = str_replace(esc_url(home_url('/'))."wp/", ABSPATH, $url);
+						$out = '<a href="'.$url.'" class="button button__large-light-pdf" target="_blank">カタログPDFダウンロード</a>';
+						echo $out;
+					}
+				}
+				?>
         <a href="<?php echo esc_url( home_url() ); ?>/download/" class="button button__large">資料ダウンロードページはこちら<br>（CAD・仕様書）</a>
       </nav>
     </div>
@@ -154,42 +186,5 @@
       </nav>
 		</div>
   </section>
-
-	<?php /*
-	<div class="<?php echo esc_attr( $container_class ); ?> single-post-container">
-		<div class="row"></div>
-			<?php do_action( 'neve_do_sidebar', 'single-post', 'left' ); ?>
-			<article id="post-<?php echo esc_attr( get_the_ID() ); ?>"
-					class="<?php echo esc_attr( join( ' ', get_post_class( 'nv-single-post-wrap col' ) ) ); ?>">
-				<?php
-					if ( have_posts() ) {
-						while ( have_posts() ) {
-							the_post();
-							get_template_part( 'template-parts/content', 'single' );
-							// カスタムフィールド読込み表示
-							$pnum = get_field('p_num');
-							$pprice = number_format(get_field('p_price'));
-							$pmaker = get_field('p_maker');
-							$pshipping = get_field('p_shipping');
-							$pshipping_type = get_field('p_shipping_type');
-							$pstock = get_field('p_stock');
-							echo '<table class="tbl_type_product">';
-							echo '<tr><th>商品番号</th><td>' . $pnum . '</td></tr>';
-							echo '<tr><th>商品名</th><td>' . get_the_title() . '</td></tr>';
-							echo '<tr><th>販売価格</th><td>' . $pprice . '円</td></tr>';
-							echo '<tr><th>メーカー</th><td>' . $pmaker . '</td></tr>';
-							echo '<tr><th>送料区分</th><td>' . $pshipping . '</td></tr>';
-							echo '<tr><th>配送タイプ</th><td>' . $pshipping_type . '</td></tr>';
-							echo '<tr><th>在庫</th><td>' . $pstock . '</td></tr>';
-							echo '</table>';
-						}
-					} else {
-						get_template_part( 'template-parts/content', 'none' );
-					}
-				?>
-			</article>
-		</div>
-	</div>
-	*/ ?>
 
 	<?php get_footer(); ?>

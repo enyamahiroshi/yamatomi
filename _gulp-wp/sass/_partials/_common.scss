@@ -159,6 +159,9 @@
   font-size: 2rem;
   font-weight: 600;
   color: $mainColor;
+  br {
+    display: none;
+  }
 }
 @include res_min( $break ) {
   .contents-title--small {

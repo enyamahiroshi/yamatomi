@@ -34,317 +34,48 @@
     </div>
   </section>
 
-  <?php // 各リスト ?>
+  <?php
+  $catargs = array(
+    'post_type' => 'product',
+    'taxonomy' => 'product-category',
+    'hide_empty' => 1,
+  );
+  $categories = get_categories($catargs);
+  foreach($categories as $category) :
+  ?>
   <section class="sec sec--archive-product">
     <div class="inner-wide">
-      <h2 class="archive-product__title">環境保全コンクリートブロック</h2>
-      <ul class="archive-product__list archive-product__list--left">
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-1.jpg);" class="archive-product__list__item__link">アニーヴンポーラススプリットン<br>（アニーヴンシリーズ）</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-2.jpg);" class="archive-product__list__item__link">ポーラススプリットン</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-3.jpg);" class="archive-product__list__item__link">アニーヴンポーラススプリットン<br>（アニーヴンシリーズ）</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-4.jpg);" class="archive-product__list__item__link">グリーンハーモニー ＢＰ</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-5.jpg);" class="archive-product__list__item__link">フラワーストーンIL</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-6.jpg);" class="archive-product__list__item__link">フラワーストーン</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <h2 class="archive-product__title">景観機能コンクリートブロック</h2>
-      <ul class="archive-product__list archive-product__list--left">
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive2-1.jpg);" class="archive-product__list__item__link">スプリットン０５<br>（ポーラス・面取りなし）</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive2-2.jpg);" class="archive-product__list__item__link">Ｔｈａｔ'ｓ スプリットン</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive2-3.jpg);" class="archive-product__list__item__link">張りブロック（玉石タイプ）</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive2-4.jpg);" class="archive-product__list__item__link">ニュースプリットン【アニーヴンスプリットン】<br>（軽井沢・上高地）</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive2-5.jpg);" class="archive-product__list__item__link">ザ・石</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <h2 class="archive-product__title">構造機能コンクリートブロック</h2>
-      <ul class="archive-product__list archive-product__list--left">
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive3-1.jpg);" class="archive-product__list__item__link">スプリットンブロック</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive3-2.jpg);" class="archive-product__list__item__link">小口止めブロック</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive3-3.jpg);" class="archive-product__list__item__link">ウラコンブロック</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive3-4.jpg);" class="archive-product__list__item__link">スプリットン０５</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive3-5.jpg);" class="archive-product__list__item__link">スクラムスプリットン</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <h2 class="archive-product__title">基礎ブロック</h2>
-      <ul class="archive-product__list archive-product__list--left">
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive4-1.jpg);" class="archive-product__list__item__link">製品名が入ります。</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive4-1.jpg);" class="archive-product__list__item__link">製品名が入ります。</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive4-1.jpg);" class="archive-product__list__item__link">製品名が入ります。</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <h2 class="archive-product__title">大型積みブロック</h2>
-      <ul class="archive-product__list archive-product__list--center">
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive5-1.jpg);" class="archive-product__list__item__link">ヘイベック間知石DC <br>（大型積みブロック）</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive5-1.jpg);" class="archive-product__list__item__link">へイベック （へイベックシリーズ）</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <h2 class="archive-product__title">舗石・車止め・ガーデニング製品</h2>
-      <ul class="archive-product__list archive-product__list--left">
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive6-1.jpg);" class="archive-product__list__item__link">カーストップ御影</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive6-2.jpg);" class="archive-product__list__item__link">マックストン</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive6-3.jpg);" class="archive-product__list__item__link">マーチ</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive6-4.jpg);" class="archive-product__list__item__link">ジューン</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive6-5.jpg);" class="archive-product__list__item__link">グリーンクラスター</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive6-6.jpg);" class="archive-product__list__item__link">カーストップ</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="./landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive6-7.jpg);" class="archive-product__list__item__link">花いっぱい</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-
-
-  <?php /*
-
-  <?php // タクソノミー(カテゴリ)別に記事を一覧出力
-  $terms = get_terms( 'product-category' );
-  foreach ( $terms as $term ) :
-    $args = array(
-      'post_type' => 'product',
-      'taxonomy' => 'product-category',
-      'term' => $term->slug,
-      'posts_per_page' => -1,
-      'no_found_rows' => true,
-    );
-    $query = new WP_Query($args); ?>
-    <h3><?php echo esc_html( $term->name ); ?></h3>
-    <ul>
-    <?php if ( $query->have_posts() ) : ?>
-      <?php while ( $query->have_posts() ) : $query->the_post();?>
-        <li>
-          <a href="<?php the_permalink(); ?>">
-            <?php the_time('Y.m.d'); ?>
-            <?php the_title(); ?>
-          </a>
-        </li>
-      <?php endwhile;?>
-      <?php wp_reset_postdata(); ?>
-    <?php endif; ?>
-    </ul>
-  <?php endforeach; ?>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
+      <h2 class="archive-product__title"><?php echo $category->name; ?></h2>
       <?php
-        $queried_object = get_queried_object();
-        $categoryname = $queried_object->name;
-        // 記事数によってstyel変更
-        $postnum = $queried_object->count;
-        if( $postnum > 3 ) {
-          $listcntent = "archive-product__list--center";
+        $postnum = $category->count;
+        if ($postnum>3) {
+          $thisstyle = 'left';
         } else {
-          $listcntent = "archive-product__list--left";
+          $thisstyle = 'center';
         }
       ?>
-      <h2 class="archive-product__title"><?php echo $categoryname; ?></h2>
-      <ul class="archive-product__list <?php echo $listcntent; ?>">
-      <?php if(have_posts()): ?>
-      <?php while(have_posts()): the_post(); ?>
+      <ul class="archive-product__list archive-product__list--<?php echo $thisstyle; ?>">
+        <?php
+        $args = array(
+          'post_type' => get_post_type($post),
+          'tax_query' => array(
+            array(
+              'taxonomy' => $category->taxonomy,
+              'field' => 'slug',
+              'terms' => $category->slug,
+            ),
+          ),
+        );
+        $the_query = new WP_Query($args);
+        if( $the_query->have_posts() ): while( $the_query->have_posts() ): $the_query->the_post();
+        ?>
         <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
+          <a href="<?php the_permalink() ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large');?>" class="archive-product__list__item__link"><?php the_title(); ?></a>
         </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-      <?php endwhile; ?>
-      <?php endif; ?>
+        <?php endwhile; endif; wp_reset_postdata(); ?>
       </ul>
     </div>
   </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <?php
-        $queried_object = get_queried_object();
-        $categoryname = $queried_object->name;
-      ?>
-      <h2 class="archive-product__title"><?php echo $categoryname; ?></h2>
-      <ul class="archive-product__list archive-product__list--center">
-      <?php if(have_posts()): ?>
-      <?php while(have_posts()): the_post(); ?>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-      <?php endwhile; ?>
-      <?php endif; ?>
-      </ul>
-    </div>
-  </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <?php
-        $queried_object = get_queried_object();
-        $categoryname = $queried_object->name;
-      ?>
-      <h2 class="archive-product__title"><?php echo $categoryname; ?></h2>
-      <ul class="archive-product__list archive-product__list--center">
-      <?php if(have_posts()): ?>
-      <?php while(have_posts()): the_post(); ?>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-      <?php endwhile; ?>
-      <?php endif; ?>
-      </ul>
-    </div>
-  </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <?php
-        $queried_object = get_queried_object();
-        $categoryname = $queried_object->name;
-      ?>
-      <h2 class="archive-product__title"><?php echo $categoryname; ?></h2>
-      <ul class="archive-product__list archive-product__list--center">
-      <?php if(have_posts()): ?>
-      <?php while(have_posts()): the_post(); ?>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-      <?php endwhile; ?>
-      <?php endif; ?>
-      </ul>
-    </div>
-  </section>
-
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
-      <?php
-        $queried_object = get_queried_object();
-        $categoryname = $queried_object->name;
-      ?>
-      <h2 class="archive-product__title"><?php echo $categoryname; ?></h2>
-      <ul class="archive-product__list archive-product__list--left">
-      <?php if(have_posts()): ?>
-      <?php while(have_posts()): the_post(); ?>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
-        </li>
-      <?php endwhile; ?>
-      <?php endif; ?>
-      </ul>
-    </div>
-  </section>
-  */ ?>
+<?php endforeach; ?>
 
 <?php get_footer(); ?>

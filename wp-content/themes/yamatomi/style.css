@@ -296,6 +296,7 @@ figure{
 
 img,
 svg{
+  max-width: 100%;
   width: 100%;
   height: auto;
   vertical-align: bottom;
@@ -381,6 +382,9 @@ svg{
   font-weight: 600;
   font-size: 20px;
   font-size: 2rem;
+}
+.contents-title--small br{
+  display: none;
 }
 .contents-title--medium{
   margin-bottom: 15px;
@@ -1014,6 +1018,14 @@ footer a img:active,
 }
 .list-post-type--thumbnail .item .item__link{
   display: block;
+  height: 100%;
+}
+.list-post-type--thumbnail .item .item__link .item__link__thumbnail{
+  padding-top: 71%;
+  height: 0;
+  background-color: #052f4b;
+  background-position: center;
+  background-size: cover;
 }
 .list-post-type--thumbnail .item .item__link .item__link__meta{
   margin-top: 3px;
@@ -1027,32 +1039,37 @@ footer a img:active,
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: start;
-  -ms-flex-align: start;
+  -ms-flex-align: center;
+  margin-top: 8px;
 
-  align-items: flex-start;
+  align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   justify-content: flex-start;
 }
 .list-post-type--thumbnail .item .item__link .item__link__meta .item__link__meta__titles .label01{
-  margin-top: 5px;
+  margin-top: 0;
   margin-right: 8px;
   white-space: nowrap;
+  line-height: 1.5;
 }
 .list-post-type--thumbnail .item .item__link .item__link__meta .item__link__meta__titles .item__link__meta__titles__title{
   color: #052f4b;
   font-weight: 600;
+  line-height: 1.5;
 }
 .list-post-type--thumbnail .item .item__link .item__link__meta .table-simple{
-  margin-top: 3px;
+  margin-top: 6px;
   color: #43647a;
   font-size: 14px;
   font-size: 1.4rem;
 }
+.list-post-type--thumbnail.list--case-study .item{
+  background-color: #f1f5fa;
+}
 .list-post-type--thumbnail.list--case-study .item .item__link{
   display: block;
   padding: 20px;
-  background-color: #f1f5fa;
   background-image: url(assets/img/common/icon_more-s-b.svg);
   background-position: right 15px bottom 15px;
   background-size: 35px;
@@ -1060,10 +1077,6 @@ footer a img:active,
 }
 .list-post-type--thumbnail.list--case-study .item .item__link .item__link__thumbnail{
   padding-top: 40%;
-  height: 0;
-  background-color: #052f4b;
-  background-position: center;
-  background-size: cover;
 }
 .list-post-type--thumbnail.list--case-study .item .item__link .item__link__meta{
   margin-top: 8px;
@@ -1304,7 +1317,11 @@ footer a img:active,
   opacity: .8;
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
 }
+.site-header .site-header__logo .site-header__logo__mark{
+  text-align: left;
+}
 .site-header .site-header__logo .site-header__logo__mark img{
+  max-width: none;
   width: auto;
   height: 32px;
 }
@@ -2526,18 +2543,31 @@ body.is__open{
   download
 ---------------------------------------------------------------- */
 .post-download{
-  padding: 25px 0 35px;
+  padding: 20px 0;
   border-bottom: 1px solid #a8b9c4;
 }
 .post-download:first-of-type{
   border-top: 1px solid #a8b9c4;
 }
-.post-download .post-download__title{
+.post-download .post-download__data{
+  margin-top: 10px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+.post-download .post-download__data .post-download__data__label{
+  margin-right: 20px;
   color: #052f4b;
   font-weight: 600;
 }
-.post-download .button--download{
-  margin-top: 15px;
+.post-download .post-download__data .post-download__data__file-type{
+  font-weight: 600;
+}
+.post-download .post-download__data .post-download__data__text{
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-size: 1.4rem;
 }
 /* ----------------------------------------------------------------
   contact
@@ -2948,7 +2978,7 @@ select-ms-expand{
 .mwform-radio-field label span.mwform-checkbox-field-text,
 .mwform-checkbox-field label span.mwform-radio-field-text,
 .mwform-checkbox-field label span.mwform-checkbox-field-text{
-  padding-right: 30px;
+  padding-left: 30px;
   font-weight: 600;
 }
 .mwform-radio-field label span.mwform-radio-field-text::before,
@@ -2957,7 +2987,7 @@ select-ms-expand{
 .mwform-checkbox-field label span.mwform-checkbox-field-text::before{
   position: absolute;
   top: 50%;
-  right: 0;
+  left: 0;
   width: 20px;
   height: 20px;
   border: 2px solid #e16f6f;
@@ -2993,17 +3023,17 @@ select-ms-expand{
 .mwform-radio-field label input:checked+ span.mwform-checkbox-field-text::after,
 .mwform-checkbox-field label input:checked+ span.mwform-checkbox-field-text::after{
   position: absolute;
-  top: 7px;
-  right: 5px;
+  top: 0;
+  left: 0;
   z-index: 1;
   display: block;
-  width: 10px;
-  height: 8px;
+  width: 20px;
+  height: 100%;
   border-radius: 0;
   background-color: transparent;
   background-image: url(assets/img/common/icon_checkmark.svg);
   background-position: center;
-  background-size: 100%;
+  background-size: 12px;
   background-repeat: no-repeat;
   content: '';
 }
@@ -3021,12 +3051,13 @@ select-ms-expand{
   height: 30px;
 }
 .form-item__input__checkbox--agree .mwform-checkbox-field label input:checked+ span.mwform-checkbox-field-text::after{
-  top: 6px;
+  top: 0;
   right: auto;
-  left: 5px;
-  width: 19px;
-  height: 13px;
+  left: 0;
+  width: 30px;
+  height: 100%;
   background-image: url(assets/img/common/icon_checkmark2.svg);
+  background-size: 18px;
 }
 .input-inline-field{
   display: -ms-flexbox;
@@ -3768,7 +3799,7 @@ select-ms-expand{
     min-width: 252px;
   }
   .button--download{
-    padding: 14px 4em 14px 36px;
+    padding: 13px 4em 13px 36px;
     background-position: right 26px center;
     font-size: 1.6rem;
   }
@@ -3854,6 +3885,7 @@ select-ms-expand{
   }
   .list-post-type--thumbnail .item{
     margin: 11px 11px 0 0;
+    background-color: #f1f5fa;
   }
   .list-post-type--thumbnail.list--case-study{
     display: -ms-flexbox;
@@ -4736,7 +4768,7 @@ select-ms-expand{
     width: 100%;
     height: 0;
   }
-  .post-cf-images .post-cf-images__item .post-cf-images__item__pic .slider__item__image__img{
+  .post-cf-images .post-cf-images__item .post-cf-images__item__pic .post-cf-images__item__img{
     position: absolute;
     top: 50%;
     left: 20px;
@@ -4770,13 +4802,29 @@ select-ms-expand{
     font-size: 2.6rem;
   }
   .post-download{
-    padding: 35px 0 40px;
+    padding: 25px 0;
   }
-  .post-download .button--download{
-    margin-top: 20px;
+  .post-download .post-download__data{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+    -ms-flex-align: stretch;
+    font-size: 1.6rem;
+
+    align-items: stretch;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    justify-content: flex-start;
   }
-  .post-download .button--download:first-of-type{
-    margin-top: 25px;
+  .post-download .post-download__data .post-download__data__label{
+    margin-right: 25px;
+  }
+  .post-download .post-download__data .post-download__data__file-type{
+    margin-right: 25px;
+  }
+  .post-download .post-download__data .post-download__data__text{
+    margin-top: 0;
+    font-size: 1.5rem;
   }
   .sec--page-contact-head{
     padding-bottom: 0;

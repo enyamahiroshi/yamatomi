@@ -74,22 +74,22 @@
       <p class="contents-leading">自然に溶け込み、共生するコンクリートブロックをつくっています。</p>
       <nav class="product-link">
         <div class="link-item link-item--product01">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/category/environmental-conservation-concrete-block/">環境保全<small>コンクリートブロック</small></a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/environmental-conservation-concrete-block/">環境保全<small>コンクリートブロック</small></a>
         </div>
         <div class="link-item link-item--product02">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/category/landscape-function-concrete-block/">景観機能<small>コンクリートブロック</small></a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/landscape-function-concrete-block/">景観機能<small>コンクリートブロック</small></a>
         </div>
         <div class="link-item link-item--product03">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/category/structural-unction-concrete-block/">構造機能<small>コンクリートブロック</small></a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/structural-unction-concrete-block/">構造機能<small>コンクリートブロック</small></a>
         </div>
         <div class="link-item link-item--product04">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/category/basal-block/">基礎ブロック</a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/basal-block/">基礎ブロック</a>
         </div>
         <div class="link-item link-item--product05">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/category/large-sized-blocking-block/">大型積みブロック</a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/large-sized-blocking-block/">大型積みブロック</a>
         </div>
         <div class="link-item link-item--product06">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/category/paved-stone-car-stop-gardening-products/">舗石・車止め・<br>ガーデニング製品</a>
+          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/paved-stone-car-stop-gardening-products/">舗石・車止め・<br>ガーデニング製品</a>
         </div>
       </nav>
       <nav class="button-wrap">
@@ -135,81 +135,42 @@
         <div class="layout-body">
           <?php // 記事リスト ?>
           <section class="list-post-type--thumbnail">
-            <?php // 各記事 ?>
+            <?php
+            $args = array(
+              'post_type' => 'case-study',
+              'posts_per_page' => 3,
+            );
+            $the_query = new WP_Query($args);
+            if( $the_query->have_posts() ):
+            while( $the_query->have_posts() ):
+            $the_query->the_post();
+            $scf_tbl_datas = SCF::get('scf_tbl_data');
+            $tbl_case_name = esc_html($scf_tbl_datas[3]['scf_tbl_data_text']);
+            $tbl_case_date = esc_html($scf_tbl_datas[4]['scf_tbl_data_text']);
+            ?>
             <article class="item">
-              <a href="./case-study/structural-unction-concrete-block/49/" class="item__link">
-                <figure class="item__link__thumbnail">
-                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_case-study_thumb01.jpg" alt="">
-                </figure>
+              <a href="<?php the_permalink(); ?>" class="item__link">
+                <div class="item__link__thumbnail" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);"></div>
                 <div class="item__link__meta">
-                  <div class="item__link__meta__date">2021.09.13</div>
+                  <div class="item__link__meta__date"><?php the_time('Y.m.d'); ?></div>
                   <div class="item__link__meta__titles">
                     <div class="label01">使用製品</div>
-                    <div class="item__link__meta__titles__title">スプリットン０５ 施工事例</div>
+                    <div class="item__link__meta__titles__title"><?php the_title(); ?></div>
                   </div>
                   <table class="table-simple">
                     <tr>
                       <th>工事名</th>
-                      <td>元災公共土木施設災害復旧工事</td>
+                      <td><?php echo $tbl_case_name; ?></td>
                     </tr>
                     <tr>
                       <th>施工日</th>
-                      <td>令和2年</td>
+                      <td><?php echo $tbl_case_date; ?></td>
                     </tr>
                   </table>
                 </div>
               </a>
-            </article><?php // eof 各記事 ?>
-            <?php // 各記事 ?>
-            <article class="item">
-              <a href="./case-study/structural-unction-concrete-block/49/" class="item__link">
-                <figure class="item__link__thumbnail">
-                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_case-study_thumb01.jpg" alt="">
-                </figure>
-                <div class="item__link__meta">
-                  <div class="item__link__meta__date">2021.09.13</div>
-                  <div class="item__link__meta__titles">
-                    <div class="label01">使用製品</div>
-                    <div class="item__link__meta__titles__title">スプリットン０５ 施工事例</div>
-                  </div>
-                  <table class="table-simple">
-                    <tr>
-                      <th>工事名</th>
-                      <td>元災公共土木施設災害復旧工事</td>
-                    </tr>
-                    <tr>
-                      <th>施工日</th>
-                      <td>令和2年</td>
-                    </tr>
-                  </table>
-                </div>
-              </a>
-            </article><?php // eof 各記事 ?>
-            <?php // 各記事 ?>
-            <article class="item">
-              <a href="./case-study/structural-unction-concrete-block/49/" class="item__link">
-                <figure class="item__link__thumbnail">
-                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_case-study_thumb01.jpg" alt="">
-                </figure>
-                <div class="item__link__meta">
-                  <div class="item__link__meta__date">2021.09.13</div>
-                  <div class="item__link__meta__titles">
-                    <div class="label01">使用製品</div>
-                    <div class="item__link__meta__titles__title">スプリットン０５ 施工事例</div>
-                  </div>
-                  <table class="table-simple">
-                    <tr>
-                      <th>工事名</th>
-                      <td>元災公共土木施設災害復旧工事</td>
-                    </tr>
-                    <tr>
-                      <th>施工日</th>
-                      <td>令和2年</td>
-                    </tr>
-                  </table>
-                </div>
-              </a>
-            </article><?php // eof 各記事 ?>
+            </article>
+            <?php endwhile; endif; wp_reset_postdata(); ?>
           </section>
         </div>
 
@@ -232,30 +193,28 @@
         <div class="layout-body">
           <?php // 記事リスト ?>
           <section class="list-post-type--simple">
-            <?php // 各記事 ?>
+            <?php
+            $args = array(
+              'post_type' => 'post',
+              'posts_per_page' => 3,
+            );
+            $the_query = new WP_Query($args);
+            if( $the_query->have_posts() ):
+            while( $the_query->have_posts() ):
+            $the_query->the_post();
+            $cats = get_the_category();
+            foreach($cats as $cat){
+              $cat = $cat->name;
+            }
+            ?>
             <article class="item">
               <div class="item__link__meta">
-                <div class="item__link__meta__date">2021.09.13</div>
-                <div class="label02">お知らせ</div>
+                <div class="item__link__meta__date"><?php the_time('Y.m.d'); ?></div>
+                <div class="label02"><?php echo $cat; ?></div>
               </div>
-              <a href="./news/exhibition/55/" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
-            </article><?php // eof 各記事 ?>
-            <?php // 各記事 ?>
-            <article class="item">
-              <div class="item__link__meta">
-                <div class="item__link__meta__date">2021.09.13</div>
-                <div class="label02">お知らせ</div>
-              </div>
-              <a href="./news/exhibition/55/" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
-            </article><?php // eof 各記事 ?>
-            <?php // 各記事 ?>
-            <article class="item">
-              <div class="item__link__meta">
-                <div class="item__link__meta__date">2021.09.13</div>
-                <div class="label02">お知らせ</div>
-              </div>
-              <a href="./news/exhibition/55/" class="item__link__meta__titles__title">ヘイベック間知石DCの製品案内について</a>
-            </article><?php // eof 各記事 ?>
+              <a href="<?php the_permalink(); ?>" class="item__link__meta__titles__title"><?php the_title(); ?></a>
+            </article>
+            <?php endwhile; endif; wp_reset_postdata(); ?>
           </section>
         </div>
 

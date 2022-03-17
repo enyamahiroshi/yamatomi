@@ -35,61 +35,32 @@
   </section>
 
   <?php // 各リスト ?>
+  <?php
+    $taxnames = get_queried_object();
+    $taxname = esc_html($taxnames->name);
+  ?>
   <section class="sec sec--archive-product">
     <div class="inner-wide">
-      <h2 class="archive-product__title">環境保全コンクリートブロック</h2>
-      <ul class="archive-product__list archive-product__list--left">
-        <li class="archive-product__list__item">
-          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-1.jpg);" class="archive-product__list__item__link">アニーヴンポーラススプリットン<br>（アニーヴンシリーズ）</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-2.jpg);" class="archive-product__list__item__link">ポーラススプリットン</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-3.jpg);" class="archive-product__list__item__link">アニーヴンポーラススプリットン<br>（アニーヴンシリーズ）</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-4.jpg);" class="archive-product__list__item__link">グリーンハーモニー ＢＰ</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-5.jpg);" class="archive-product__list__item__link">フラワーストーンIL</a>
-        </li>
-        <li class="archive-product__list__item">
-          <a href="../../landscape-function-concrete-block//40/" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sample/dammy_product-archive1-6.jpg);" class="archive-product__list__item__link">フラワーストーン</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-
-
-  <?php /*
-  <?php // 各リスト ?>
-  <section class="sec sec--archive-product">
-    <div class="inner-wide">
+      <h2 class="archive-product__title"><?php echo $taxname; ?></h2>
       <?php
-        $queried_object = get_queried_object();
-        $categoryname = $queried_object->name;
-        // 記事数によってstyel変更
-        $postnum = $queried_object->count;
-        if( $postnum > 3 ) {
-          $listcntent = "archive-product__list--center";
+        if(have_posts()):
+        global $wp_query;
+        $postnum = $wp_query->found_posts;
+        if ($postnum>3) {
+          $thisstyle = 'left';
         } else {
-          $listcntent = "archive-product__list--left";
+          $thisstyle = 'center';
         }
       ?>
-      <h2 class="archive-product__title"><?php echo $categoryname; ?></h2>
-      <ul class="archive-product__list <?php echo $listcntent; ?>">
-      <?php if(have_posts()): ?>
-      <?php while(have_posts()): the_post(); ?>
+      <ul class="archive-product__list archive-product__list--<?php echo $thisstyle; ?>">
+        <?php while(have_posts()): the_post(); ?>
         <li class="archive-product__list__item">
-          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>);" class="archive-product__list__item__link"><?php the_title(); ?></a>
+          <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large'); ?>" class="archive-product__list__item__link"><?php the_title(); ?></a>
         </li>
-      <?php endwhile; ?>
-      <?php endif; ?>
+        <?php endwhile; ?>
       </ul>
+      <?php endif; ?>
     </div>
   </section>
- */ ?>
 
 <?php get_footer(); ?>

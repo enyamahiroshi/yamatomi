@@ -7,81 +7,25 @@
   <?php // download ?>
   <section class="sec sec--download">
     <div class="inner-small">
-
+      <?php if( have_posts() ): ?>
+      <?php
+      $file = get_post_meta(get_the_ID(), 'scf_dl_file', true);
+      $fileUrl = wp_get_attachment_url($file);
+      $fileType = SCF::get(esc_html('scf_dl_filetype'));
+      $fileText = SCF::get(esc_html('scf_dl_filetext'));
+      ?>
+      <?php while( have_posts() ): the_post(); ?>
       <?php // ブロック：各記事 ?>
       <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
+        <a href="<?php echo $fileUrl; ?>" class="button--download"><?php the_title(); ?>　ダウンロード</a>
+        <div class="post-download__data">
+          <span class="post-download__data__label">ファイル形式</span>
+          <span class="post-download__data__file-type"><?php echo $fileType; ?></span>
+          <span class="post-download__data__text"><?php echo $fileText; ?></span>
+        </div>
       </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
-      <?php // ブロック：各記事 ?>
-      <div class="post-download">
-        <h2 class="post-download__title">ヘイベック間知石DC資料</h2>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-        <a href="" class="button--download">ボタンタイトルが入ります。データがダウンロードできます。</a>
-      </div>
-
+      <?php endwhile; ?>
+      <?php endif; ?>
     </div>
   </section>
 
