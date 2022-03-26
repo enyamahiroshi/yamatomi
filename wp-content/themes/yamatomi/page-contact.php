@@ -1,32 +1,57 @@
-<?php get_header(); ?>
+<?php 
+// mailform setting
+ini_set('display_errors', 1);
+define('LIB_PATH', __DIR__. "/mailform-lib/");
+define('CONFIG_PATH', LIB_PATH);
+define('TEMPLATE_PATH', CONFIG_PATH.  "/template/");
+define('ERROR_FRAME', '<span class="error">ERROR_MESSAGE</span>');
 
-<?php
-  $page = get_post( get_the_ID() );
-  $slug = $page->post_name;
-  $strUp = strtoupper($slug);
+define('MAIL_FROM_LABEL', '');
+//送信元アドレス
+define('MAIL_FROM_ADDRESS', 'toi.manabu+inq@gmail.com');
+//通知先アドレス
+define('MAIL_NOTICE_ADDRESS', 'toi.manabu+toinq@gmail.com');
+
+require_once(LIB_PATH. "toi-mail-form.php");
+
+session_start();
+
+//表示のコンバート
+function contact_header($buffer)
+{
+  $head_text = '<style>.mw_wp_form_input .form-button--back, .mw_wp_form_input .form-button--submit{ display: block; }</style>';
+  $head_text.= "<link rel='stylesheet' id='style-css'  href='". esc_url( home_url() ). "/wp-content/plugins/mw-wp-form/css/style.css' type='text/css' media='all' />";
+
+  $buffer = str_replace('</head>', $head_text. "</head>", $buffer);
+  if(CONTACT_TEMPLATE=="confirm"){
+    $buffer = str_replace('お問い合わせ・資料請求<', 'お問い合わせ・資料請求（確認）<', $buffer);
+    $buffer = str_replace('CONTACT', 'CONTACT-CONFIRM', $buffer);
+
+  }elseif(CONTACT_TEMPLATE=="complete"){
+    $buffer = str_replace('お問い合わせ・資料請求<', 'お問い合わせ・資料請求（完了）<', $buffer);
+    $buffer = str_replace('CONTACT', 'CONTACT-THANKS', $buffer);
+
+  }
+
+  return $buffer;
+}
+
+
+$page = get_post( get_the_ID() );
+$slug = $page->post_name;
+$strUp = strtoupper($slug);
+
+//バッファ
+ob_start("contact_header");
+
+get_header();
+$class = new toi_mail_form("contact");
+get_footer();
+
+define('CONTACT_TEMPLATE', $class->template);
+
+ob_end_flush();
+
+
 ?>
-  <header class="page-header">
-    <h1 class="page-header__title"><span><?php echo $strUp; ?></span><?php echo the_title(); ?></h1>
-  </header>
 
-  <section class="sec sec--page-contact-head">
-    <div class="inner-small">
-      <p>製品に関してのお問い合わせ、資料請求は以下のフォームにてお気軽にご連絡ください。<br>また、お電話からのお問い合わせも承ります。</p>
-      <div class="contact-by-tel">
-        <em>電話でのお問い合わせ</em><a href="tel:0263-25-0387">0263-25-0387</a>
-      </div>
-      <nav class="step-contact">
-        <div class="step-contact__label current">入力</div>
-        <div class="step-contact__label">確認</div>
-        <div class="step-contact__label">完了</div>
-      </nav>
-    </div>
-  </section>
-
-  <section class="sec sec--page-contact-body">
-    <div class="inner-wide">
-      <?php echo do_shortcode('[mwform_formkey key="72"]'); ?>
-    </div>
-  </section>
-
-<?php get_footer(); ?>

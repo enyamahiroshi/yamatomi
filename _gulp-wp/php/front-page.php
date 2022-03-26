@@ -3,7 +3,8 @@
   <!-- key visiual -->
   <section class="kv">
     <div class="slider1">
-      <div class="slider__item">
+      <?php // スライダーアイテム ?>
+      <a href="<?php echo esc_html(home_url()); ?>/product/environmental-conservation-concrete-block/40/" class="slider__item">
         <div class="slider__item__image">
           <picture>
             <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv01_s.jpg" media="(max-width: 768px)">
@@ -12,14 +13,14 @@
           <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide01.png" alt="" width="260" height="260"></i>
         </div>
         <p class="slider__item__title">
-          <small>UNEVEN BIO POROUS SPLITTON</small>
           <em>アニーヴンビオポーラススプリットン</em>
         </p>
         <p class="slider__item__text">
-          ポーラス層による多自然型機能に加えて、自然石に近い柔らかな曲線がつくる深目地と、客土層と胴込めコンクリート層の２層構造により、昆虫や植物の生息の場を短時間でつくりあげます。
+          自然界の生態系を損なわず、その地独自の個性を大切にし、共存する景観づくりを目的としています。ポーラス層による多自然型機能、自然石に近い形状、内部構造は、草木の根、昆虫の生息の妨げとならぬよう、客土層に土が入る構造になっています。
         </p>
-      </div>
-      <div class="slider__item">
+      </a>
+      <?php // スライダーアイテム ?>
+      <a href="<?php echo esc_html(home_url()); ?>/product/environmental-conservation-concrete-block/160/" class="slider__item">
         <div class="slider__item__image">
           <picture>
             <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv02_s.jpg" media="(max-width: 768px)">
@@ -28,14 +29,14 @@
           <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide02.png" alt="" width="260" height="260"></i>
         </div>
         <p class="slider__item__title">
-          <small>SPLITTON 05 POROUS</small>
-          <em>スプリットン05ポーラス</em>
+          <em>ヘイベック間知石DC</em>
         </p>
         <p class="slider__item__text">
-          0.5㎡規格の施工性の良い、コストパフォーマンスに優れた大型スプリットンブロックです。<br>通常の製品は下の写真のように面取りのある製品ですが、これは面取りをなくした製品です。
+          従来からあるヘイベック間知石を即時脱型製法で製造しています。従来からのヘイベックの施工性の良さはそのままに、製造効率が大幅にアップすることから、急な現場、大きな現場にも対応できます。
         </p>
-      </div>
-      <div class="slider__item">
+      </a>
+      <?php // スライダーアイテム ?>
+      <a href="<?php echo esc_html(home_url()); ?>/product/environmental-conservation-concrete-block/152/" class="slider__item">
         <div class="slider__item__image">
           <picture>
             <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv03_s.jpg" media="(max-width: 768px)">
@@ -44,13 +45,44 @@
           <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide03.png" alt="" width="260" height="260"></i>
         </div>
         <p class="slider__item__title">
-          <small>SAMPLE</small>
-          <em>サンプル</em>
+          <em>スプリットン05</em>
         </p>
         <p class="slider__item__text">
-          サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル
+          業界初の0.5㎡規格のスプリットンブロックとして機械施工による施工性の良さに加え、施工現場の合理化とスピードアップ、コストダウンを実現。自然な石の風合いを持つ割面で、環境を限定することなく幅広い利用が可能です。
         </p>
-      </div>
+      </a>
+      <?php // スライダーアイテム ?>
+      <a href="<?php echo esc_html(home_url()); ?>/product/environmental-conservation-concrete-block/166/" class="slider__item">
+        <div class="slider__item__image">
+          <picture>
+            <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv04_s.jpg" media="(max-width: 768px)">
+            <img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv04.jpg" alt="" width="2400" height="1400">
+          </picture>
+          <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide04.png" alt="" width="260" height="260"></i>
+        </div>
+        <p class="slider__item__title">
+          <em>マーチ</em>
+        </p>
+        <p class="slider__item__text">
+          新しい発想から生まれた高い透水性能を持つコンクリートブロック。ポーラスコンクリートを使用する事で高い透水性を実現し、路面の解けた雪水や雨水をいち早く地下に浸透させ安心して生活できる環境をつくりだします。
+        </p>
+      </a>
+      <?php // スライダーアイテム ?>
+      <a href="<?php echo esc_html(home_url()); ?>/product/environmental-conservation-concrete-block/137/" class="slider__item">
+        <div class="slider__item__image">
+          <picture>
+            <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv05_s.jpg" media="(max-width: 768px)">
+            <img class="slider__item__image__img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv05.jpg" alt="" width="2400" height="1400">
+          </picture>
+          <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide05.png" alt="" width="260" height="260"></i>
+        </div>
+        <p class="slider__item__title">
+          <em>Ｔｈａｔ’ｓスプリットン</em>
+        </p>
+        <p class="slider__item__text">
+         Ｔｈａｔ’ｓスプリットンは、従来の割面形状に、こぶ出し加工を施したスプリットンブロックです。古来からある間知石積みのもつ重量感、美観と気品がしのばれ、自然割石のような風合いのある景観を創りだします。
+        </p>
+      </a>
     </div>
   </section>
 
@@ -73,24 +105,24 @@
       <h2 class="contents-title"><span>PRODUCT</span>山富産業の製品</h2>
       <p class="contents-leading">自然に溶け込み、共生するコンクリートブロックをつくっています。</p>
       <nav class="product-link">
-        <div class="link-item link-item--product01">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/environmental-conservation-concrete-block/">環境保全<small>コンクリートブロック</small></a>
+        <?php
+          $myterms = array(
+            'product-category',
+          );
+          $args = array(
+            'orderby'       => 'name',
+            'hide_empty'    => true,
+            'slug'          => '',
+          );
+          $taxonomy_terms = get_terms( $myterms, $args );
+          if ( ! empty( $taxonomy_terms ) && ! is_wp_error( $taxonomy_terms ) ):
+        ?>
+        <?php foreach ($taxonomy_terms as $taxonomy_term ): ?>
+        <div class="link-item link-item--cat_<?php echo $taxonomy_term->slug; ?>">
+          <a href="<?php echo get_term_link( $taxonomy_term ); ?>"><?php //echo $taxonomy_term->name; ?></a>
         </div>
-        <div class="link-item link-item--product02">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/landscape-function-concrete-block/">景観機能<small>コンクリートブロック</small></a>
-        </div>
-        <div class="link-item link-item--product03">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/structural-unction-concrete-block/">構造機能<small>コンクリートブロック</small></a>
-        </div>
-        <div class="link-item link-item--product04">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/basal-block/">基礎ブロック</a>
-        </div>
-        <div class="link-item link-item--product05">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/large-sized-blocking-block/">大型積みブロック</a>
-        </div>
-        <div class="link-item link-item--product06">
-          <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/paved-stone-car-stop-gardening-products/">舗石・車止め・<br>ガーデニング製品</a>
-        </div>
+        <?php endforeach; ?>
+        <?php endif; ?>
       </nav>
       <nav class="button-wrap">
         <a href="<?php echo esc_url( home_url() ); ?>/product/" class="button button__base">製品案内一覧へ</a>

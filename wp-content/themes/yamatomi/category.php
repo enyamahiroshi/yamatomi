@@ -13,7 +13,7 @@
           </li>
           <?php
             $args = array(
-              'hide_empty'         => 0,
+              'hide_empty'         => true,
               'title_li'           => '',
               'taxonomy'           => 'category',
             );

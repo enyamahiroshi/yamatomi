@@ -12,8 +12,8 @@
   <section class="sec sec--separate-kv sec--separate-kv--recruit">
     <div class="inner-wide">
       <div class="separate-kv__content">
-        <strong class="separate-kv__content__title">文章タイトルが入ります。</strong>
-        <p class="separate-kv__content__text">テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。</p>
+        <strong class="separate-kv__content__title">「たくさんのしあわせな環境をつくる」素敵なお仕事です。</strong>
+        <p class="separate-kv__content__text">山富産業では、1960年の創業以来、地域の自然環境やインフラ環境に貢献するコンクリートブロックを開発・設計・製造するメーカーです。いつでも大切に考えてきたのは、人と自然、人と経済、人と他の生物の関係。常に、独創的なアイデア満載の製品を開発したくさんの風景をつくりだしてきました。自分が関わった製品が地域らしい風景の一部となる。そんなやりがいの持てる素敵な仕事です。</p>
       </div>
       <div class="separate-kv__image"></div>
     </div>
@@ -145,10 +145,10 @@
         <div class="separate-block-content">
           <div class="separate-block-content__head">
             <h2 class="separate-block-content__head__staff-name"><span>〇〇〇〇職</span><em>名前が入ります</em></h2>
-            <em class="separate-block-content__head__staff-title">文章タイトルが入ります。</em>
+            <em class="separate-block-content__head__staff-title">社会に大きく貢献できることを実感しています。</em>
           </div>
           <p class="separate-block-content__text">
-            テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。
+            山富産業の魅力の一つとして、特徴的なコンクリートブロックをつくることができるということ。それが様々な地域で設置され、まち並みや自然の風景の美しさを守ることにつながっていることは「つくり手」として、とてもやりがいを感じるところです。長野県の中でもたくさんの場所で見ることができますよ。専用のマシンを使い、チームワークで様々な種類のブロック製造にチームで完成させていくプロセスもとても魅力的ですね。
           </p>
         </div>
         <div class="separate-block-image" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/recruit/img_recruit_message01.jpg);"></div>
@@ -160,10 +160,10 @@
         <div class="separate-block-content">
           <div class="separate-block-content__head">
             <h2 class="separate-block-content__head__staff-name"><span>〇〇〇〇職</span><em>名前が入ります</em></h2>
-            <em class="separate-block-content__head__staff-title">文章タイトルが入ります。</em>
+            <em class="separate-block-content__head__staff-title">毎日新鮮な発見がある。自分の成長を実感できる仕事です。</em>
           </div>
           <p class="separate-block-content__text">
-            テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。テキストが入ります。このテキストはダミーです。
+            一見同じようなカタチに見えるコンクリートブロックも一つひとつ違った表情を持っています。私たちのつくる製品は、それぞれの風景や環境を守るという機能を持った独創的なブロック。私は、全くの未経験で入社しましたが、先輩・上司のみなさんが一つ一つの工程を丁寧に教えていただき、できるようになると次の技術にチャレンジさせてくれる。自分自身で成長を実感でき、毎日の業務の新たな発見を見いだせるやりがいのある職場環境ですね。
           </p>
         </div>
         <div class="separate-block-image" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/recruit/img_recruit_message02.jpg);"></div>

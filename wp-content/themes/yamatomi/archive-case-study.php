@@ -13,7 +13,7 @@
           );
           $args = array(
             'orderby'       => 'name',
-            'hide_empty'    => false,
+            'hide_empty'    => true,
             'slug'          => '',
           );
           $taxonomy_terms = get_terms( $myterms, $args );

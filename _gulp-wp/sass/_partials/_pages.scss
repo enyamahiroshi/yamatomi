@@ -41,6 +41,7 @@
     top: 0;
     transform: translateX(-50%);
     z-index: 2;
+    pointer-events: none;
   }
 }
 @include res_min( $break ) {
@@ -154,6 +155,17 @@
         right: 10px;
         bottom: 10px;
       }
+      &::after { // 各カテゴリー名を画像で表示
+        content: '';
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
       &:hover, &:active {
         &::before {
           background-image: url(./assets/img/common/icon_more-l-b.svg);
@@ -162,32 +174,53 @@
     }
 
     // 個別
-    &.link-item--product01 a {
-      padding: 90px 0;
+    &.link-item--cat_environmental-conservation-concrete-block a { //環境保全コンクリートブロック
+      height: 255px;
       background-image: url(./assets/img/top/top_product01.jpg);
+      &::after {
+        background-image: url(./assets/img/top/txt-product-cat1-sp.svg);
+        background-size: auto 59px;
+      }
     }
-    &.link-item--product02 a {
-      padding: 90px 0;
+    &.link-item--cat_landscape-function-concrete-block a { //景観機能コンクリートブロック
+      height: 255px;
       background-image: url(./assets/img/top/top_product02.jpg);
+      &::after {
+        background-image: url(./assets/img/top/txt-product-cat2-sp.svg);
+        background-size: auto 59px;
+      }
     }
-    &.link-item--product03 a {
-      padding: 90px 0;
+    &.link-item--cat_structural-unction-concrete-block a { //構造機能コンクリートブロック
+      height: 255px;
       background-image: url(./assets/img/top/top_product03.jpg);
+      &::after {
+        background-image: url(./assets/img/top/txt-product-cat3-sp.svg);
+        background-size: auto 59px;
+      }
     }
-    &.link-item--product04 a {
-      padding: 54px 0;
-      font-size: 2rem;
+    &.link-item--cat_basal-block a { //基礎ブロック
+      height: 108px;
       background-image: url(./assets/img/top/top_product04.jpg);
+      &::after {
+        background-image: url(./assets/img/top/txt-product-cat4-sp.svg);
+        background-size: auto 19px;
+      }
     }
-    &.link-item--product05 a {
-      padding: 54px 0;
-      font-size: 2rem;
+    &.link-item--cat_large-sized-blocking-block a { //大型積みブロック
+      height: 108px;
       background-image: url(./assets/img/top/top_product05.jpg);
+      &::after {
+        background-image: url(./assets/img/top/txt-product-cat5-sp.svg);
+        background-size: auto 19px;
+      }
     }
-    &.link-item--product06 a {
-      padding: 54px 0;
-      font-size: 2rem;
+    &.link-item--cat_paved-stone-car-stop-gardening-products a { //舗石・車止め・ガーデニング製品
+      height: 108px;
       background-image: url(./assets/img/top/top_product06.jpg);
+      &::after {
+        background-image: url(./assets/img/top/txt-product-cat6-sp.svg);
+        background-size: auto 45px;
+      }
     }
 	}
 }
@@ -219,32 +252,47 @@
       }
 
       // 個別
-      &.link-item--product01 a {
-        padding: 0;
+      &.link-item--cat_environmental-conservation-concrete-block a { //環境保全コンクリートブロック
         height: 440px;
+        &::after {
+          background-image: url(./assets/img/top/txt-product-cat1-pc.svg);
+          background-size: auto 78px;
+        }
       }
-      &.link-item--product02 a {
-        padding: 0;
+      &.link-item--cat_landscape-function-concrete-block a { //景観機能コンクリートブロック
         height: 440px;
+        &::after {
+          background-image: url(./assets/img/top/txt-product-cat2-pc.svg);
+          background-size: auto 78px;
+        }
       }
-      &.link-item--product03 a {
-        padding: 0;
+      &.link-item--cat_structural-unction-concrete-block a { //構造機能コンクリートブロック
         height: 440px;
+        &::after {
+          background-image: url(./assets/img/top/txt-product-cat3-pc.svg);
+          background-size: auto 78px;
+        }
       }
-      &.link-item--product04 a {
-        padding: 0;
+      &.link-item--cat_basal-block a { //基礎ブロック
         height: 240px;
-        font-size: 3rem;
+        &::after {
+          background-image: url(./assets/img/top/txt-product-cat4-pc.svg);
+          background-size: auto 29px;
+        }
       }
-      &.link-item--product05 a {
-        padding: 0;
+      &.link-item--cat_large-sized-blocking-block a { //大型積みブロック
         height: 240px;
-        font-size: 3rem;
+        &::after {
+          background-image: url(./assets/img/top/txt-product-cat5-pc.svg);
+          background-size: auto 29px;
+        }
       }
-      &.link-item--product06 a {
-        padding: 0;
+      &.link-item--cat_paved-stone-car-stop-gardening-products a { //舗石・車止め・ガーデニング製品
         height: 240px;
-        font-size: 3rem;
+        &::after {
+          background-image: url(./assets/img/top/txt-product-cat6-pc.svg);
+          background-size: auto 76px;
+        }
       }
     }
   }

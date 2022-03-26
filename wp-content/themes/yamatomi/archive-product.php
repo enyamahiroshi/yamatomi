@@ -13,7 +13,7 @@
           );
           $args = array(
             'orderby'       => 'name',
-            'hide_empty'    => false,
+            'hide_empty'    => true,
             'slug'          => '',
           );
           $taxonomy_terms = get_terms( $myterms, $args );
@@ -38,7 +38,7 @@
   $catargs = array(
     'post_type' => 'product',
     'taxonomy' => 'product-category',
-    'hide_empty' => 1,
+    'hide_empty' => true,
   );
   $categories = get_categories($catargs);
   foreach($categories as $category) :
