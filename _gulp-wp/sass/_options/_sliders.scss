@@ -111,7 +111,8 @@
 .slider1 {
   .slider__item {
     .slider__item__image {
-      height: 128vw;
+      height: 0;
+      padding-top: 128%;
       overflow: hidden;
       position: relative;
       left: 50%;
@@ -120,6 +121,10 @@
       .slider__item__image__img {
         width: auto;
         height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
       }
       .slider__item__image__num {
         position: absolute;
@@ -160,13 +165,11 @@
       margin-left: 10px;
       margin-right: 10px;
       .slider__item__image {
-        height: 37.23vw;
+        // height: 37.23vw;
+        height: 0;
+        padding-top: 58%;
         left: auto;
         transform: translateX(0);
-        .slider__item__image__img {
-          width: auto;
-          height: 100%;
-        }
         .slider__item__image__num {
           img {
             width: 130px;
@@ -193,7 +196,17 @@
 
 .slider2 {
   .slider__item {
-
+    .slider__item__image {
+      height: 0;
+      padding-top: 51.667%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
   }
 }
 @include res_min() {

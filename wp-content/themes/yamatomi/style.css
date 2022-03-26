@@ -1740,6 +1740,7 @@ body.is__open{
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  pointer-events: none;
 }
 .sec--intro{
   margin-top: 24px;
@@ -1827,39 +1828,68 @@ body.is__open{
   background-size: cover;
   content: '';
 }
+.product-link .link-item a::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: '';
+}
 .product-link .link-item a:hover::before,
 .product-link .link-item a:active::before{
   background-image: url(assets/img/common/icon_more-l-b.svg);
 }
-.product-link .link-item.link-item--product01 a{
-  padding: 90px 0;
+.product-link .link-item.link-item--cat_environmental-conservation-concrete-block a{
+  height: 255px;
   background-image: url(assets/img/top/top_product01.jpg);
 }
-.product-link .link-item.link-item--product02 a{
-  padding: 90px 0;
+.product-link .link-item.link-item--cat_environmental-conservation-concrete-block a::after{
+  background-image: url(assets/img/top/txt-product-cat1-sp.svg);
+  background-size: auto 59px;
+}
+.product-link .link-item.link-item--cat_landscape-function-concrete-block a{
+  height: 255px;
   background-image: url(assets/img/top/top_product02.jpg);
 }
-.product-link .link-item.link-item--product03 a{
-  padding: 90px 0;
+.product-link .link-item.link-item--cat_landscape-function-concrete-block a::after{
+  background-image: url(assets/img/top/txt-product-cat2-sp.svg);
+  background-size: auto 59px;
+}
+.product-link .link-item.link-item--cat_structural-unction-concrete-block a{
+  height: 255px;
   background-image: url(assets/img/top/top_product03.jpg);
 }
-.product-link .link-item.link-item--product04 a{
-  padding: 54px 0;
+.product-link .link-item.link-item--cat_structural-unction-concrete-block a::after{
+  background-image: url(assets/img/top/txt-product-cat3-sp.svg);
+  background-size: auto 59px;
+}
+.product-link .link-item.link-item--cat_basal-block a{
+  height: 108px;
   background-image: url(assets/img/top/top_product04.jpg);
-  font-size: 20px;
-  font-size: 2rem;
 }
-.product-link .link-item.link-item--product05 a{
-  padding: 54px 0;
+.product-link .link-item.link-item--cat_basal-block a::after{
+  background-image: url(assets/img/top/txt-product-cat4-sp.svg);
+  background-size: auto 19px;
+}
+.product-link .link-item.link-item--cat_large-sized-blocking-block a{
+  height: 108px;
   background-image: url(assets/img/top/top_product05.jpg);
-  font-size: 20px;
-  font-size: 2rem;
 }
-.product-link .link-item.link-item--product06 a{
-  padding: 54px 0;
+.product-link .link-item.link-item--cat_large-sized-blocking-block a::after{
+  background-image: url(assets/img/top/txt-product-cat5-sp.svg);
+  background-size: auto 19px;
+}
+.product-link .link-item.link-item--cat_paved-stone-car-stop-gardening-products a{
+  height: 108px;
   background-image: url(assets/img/top/top_product06.jpg);
-  font-size: 20px;
-  font-size: 2rem;
+}
+.product-link .link-item.link-item--cat_paved-stone-car-stop-gardening-products a::after{
+  background-image: url(assets/img/top/txt-product-cat6-sp.svg);
+  background-size: auto 45px;
 }
 .sec--brand{
   background-image: url(assets/img/top/bg_brand.jpg);
@@ -2644,8 +2674,9 @@ body.is__open{
 .post-body p{
   font-size: inherit;
 }
-.post-body figure{
-  text-align: left;
+.post-body a:link,
+.post-body a:visited{
+  color: #1484db;
 }
 .post-body img,
 .post-body svg{
@@ -2654,6 +2685,26 @@ body.is__open{
   width: auto;
   height: auto;
   vertical-align: bottom;
+}
+.post-body .wp-block-image figure img,
+.post-body .wp-block-image figure svg{
+  margin: 2em 0;
+  max-width: 100%;
+  width: auto !important;
+  height: auto !important;
+  vertical-align: bottom;
+}
+.post-body figure{
+  margin: 2em auto;
+}
+.post-body figure img,
+.post-body figure svg{
+  margin: 0;
+}
+.post-body figure figcaption{
+  margin: 0;
+  font-size: 85%;
+  line-height: 1.5;
 }
 .post-body .alignleft:before,
 .post-body .alignleft:after,
@@ -2728,11 +2779,12 @@ body.is__open{
 }
 .post-body strong{
   color: #3b3b3b;
-  font-weight: 400;
+  font-weight: 600;
+  font-style: normal;
 }
 .post-body em{
   color: #3b3b3b;
-  font-weight: normal;
+  font-weight: 600;
   font-style: italic;
 }
 .post-body pre{
@@ -3582,14 +3634,21 @@ select-ms-expand{
   top: 0;
   left: 50%;
   overflow: hidden;
-  height: 128vw;
+  padding-top: 128%;
+  height: 0;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 .slider1 .slider__item .slider__item__image .slider__item__image__img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: auto;
   height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .slider1 .slider__item .slider__item__image .slider__item__image__num{
   position: absolute;
@@ -3623,6 +3682,19 @@ select-ms-expand{
   padding: 0 20px;
   font-size: 14px;
   font-size: 1.4rem;
+}
+.slider2 .slider__item .slider__item__image{
+  position: relative;
+  top: 0;
+  left: 50%;
+  padding-top: 51.667%;
+  height: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 @media only screen and (min-width: 768px){
   .no_pc{
@@ -4163,32 +4235,47 @@ select-ms-expand{
     width: 68px;
     height: 68px;
   }
-  .product-link .link-item.link-item--product01 a{
-    padding: 0;
+  .product-link .link-item.link-item--cat_environmental-conservation-concrete-block a{
     height: 440px;
   }
-  .product-link .link-item.link-item--product02 a{
-    padding: 0;
+  .product-link .link-item.link-item--cat_environmental-conservation-concrete-block a::after{
+    background-image: url(assets/img/top/txt-product-cat1-pc.svg);
+    background-size: auto 78px;
+  }
+  .product-link .link-item.link-item--cat_landscape-function-concrete-block a{
     height: 440px;
   }
-  .product-link .link-item.link-item--product03 a{
-    padding: 0;
+  .product-link .link-item.link-item--cat_landscape-function-concrete-block a::after{
+    background-image: url(assets/img/top/txt-product-cat2-pc.svg);
+    background-size: auto 78px;
+  }
+  .product-link .link-item.link-item--cat_structural-unction-concrete-block a{
     height: 440px;
   }
-  .product-link .link-item.link-item--product04 a{
-    padding: 0;
-    height: 240px;
-    font-size: 3rem;
+  .product-link .link-item.link-item--cat_structural-unction-concrete-block a::after{
+    background-image: url(assets/img/top/txt-product-cat3-pc.svg);
+    background-size: auto 78px;
   }
-  .product-link .link-item.link-item--product05 a{
-    padding: 0;
+  .product-link .link-item.link-item--cat_basal-block a{
     height: 240px;
-    font-size: 3rem;
   }
-  .product-link .link-item.link-item--product06 a{
-    padding: 0;
+  .product-link .link-item.link-item--cat_basal-block a::after{
+    background-image: url(assets/img/top/txt-product-cat4-pc.svg);
+    background-size: auto 29px;
+  }
+  .product-link .link-item.link-item--cat_large-sized-blocking-block a{
     height: 240px;
-    font-size: 3rem;
+  }
+  .product-link .link-item.link-item--cat_large-sized-blocking-block a::after{
+    background-image: url(assets/img/top/txt-product-cat5-pc.svg);
+    background-size: auto 29px;
+  }
+  .product-link .link-item.link-item--cat_paved-stone-car-stop-gardening-products a{
+    height: 240px;
+  }
+  .product-link .link-item.link-item--cat_paved-stone-car-stop-gardening-products a::after{
+    background-image: url(assets/img/top/txt-product-cat6-pc.svg);
+    background-size: auto 76px;
   }
   .sec--brand .img-brand img{
     width: 417px;
@@ -5080,14 +5167,11 @@ select-ms-expand{
   }
   .slider1 .slider__item .slider__item__image{
     left: auto;
-    height: 37.23vw;
+    padding-top: 58%;
+    height: 0;
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
-  }
-  .slider1 .slider__item .slider__item__image .slider__item__image__img{
-    width: auto;
-    height: 100%;
   }
   .slider1 .slider__item .slider__item__image .slider__item__image__num img{
     width: 130px;

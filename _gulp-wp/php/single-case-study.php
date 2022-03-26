@@ -10,8 +10,7 @@
 				if ( ${"slimg".$i} ) {
 					$slideIMG = wp_get_attachment_url(${"slimg".$i});
 					echo '<div class="slider__item">';
-					echo '<div class="slider__item__image">';
-					echo '<img class="slider__item__image__img" src="'.$slideIMG.'" alt="">';
+					echo '<div class="slider__item__image" style="background-image:url('.$slideIMG.')">';
 					echo '</div>';
 					echo '</div>';
 				}

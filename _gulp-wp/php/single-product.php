@@ -10,8 +10,7 @@
 				if ( ${"slimg".$i} ) {
 					$slideIMG = wp_get_attachment_url(${"slimg".$i});
 					echo '<div class="slider__item">';
-					echo '<div class="slider__item__image">';
-					echo '<img class="slider__item__image__img" src="'.$slideIMG.'" alt="">';
+					echo '<div class="slider__item__image" style="background-image:url('.$slideIMG.')">';
 					echo '</div>';
 					echo '</div>';
 				}
@@ -51,28 +50,37 @@
 				${"pImgs".$i} = "scf_larger_img".$i;
 				${"pImg".$i} = SCF::get(${"pImgs".$i});
 				if ( ${"pImg".$i} ) {
-					${"pImgIMGthumb".$i} = wp_get_attachment_image(${"pImg".$i}, "thumbnail");
+					${"pImgIMGthumb".$i} = wp_get_attachment_url(${"pImg".$i});
 					${"pImgIMG".$i} = wp_get_attachment_url(${"pImg".$i});
 				}
 				${"pTitles".$i} = "scf_larger_title".$i;
 				${"pTitle".$i} = SCF::get(${"pTitles".$i});
 			}
-			if ($pImgIMG1 || $pImgIMG2):
 			?>
+			<?php if ($pImgIMG1 || $pImgIMG2): ?>
 			<section class="post-cf-images">
-			<?php // CF:画像表示
-			for ($i=1; $i<=2; $i++):
-			?>
+			<?php if ($pImgIMG1): ?>
 				<div class="post-cf-images__item">
 					<figure class="post-cf-images__item__pic">
-						<img class="post-cf-images__item__img" src="<?php echo ${"pImgIMGthumb".$i}; ?>" alt="">
+						<img class="post-cf-images__item__img" src="<?php echo $pImgIMGthumb1; ?>" alt="">
 					</figure>
-					<?php if (${"pTitle".$i}): ?>
-						<p class="post-cf-images__item__pic__caption"><?php echo ${"pTitle".$i}; ?></p>
+					<?php if ($pTitle1): ?>
+						<p class="post-cf-images__item__pic__caption"><?php echo $pTitle1; ?></p>
 					<?php endif; ?>
-					<a href="<?php echo ${"pImgIMG".$i}; ?>" class="button--expansion">画像拡大</a>
+					<a href="<?php echo $pImgIMG1; ?>" class="button--expansion" target="_blank" rel="noopener noreferrer">画像拡大</a>
 				</div>
-			<?php endfor; ?>
+			<?php endif; ?>
+			<?php if ($pImgIMG2): ?>
+				<div class="post-cf-images__item">
+					<figure class="post-cf-images__item__pic">
+						<img class="post-cf-images__item__img" src="<?php echo $pImgIMGthumb2; ?>" alt="">
+					</figure>
+					<?php if ($pTitle2): ?>
+						<p class="post-cf-images__item__pic__caption"><?php echo $pTitle2; ?></p>
+					<?php endif; ?>
+					<a href="<?php echo $pImgIMG2; ?>" class="button--expansion" target="_blank" rel="noopener noreferrer">画像拡大</a>
+				</div>
+			<?php endif; ?>
 			</section>
 			<?php endif; ?>
 

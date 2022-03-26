@@ -30,7 +30,7 @@ function my_pre_get_posts( $query ) {
   //   $query -> set('posts_per_page', 10); //表示件数
   // }
   if($query->is_home()){ // アーカイブページ
-    $query->set( 'posts_per_page', 2); //表示件数
+    $query->set( 'posts_per_page', 10); //表示件数
   }
   // if($query->is_month()){ // 月別アーカイブ
   //   $query->set('posts_per_page', -1); //表示件数
