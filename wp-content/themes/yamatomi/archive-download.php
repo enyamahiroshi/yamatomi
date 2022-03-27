@@ -8,13 +8,13 @@
   <section class="sec sec--download">
     <div class="inner-small">
       <?php if( have_posts() ): ?>
+      <?php while( have_posts() ): the_post(); ?>
       <?php
       $file = get_post_meta(get_the_ID(), 'scf_dl_file', true);
       $fileUrl = wp_get_attachment_url($file);
       $fileType = SCF::get(esc_html('scf_dl_filetype'));
       $fileText = SCF::get(esc_html('scf_dl_filetext'));
       ?>
-      <?php while( have_posts() ): the_post(); ?>
       <?php // ブロック：各記事 ?>
       <div class="post-download">
         <a href="<?php echo $fileUrl; ?>" class="button--download"><?php the_title(); ?>　ダウンロード</a>
