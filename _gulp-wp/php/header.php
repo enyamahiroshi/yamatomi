@@ -26,10 +26,10 @@
             <a href="<?php echo esc_url( home_url() ); ?>/brand/" class="menu__item__link">開発理念<span>BRAND</span></a>
           </li>
           <li class="menu__item">
-            <a href="<?php echo esc_url( home_url() ); ?>/product" class="menu__item__link">製品案内<span>PRODUCT</span></a>
+            <a href="<?php echo esc_url( home_url() ); ?>/product/" class="menu__item__link">製品案内<span>PRODUCT</span></a>
           </li>
           <li class="menu__item">
-            <a href="<?php echo esc_url( home_url() ); ?>/case-study" class="menu__item__link">施工事例<span>CASE STUDY</span></a>
+            <a href="<?php echo esc_url( home_url() ); ?>/case-study/" class="menu__item__link">施工事例<span>CASE STUDY</span></a>
           </li>
           <li class="menu__item">
             <a href="<?php echo esc_url( home_url() ); ?>/company/" class="menu__item__link">会社案内<span>COMPANY</span></a>

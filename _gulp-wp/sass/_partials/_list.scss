@@ -19,6 +19,31 @@
   }
 }
 
+// list-num
+.list-num {
+  margin-top: 1em;
+  dt {
+    margin-top: .4em;
+    font-size: 2rem;
+    font-weight: 600;
+    color: $mainColor;
+    span {
+      margin-right: 8px;
+      font-family: $ff-en;
+      font-size: 2.4rem;
+      font-weight: 400;
+      vertical-align: -.1em;
+    }
+  }
+  dd {
+    p {
+      &:not(:first-of-type) {
+        margin-top: 1.5em;
+      }
+    }
+  }
+}
+
 
 // カテゴリーリスト
 .term-list {
