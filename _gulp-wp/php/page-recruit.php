@@ -144,11 +144,11 @@
       <div class="inner-wide">
         <div class="separate-block-content">
           <div class="separate-block-content__head">
-            <h2 class="separate-block-content__head__staff-name"><span>〇〇〇〇職</span><em>名前が入ります</em></h2>
-            <em class="separate-block-content__head__staff-title">社会に大きく貢献できることを実感しています。</em>
+            <h2 class="separate-block-content__head__staff-name"><span>製造職</span><em>小松 健一</em></h2>
+            <em class="separate-block-content__head__staff-title">出来上がった製品に自分自身の成長を実感できます。</em>
           </div>
           <p class="separate-block-content__text">
-            山富産業の魅力の一つとして、特徴的なコンクリートブロックをつくることができるということ。それが様々な地域で設置され、まち並みや自然の風景の美しさを守ることにつながっていることは「つくり手」として、とてもやりがいを感じるところです。長野県の中でもたくさんの場所で見ることができますよ。専用のマシンを使い、チームワークで様々な種類のブロック製造にチームで完成させていくプロセスもとても魅力的ですね。
+            自分が手掛けたコンクリートブロックが、河川や街並みの自然の一部になっていると思うと、とてもやりがいを感じます。<br>入社当時、右も左もわからない自分に先輩の皆さんから一つ一つの工程の意味を教えて頂きました。出来上がった製品を見ると自分自身の成長を実感できます。
           </p>
         </div>
         <div class="separate-block-image" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/recruit/img_recruit_message01.jpg);"></div>
@@ -159,11 +159,12 @@
       <div class="inner-wide">
         <div class="separate-block-content">
           <div class="separate-block-content__head">
-            <h2 class="separate-block-content__head__staff-name"><span>〇〇〇〇職</span><em>名前が入ります</em></h2>
-            <em class="separate-block-content__head__staff-title">毎日新鮮な発見がある。自分の成長を実感できる仕事です。</em>
+            <h2 class="separate-block-content__head__staff-name"><span>製造職</span><em>花岡 市郎</em></h2>
+            <em class="separate-block-content__head__staff-title">地域に貢献できる、やりがいのある仕事です。</em>
           </div>
           <p class="separate-block-content__text">
-            一見同じようなカタチに見えるコンクリートブロックも一つひとつ違った表情を持っています。私たちのつくる製品は、それぞれの風景や環境を守るという機能を持った独創的なブロック。私は、全くの未経験で入社しましたが、先輩・上司のみなさんが一つ一つの工程を丁寧に教えていただき、できるようになると次の技術にチャレンジさせてくれる。自分自身で成長を実感でき、毎日の業務の新たな発見を見いだせるやりがいのある職場環境ですね。
+		私たちは、環境や景観にあわせた多種多様なコンクリートブロックを製造しています。<br>まったく未経験で入社しましたが、機械操作を丁寧に教えていただき、今では、自分でも考えながら日々よりよい製品を作れることにやりがいを感じています。
+
           </p>
         </div>
         <div class="separate-block-image" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/recruit/img_recruit_message02.jpg);"></div>

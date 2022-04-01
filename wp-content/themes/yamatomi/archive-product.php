@@ -34,6 +34,21 @@
     </div>
   </section>
 
+  <section class="sec sec--pfoduct-intro">
+    <div class="inner-medium">
+      <div class="product-intro">
+        <figure class="product-intro-image">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_brand.png" alt="環境保全機能（生体機能） 景観機能 構造機能" width="834" height="780">
+        </figure>
+        <div class="product-intro-body">
+          <strong>ASSIMILATE with NATURE</strong>
+          <h2>草木を共に育て、その地の優しさを表現する。<br>そこには、自然と同化する美しさがあります。</h2>
+          <p>人と自然、人と経済、人と他の生物の関係。それら全てが山富産業のテーマです。私たちは、人間社会におけるあらゆる「環境」を考えよりよい環境構築のために必要な機能を持つ製品を開発します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <?php
   $catargs = array(
     'post_type' => 'product',
@@ -43,9 +58,9 @@
   $categories = get_categories($catargs);
   foreach($categories as $category) :
   ?>
-  <section class="sec sec--archive-product">
+  <section class="sec sec--archive-product sec--archive-product--<?php echo $category->slug; ?>">
     <div class="inner-wide">
-      <h2 class="archive-product__title"><?php echo $category->name; ?></h2>
+      <h2 class="archive-product__title archive-product__title--<?php echo $category->slug; ?>"><?php echo $category->name; ?></h2>
       <?php
         $postnum = $category->count;
         if ($postnum>3) {
@@ -68,9 +83,13 @@
         );
         $the_query = new WP_Query($args);
         if( $the_query->have_posts() ): while( $the_query->have_posts() ): $the_query->the_post();
+        $scf_product_archive_comment = SCF::get('scf_product_archive_comment');
         ?>
         <li class="archive-product__list__item">
           <a href="<?php the_permalink() ?>" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large');?>" class="archive-product__list__item__link"><?php the_title(); ?></a>
+          <?php if( $scf_product_archive_comment ): ?>
+          <div class="archive-product__list__item__comment"><?php echo $scf_product_archive_comment; ?></div>
+          <?php endif; ?>
         </li>
         <?php endwhile; endif; wp_reset_postdata(); ?>
       </ul>

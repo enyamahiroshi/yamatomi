@@ -8,9 +8,9 @@ define('ERROR_FRAME', '<span class="error">ERROR_MESSAGE</span>');
 
 define('MAIL_FROM_LABEL', '');
 //送信元アドレス
-define('MAIL_FROM_ADDRESS', 'toi.manabu+inq@gmail.com');
+define('MAIL_FROM_ADDRESS', 'info@yamatomi.co.jp');
 //通知先アドレス
-define('MAIL_NOTICE_ADDRESS', 'toi.manabu+toinq@gmail.com');
+define('MAIL_NOTICE_ADDRESS', 'info@yamatomi.co.jp');
 
 require_once(LIB_PATH. "toi-mail-form.php");
 

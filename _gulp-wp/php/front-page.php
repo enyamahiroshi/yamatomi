@@ -4,7 +4,7 @@
   <section class="kv">
     <div class="slider1">
       <?php // スライダーアイテム ?>
-      <a href="<?php echo esc_html(home_url()); ?>/product/environmental-conservation-concrete-block/40/" class="slider__item">
+      <a href="<?php echo esc_html(home_url()); ?>/product/environmental-conservation-concrete-block/129/" class="slider__item">
         <div class="slider__item__image">
           <picture>
             <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv01_s.jpg" media="(max-width: 768px)">
@@ -13,10 +13,10 @@
           <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide01.png" alt="" width="260" height="260"></i>
         </div>
         <p class="slider__item__title">
-          <em>アニーヴンビオポーラススプリットン</em>
+          <em>アニーヴンポーラススプリットン</em>
         </p>
         <p class="slider__item__text">
-          自然界の生態系を損なわず、その地独自の個性を大切にし、共存する景観づくりを目的としています。ポーラス層による多自然型機能、自然石に近い形状、内部構造は、草木の根、昆虫の生息の妨げとならぬよう、客土層に土が入る構造になっています。
+          自然界の生態系を損なわず、その地独自の個性を大切にし、共存する景観づくりを目的としています。不規則な形状は、自然に近い景観となり、また、その地の生物の生息の場を守ります。
         </p>
       </a>
       <?php // スライダーアイテム ?>
@@ -32,7 +32,7 @@
           <em>ヘイベック間知石DC</em>
         </p>
         <p class="slider__item__text">
-          従来からあるヘイベック間知石を即時脱型製法で製造しています。従来からのヘイベックの施工性の良さはそのままに、製造効率が大幅にアップすることから、急な現場、大きな現場にも対応できます。
+          従来からあるヘイベック間知石を即時脱型製法で製造しています。従来からのヘイベックの施工性の良さはそのままに、日本の原風景ともいえる、谷積み模様を再現できます。製造効率が大幅にアップすることから、急な現場、大きな現場にも対応できます。
         </p>
       </a>
       <?php // スライダーアイテム ?>
@@ -52,7 +52,7 @@
         </p>
       </a>
       <?php // スライダーアイテム ?>
-      <a href="<?php echo esc_html(home_url()); ?>/product/environmental-conservation-concrete-block/166/" class="slider__item">
+      <a href="<?php echo esc_html(home_url()); ?>/product/structural-unction-concrete-block/154/" class="slider__item">
         <div class="slider__item__image">
           <picture>
             <source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_kv04_s.jpg" media="(max-width: 768px)">
@@ -61,10 +61,11 @@
           <i class="slider__item__image__num"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/num_slide04.png" alt="" width="260" height="260"></i>
         </div>
         <p class="slider__item__title">
-          <em>マーチ</em>
+          <em>スクラムスプリットン</em>
         </p>
         <p class="slider__item__text">
-          新しい発想から生まれた高い透水性能を持つコンクリートブロック。ポーラスコンクリートを使用する事で高い透水性を実現し、路面の解けた雪水や雨水をいち早く地下に浸透させ安心して生活できる環境をつくりだします。
+         ブロックを互いに組み合って強く一体化する構造のコンクリートブロック。現場で生コンクリートを使わず、ブロックの組み合わせ(かみ合わせ)によって施工できる、新しいタイプのコンクリートブロックです。
+
         </p>
       </a>
       <?php // スライダーアイテム ?>
@@ -80,7 +81,7 @@
           <em>Ｔｈａｔ’ｓスプリットン</em>
         </p>
         <p class="slider__item__text">
-         Ｔｈａｔ’ｓスプリットンは、従来の割面形状に、こぶ出し加工を施したスプリットンブロックです。古来からある間知石積みのもつ重量感、美観と気品がしのばれ、自然割石のような風合いのある景観を創りだします。
+         従来の割面形状に、こぶ出し加工を施し、古来の間知石積みの重量感、美観と気品がある自然割石のような風合いを実現。日本の美しい風景を後世につないでいきます。
         </p>
       </a>
     </div>
@@ -280,7 +281,7 @@
       <h2 class="contents-title"><span>DOWNLOAD</span>各種資料ダウンロード</h2>
       <p class="contents-leading">各種製品資料（CAD・仕様書）のダウンロードはこちらから。</p>
       <nav class="button-wrap">
-        <a href="<?php echo esc_url( home_url() ); ?>/download/" class="button button__large-light">初めての方はこちら</a>
+        <a href="<?php echo esc_url( home_url() ); ?>/contact/" class="button button__large-light">初めての方はこちら</a>
         <a href="<?php echo esc_url( home_url() ); ?>/download/" class="button button__large">登録済の方はこちら</a>
       </nav>
     </div>

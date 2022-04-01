@@ -34,14 +34,30 @@
     </div>
   </section>
 
+  <section class="sec sec--pfoduct-intro">
+    <div class="inner-medium">
+      <div class="product-intro">
+        <figure class="product-intro-image">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_brand.png" alt="環境保全機能（生体機能） 景観機能 構造機能" width="834" height="780">
+        </figure>
+        <div class="product-intro-body">
+          <strong>ASSIMILATE with NATURE</strong>
+          <h2>草木を共に育て、その地の優しさを表現する。<br>そこには、自然と同化する美しさがあります。</h2>
+          <p>人と自然、人と経済、人と他の生物の関係。それら全てが山富産業のテーマです。私たちは、人間社会におけるあらゆる「環境」を考えよりよい環境構築のために必要な機能を持つ製品を開発します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <?php // 各リスト ?>
   <?php
     $taxnames = get_queried_object();
     $taxname = esc_html($taxnames->name);
+    $taxslug = esc_html($taxnames->slug);
   ?>
-  <section class="sec sec--archive-product">
+  <section class="sec sec--archive-product sec--archive-product--<?php echo $taxslug; ?>">
     <div class="inner-wide">
-      <h2 class="archive-product__title"><?php echo $taxname; ?></h2>
+      <h2 class="archive-product__title archive-product__title--<?php echo $taxslug; ?>"><?php echo $taxname; ?></h2>
       <?php
         if(have_posts()):
         global $wp_query;

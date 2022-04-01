@@ -85,11 +85,52 @@ $header_height_PC: 100; // ヘッダーの高さ PC
     }
   }
 }
-@include res_min( $break4 ) {
+@include res_min( $break2 ) {
   .site-header {
-    padding-right: 26px;
+    padding-right: 16px;
     height: #{$header_height_PC + px};
     align-items: center;
+
+    .button-search {
+      flex: 0 0 70px;
+    }
+    .button__inquery {
+      padding: 10px 12px 12px;
+      height: 45%;
+      white-space: nowrap;
+      line-height: 1;
+      @include flex(nowrap, center, center);
+      flex-direction: row;
+      span {
+        display: inline-block;
+      }
+      br {
+        display: none;
+      }
+      &::before {
+        content: none;
+      }
+    }
+
+    @include res_min( $break3 ) {
+      .site-header__logo {
+        padding: 0;
+        @include flex(nowrap, flex-start, flex-end);
+        .site-header__logo__mark {
+          img {
+            width: 137px;
+            height: auto;
+          }
+        }
+        .site-header__logo__compamy-name {
+          margin: 0 0 9px 26px;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    @include res_min( $break4 ) {
+    padding-right: 26px;
     .site-header__logo {
       padding: 0;
       @include flex(nowrap, flex-start, flex-end);
@@ -119,20 +160,9 @@ $header_height_PC: 100; // ヘッダーの高さ PC
       padding: 14px 32px 17px;
       height: auto;
       font-size: 1.7rem;
-      line-height: 1;
-      white-space: nowrap;
-      @include flex(nowrap, center, center);
-      flex-direction: row;
-      span {
-        display: inline-block;
-      }
-      br {
-        display: none;
-      }
-      &::before {
-        content: none;
-      }
     }
+    }
+
   }
 }
 
@@ -154,7 +184,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
   z-index: 9998;
   transition:.15s;
 }
-@include res_min( $break4 ) {
+@include res_min( $break2 ) {
   .global-menu {
     opacity: 1;
     height: auto;
@@ -201,7 +231,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
     }
   }
 }
-@include res_min( $break4 ) {
+@include res_min( $break2 ) {
   .header-navi {
     .menu {
       @include flex(nowrap, center, center);
@@ -283,7 +313,7 @@ $header_height_PC: 100; // ヘッダーの高さ PC
     }
   }
 }
-@include res_min( $break4 ) {
+@include res_min( $break2 ) {
   .menu_bar {
     display: none;
   }

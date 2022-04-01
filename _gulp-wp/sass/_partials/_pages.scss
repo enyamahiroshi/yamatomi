@@ -174,54 +174,78 @@
     }
 
     // 個別
-    &.link-item--cat_environmental-conservation-concrete-block a { //環境保全コンクリートブロック
+    &.link-item--cat_concrete-block a { //コンクリートブロック
       height: 255px;
       background-image: url(./assets/img/top/top_product01.jpg);
       &::after {
         background-image: url(./assets/img/top/txt-product-cat1-sp.svg);
-        background-size: auto 59px;
-      }
-    }
-    &.link-item--cat_landscape-function-concrete-block a { //景観機能コンクリートブロック
-      height: 255px;
-      background-image: url(./assets/img/top/top_product02.jpg);
-      &::after {
-        background-image: url(./assets/img/top/txt-product-cat2-sp.svg);
-        background-size: auto 59px;
-      }
-    }
-    &.link-item--cat_structural-unction-concrete-block a { //構造機能コンクリートブロック
-      height: 255px;
-      background-image: url(./assets/img/top/top_product03.jpg);
-      &::after {
-        background-image: url(./assets/img/top/txt-product-cat3-sp.svg);
-        background-size: auto 59px;
-      }
-    }
-    &.link-item--cat_basal-block a { //基礎ブロック
-      height: 108px;
-      background-image: url(./assets/img/top/top_product04.jpg);
-      &::after {
-        background-image: url(./assets/img/top/txt-product-cat4-sp.svg);
         background-size: auto 19px;
       }
     }
     &.link-item--cat_large-sized-blocking-block a { //大型積みブロック
-      height: 108px;
+      height: 255px;
       background-image: url(./assets/img/top/top_product05.jpg);
       &::after {
         background-image: url(./assets/img/top/txt-product-cat5-sp.svg);
         background-size: auto 19px;
       }
     }
-    &.link-item--cat_paved-stone-car-stop-gardening-products a { //舗石・車止め・ガーデニング製品
-      height: 108px;
+    &.link-item--cat_koguchidome-uracon a { //小口止め・ウラコン
+      height: 138px;
+      background-image: url(./assets/img/top/top_product07.jpg);
+      &::after {
+        background-image: url(./assets/img/top/txt-product-cat7-sp.svg);
+        background-size: auto 19px;
+      }
+    }
+    &.link-item--cat_basal-block a { //基礎ブロック
+      height: 138px;
+      background-image: url(./assets/img/top/top_product04.jpg);
+      &::after {
+        background-image: url(./assets/img/top/txt-product-cat4-sp.svg);
+        background-size: auto 19px;
+      }
+    }
+    &.link-item--cat_paved_stone-car_stop-other a { //舗石・車止め・その他
+      height: 138px;
       background-image: url(./assets/img/top/top_product06.jpg);
       &::after {
         background-image: url(./assets/img/top/txt-product-cat6-sp.svg);
-        background-size: auto 45px;
+        background-size: auto 19px;
       }
     }
+    // &.link-item--cat_environmental-conservation-concrete-block a { //環境保全コンクリートブロック
+    //   height: 255px;
+    //   background-image: url(./assets/img/top/top_product01.jpg);
+    //   &::after {
+    //     background-image: url(./assets/img/top/txt-product-cat1-sp.svg);
+    //     background-size: auto 59px;
+    //   }
+    // }
+    // &.link-item--cat_landscape-function-concrete-block a { //景観機能コンクリートブロック
+    //   height: 255px;
+    //   background-image: url(./assets/img/top/top_product02.jpg);
+    //   &::after {
+    //     background-image: url(./assets/img/top/txt-product-cat2-sp.svg);
+    //     background-size: auto 59px;
+    //   }
+    // }
+    // &.link-item--cat_structural-unction-concrete-block a { //構造機能コンクリートブロック
+    //   height: 255px;
+    //   background-image: url(./assets/img/top/top_product03.jpg);
+    //   &::after {
+    //     background-image: url(./assets/img/top/txt-product-cat3-sp.svg);
+    //     background-size: auto 59px;
+    //   }
+    // }
+    // &.link-item--cat_paved-stone-car-stop-gardening-products a { //舗石・車止め・ガーデニング製品
+    //   height: 108px;
+    //   background-image: url(./assets/img/top/top_product06.jpg);
+    //   &::after {
+    //     background-image: url(./assets/img/top/txt-product-cat6-sp.svg);
+    //     background-size: auto 45px;
+    //   }
+    // }
 	}
 }
 @include res_min( $break ) {
@@ -231,7 +255,11 @@
     .link-item {
       flex-basis: calc(33.333% - 6.667px);
       margin: 10px 10px 0 0;
-      &:nth-of-type(3n) {
+      &:nth-of-type(-n+2) {
+        flex-basis: calc(50% - 5px);
+      }
+      &:nth-of-type(2),
+      &:nth-of-type(5) {
         margin-right: 0;
       }
       a {
@@ -252,46 +280,39 @@
       }
 
       // 個別
-      &.link-item--cat_environmental-conservation-concrete-block a { //環境保全コンクリートブロック
+      &.link-item--cat_concrete-block a { //コンクリートブロック
         height: 440px;
         &::after {
           background-image: url(./assets/img/top/txt-product-cat1-pc.svg);
-          background-size: auto 78px;
+          background-size: auto 35px;
         }
       }
-      &.link-item--cat_landscape-function-concrete-block a { //景観機能コンクリートブロック
+      &.link-item--cat_large-sized-blocking-block a { //大型積みブロック
         height: 440px;
         &::after {
-          background-image: url(./assets/img/top/txt-product-cat2-pc.svg);
-          background-size: auto 78px;
+          background-image: url(./assets/img/top/txt-product-cat5-pc.svg);
+          background-size: auto 35px;
         }
       }
-      &.link-item--cat_structural-unction-concrete-block a { //構造機能コンクリートブロック
-        height: 440px;
+      &.link-item--cat_koguchidome-uracon a { //小口止め・ウラコン
+        height: 240px;
         &::after {
-          background-image: url(./assets/img/top/txt-product-cat3-pc.svg);
-          background-size: auto 78px;
+          background-image: url(./assets/img/top/txt-product-cat7-pc.svg);
+          background-size: auto 28px;
         }
       }
       &.link-item--cat_basal-block a { //基礎ブロック
         height: 240px;
         &::after {
           background-image: url(./assets/img/top/txt-product-cat4-pc.svg);
-          background-size: auto 29px;
+          background-size: auto 28px;
         }
       }
-      &.link-item--cat_large-sized-blocking-block a { //大型積みブロック
-        height: 240px;
-        &::after {
-          background-image: url(./assets/img/top/txt-product-cat5-pc.svg);
-          background-size: auto 29px;
-        }
-      }
-      &.link-item--cat_paved-stone-car-stop-gardening-products a { //舗石・車止め・ガーデニング製品
+      &.link-item--cat_paved_stone-car_stop-other a { //舗石・車止め・その他
         height: 240px;
         &::after {
           background-image: url(./assets/img/top/txt-product-cat6-pc.svg);
-          background-size: auto 76px;
+          background-size: auto 28px;
         }
       }
     }
@@ -1302,13 +1323,83 @@
 }
 
 // product
+.sec--pfoduct-intro {
+  .product-intro {
+    .product-intro-image {
+      img {
+        max-width: 420px;
+      }
+    }
+    .product-intro-body {
+      margin-top: 30px;
+      strong {
+        display: block;
+        font-family: $ff-en;
+        font-size: 9.5vw;
+        font-weight: 400;
+        line-height: 1.2;
+        color: $mainColor;
+        text-align: center;
+      }
+      h2 {
+        margin-top: 1em;
+        font-size: 4.2vw;
+        font-weight: 600;
+        line-height: 1.8;
+        color: $mainColor;
+        text-align: center;
+      }
+      p {
+        margin-top: 15px;
+        font-size: 1.4rem;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+@include res_min( $break ) {
+  .sec--pfoduct-intro {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    .product-intro {
+      @include flex(nowrap, space-between, center);
+      .product-intro-image {
+        flex: 0 0 364px;
+        padding-right: 50px;
+        img {
+          max-width: none;
+        }
+      }
+      .product-intro-body {
+        strong {
+          font-size: 4.8rem;
+          text-align: left;
+        }
+        h2 {
+          margin-top: 20px;
+          font-size: 2rem;
+          text-align: left;
+        }
+        p {
+          margin-top: 20px;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
 .sec--archive-product {
   padding-bottom: 30px !important;
+  // カテゴリーが「コンクリートブロック」の場合
+  &--concrete-block {
+    padding-top: 20px !important;
+  }
   .sec--archive-list + & {
     margin-top: 40px;
   }
   // 背景設定
-  &:nth-of-type(even) { // 直前に sec--archive-list があるため2番目以降となる
+  &:nth-of-type(odd) { // 直前に .sec が2つあるため3番目以降となる
     background-image: url(./assets/img/common/bk_concrete_blue.jpg);
     background-position: center;
     background-size: cover;
@@ -1329,26 +1420,12 @@
 @include res_min( $break ) {
   .sec--archive-product {
     padding-bottom: 100px !important;
+    // カテゴリーが「コンクリートブロック」の場合
+    &--concrete-block {
+      padding-top: 30px !important;
+    }
     .sec--archive-list + & {
       margin-top: 60px;
-    }
-    // 背景設定
-    &:nth-of-type(even) { // 直前に sec--archive-list があるため2番目以降となる
-      background-image: url(./assets/img/common/bk_concrete_blue.jpg);
-      background-position: center;
-      background-size: cover;
-      position: relative;
-      z-index: 1;
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255,255,255,.4);
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-      }
     }
   }
 }
@@ -1359,11 +1436,36 @@
   line-height: 1.6;
   font-weight: 600;
   color: $mainColor;
+
+  // カテゴリーが「コンクリートブロック」の場合
+  &--concrete-block {
+    &::after {
+      content: '';
+      width: 74.5px;
+      height: 70px;
+      background-image: url(./assets/img/product/img_brand.svg);
+      background-position: center;
+      background-size: cover;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  }
 }
 @include res_min( $break ) {
   .archive-product__title {
     font-size: 3rem;
     text-align: center;
+
+    // カテゴリーが「コンクリートブロック」の場合
+    &--concrete-block {
+      margin-bottom: -35px;
+      &::after {
+        width: 162px;
+        height: 152px;
+        margin-left: 20px;
+      }
+    }
   }
 }
 
@@ -1372,7 +1474,7 @@
   margin-top: 20px;
 	.archive-product__list__item {
     &:not(:first-of-type) {
-      margin-top: 10px;
+      margin-top: 15px;
     }
 		.archive-product__list__item__link {
       display: block;
@@ -1407,6 +1509,12 @@
         bottom: 10px;
       }
 		}
+    .archive-product__list__item__comment {
+      margin-top: 3px;
+      font-size: 1.4rem;
+      line-height: 1.6;
+      text-align: center;
+    }
 	}
 }
 @include res_min( $break ) {
@@ -1424,7 +1532,7 @@
         margin-right: 0;
       }
       &:nth-of-type(n+4) {
-        margin-top: 10px;
+        margin-top: 35px;
       }
       .archive-product__list__item__link {
         display: inline-flex;
@@ -1438,6 +1546,10 @@
           width: 50px;
           height: 50px;
         }
+      }
+      .archive-product__list__item__comment {
+        margin-top: 10px;
+        font-size: 1.6rem;
       }
     }
     // 中央寄せの場合(記事が3件以下)
