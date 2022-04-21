@@ -56,6 +56,14 @@
                 <a href="<?php echo esc_url( home_url() ); ?>/product/product-category/paved_stone-car_stop-other/" class="menu__item__link">舗石・車止め・その他</a>
               </li>
             </ul>
+            <ul class="menu_other">
+              <li class="menu__item">
+                <a href="<?php echo esc_url( home_url() ); ?>/sitemap/" class="menu__item__link">サイトマップ</a>
+              </li>
+              <li class="menu__item">
+                <a href="<?php echo esc_url( home_url() ); ?>/privacy-policy/" class="menu__item__link">個人情報保護方針</a>
+               </li>
+            </ul>
           </div>
         </nav>
       </section>
@@ -63,6 +71,12 @@
     </div><?php // .inner ?>
   </footer>
   <a href="#top" class="page-top"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/btn_pagetop.svg" alt="PAGE TOP"></a>
+  <div id="search-window" class="popup-block mfp-hide">
+    <div class="search-button-wrap">
+      <script async src="https://cse.google.com/cse.js?cx=881ecb474f294c4e6"></script>
+      <div class="gcse-searchbox-only"></div>
+    </div>
+  </div>
 <?php wp_footer(); ?>
 </body>
 </html>

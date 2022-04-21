@@ -7,6 +7,7 @@
 function import_files_to_header() {
   // wp_enqueue_style( 'animate', get_stylesheet_directory_uri() . '/assets/css/animate.min.css');
   wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css');
+  wp_enqueue_style( 'magnific', get_stylesheet_directory_uri() . '/assets/css/magnific-popup/magnific-popup.css');
   /* slick.js スライダー */
   if ( is_front_page() || is_singular('product') || is_singular('case-study') ) {
     wp_enqueue_style( 'slick', get_stylesheet_directory_uri() . '/assets/js/slick/slick.css');
@@ -18,6 +19,7 @@ add_action( 'wp_enqueue_scripts', 'import_files_to_header' );
 // フッターにファイル追加
 function import_files_to_footer() {
   wp_enqueue_script( 'jquery' );
+  wp_enqueue_script( 'magnific', get_stylesheet_directory_uri() . '/assets/js/magnific-popup/jquery.magnific-popup.min.js', true, array());
   wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', true, array());
   /* slick.js スライダー */
   if ( is_front_page() || is_singular('product') || is_singular('case-study') ) {

@@ -1,3 +1,11 @@
+<?php // カスタム投稿タイプ：ダウンロード のアーカイブページにのみBASIC認証をかける（functions.php にも記述あり）
+if(is_post_type_archive("download")):
+$userArray = array(
+  "download" => "w2WdCDXrZn6f"
+);
+basic_auth($userArray);
+endif;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -40,7 +48,7 @@
         </ul>
       </nav>
     </section>
-    <a href="" class="button-search">検索</a>
+    <a href="#search-window" class="button-search js-not-scroll js-popup">検索</a>
     <a href="<?php echo esc_url( home_url() ); ?>/contact/" class="button__inquery">お問い合わせ<span>・</span><br>資料請求</a>
     <button class="menu_bar js_tgl_menu" type="button"><span class="menu-bar-line"></span></button>
   </header>

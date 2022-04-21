@@ -177,9 +177,12 @@
       <h2 class="contents-title"><span>ENTRY</span>エントリー</h2>
       <p class="contents-leading">ご応募は下記からお問い合わせいただくか、マイナビよりご応募ください。</p>
       <nav class="button-wrap button-wrap--recruit">
-        <a href="<?php echo esc_url( home_url() ); ?>/contact/" class="button button__large">お問い合わせ</a>
         <a href="https://tenshoku.mynavi.jp/list/kw%E5%B1%B1%E5%AF%8C%E7%94%A3%E6%A5%AD/?jobsearchType=14&searchType=18" target="_blank" rel="noopener noreferrer" class="image_button"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/recruit/button_mynavi2023.png" alt="マイナビ2023" width="400" height="140"></a>
       </nav>
+      <div class="contact-other">
+        <p>採用のお問い合わせはこちらから</p>
+        <a href="tel:0263-25-0387">0263-25-0387</a><span>（採用担当：小山）</span>
+      </div>
     </div>
   </section>
 

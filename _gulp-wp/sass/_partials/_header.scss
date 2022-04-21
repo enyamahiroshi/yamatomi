@@ -321,6 +321,41 @@ $header_height_PC: 100; // ヘッダーの高さ PC
 
 
 /* ----------------------------------------------------------------
+  JS: magnific-popup の閉じるボタン
+---------------------------------------------------------------- */
+// Original
+.button-mfp-close {
+  .close-button-line {
+    width: 44px;
+    height: 2px;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include transition;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------
   メニュー開閉時の挙動　まとめて指定
 ---------------------------------------------------------------- */
 // body

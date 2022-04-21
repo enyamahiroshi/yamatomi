@@ -79,7 +79,7 @@ for( let i = 0; i < fadeObj.length; i++ ) {
   Anchor Link
 -------------------------------------------------- */
 const $header = $('.site-header');
-const $anchor = 'a[href^="#"]';
+const $anchor = 'a[href^="#"]:not(".js-not-scroll")';
 
 $(function(){
   const urlHash = location.hash;
@@ -116,6 +116,19 @@ $(window).scroll(function() {
   } else {
     pagetop.removeClass(adclass2);
   }
+});
+
+/* --------------------------------------------------
+  magnific popup
+-------------------------------------------------- */
+$('.js-popup').magnificPopup({
+  type: 'inline',
+  preloader: false,
+  alignTop: false,
+  fixedContentPos: true,
+  closeBtnInside: true,
+  closeMarkup: '<button title="閉じる" type="button" class="button-mfp-close mfp-close"><span class="close-button-line"></span></button>',
+  autoFocusLast: true,
 });
 
 })(jQuery);

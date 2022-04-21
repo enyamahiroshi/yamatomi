@@ -201,13 +201,13 @@ button{
   font-weight: 400;
   font-style: normal;
   font-family: 'Noto Sans CJK JP';
-  src: local('Noto Sans CJK JP Regular'), url('../fonts/notosans-cjk-jp/NotoSansCJKjp-Regular.woff2') format('woff2'), url('../fonts/notosans-cjk-jp/NotoSansCJKjp-Regular.woff') format('woff'), url('../fonts/notosans-cjk-jp/NotoSansCJKjp-Regular.ttf') format('truetype'), url('../fonts/notosans-cjk-jp/NotoSansCJKjp-Regular.eot') format('embedded-opentype');
+  src: local('Noto Sans CJK JP Regular'), url('assets/fonts/notosans-cjk-jp/NotoSansCJKjp-Regular.woff2') format('woff2'), url('assets/fonts/notosans-cjk-jp/NotoSansCJKjp-Regular.woff') format('woff'), url('assets/fonts/notosans-cjk-jp/NotoSansCJKjp-Regular.ttf') format('truetype'), url('assets/fonts/notosans-cjk-jp/NotoSansCJKjp-Regular.eot') format('embedded-opentype');
 }
 @font-face{
   font-weight: 600;
   font-style: normal;
   font-family: 'Noto Sans CJK JP';
-  src: local('Noto Sans CJK JP Bold'), url('../fonts/notosans-cjk-jp/NotoSansCJKjp-Bold.woff2') format('woff2'), url('../fonts/notosans-cjk-jp/NotoSansCJKjp-Bold.woff') format('woff'), url('../fonts/notosans-cjk-jp/NotoSansCJKjp-Bold.ttf') format('truetype'), url('../fonts/notosans-cjk-jp/NotoSansCJKjp-Bold.eot') format('embedded-opentype');
+  src: local('Noto Sans CJK JP Bold'), url('assets/fonts/notosans-cjk-jp/NotoSansCJKjp-Bold.woff2') format('woff2'), url('assets/fonts/notosans-cjk-jp/NotoSansCJKjp-Bold.woff') format('woff'), url('assets/fonts/notosans-cjk-jp/NotoSansCJKjp-Bold.ttf') format('truetype'), url('assets/fonts/notosans-cjk-jp/NotoSansCJKjp-Bold.eot') format('embedded-opentype');
 }
 /* ------------------------------------
 //  base
@@ -1538,6 +1538,42 @@ footer a img:active,
   top: 7px;
 }
 /* ----------------------------------------------------------------
+  JS: magnific-popup の閉じるボタン
+---------------------------------------------------------------- */
+.button-mfp-close .close-button-line{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 2px;
+  background-color: transparent;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.button-mfp-close .close-button-line::before,
+.button-mfp-close .close-button-line::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  content: '';
+  transition: all .1s linear 0s;
+}
+.button-mfp-close .close-button-line::before{
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.button-mfp-close .close-button-line::after{
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/* ----------------------------------------------------------------
   メニュー開閉時の挙動　まとめて指定
 ---------------------------------------------------------------- */
 body.is__open{
@@ -1968,6 +2004,20 @@ body.is__open{
 }
 .sec--navi-block .button-wrap{
   margin-top: 30px;
+}
+.sec--navi-block .contact-other{
+  margin-top: 30px;
+  text-align: center;
+}
+.sec--navi-block .contact-other p{
+  text-align: center;
+}
+.sec--navi-block .contact-other a{
+  display: block;
+  font-weight: 700;
+  font-size: 28px;
+  font-size: 2.8rem;
+  font-family: 'Oswald', sans-serif;
 }
 .sec--page-navi{
   padding-top: 0;
@@ -2769,6 +2819,73 @@ body.is__open{
   margin-bottom: 5px;
 }
 
+/* ----------------------------------------------------------------
+  検索関連
+---------------------------------------------------------------- */
+.gsc-control-cse img,
+.gsc-control-cse svg{
+  width: auto !important;
+}
+
+.search-button-wrap{
+  padding: 0 10px;
+}
+.gsc-search-box{
+  margin-bottom: 0 !important;
+}
+.gsc-search-box .gsc-input-box{
+  padding: 8px 0 8px 5px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-radius: 0;
+  background-color: transparent;
+}
+.gsc-search-box .gsc-input-box .gsib_a{
+  padding: 0;
+}
+.gsc-search-box .gsc-input-box .gsib_a .gsc-input{
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #fff;
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+.gsc-search-box .gsc-input-box .gsib_b .gscb_a{
+  color: #fff;
+  vertical-align: bottom;
+}
+.gsc-search-box .gsc-search-button{
+  padding-left: 15px;
+}
+.gsc-search-box .gsc-search-button .gsc-search-button-v2{
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+.gsc-search-box .gsc-search-button .gsc-search-button-v2::before{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/img/common/icon_search-white.svg);
+  background-position: center;
+  background-size: 29px;
+  background-repeat: no-repeat;
+  content: '';
+}
+.gsc-search-box .gsc-search-button .gsc-search-button-v2 svg{
+  display: none !important;
+}
+
+.gssb_c{
+  z-index: 999999 !important;
+  margin-top: 8px !important;
+}
+.gssb_c .gssb_a img{
+  width: auto !important;
+}
 .post-body *{
   line-height: 2;
 }
@@ -4421,6 +4538,21 @@ select-ms-expand{
   .sec--navi-block .button-wrap{
     margin-top: 50px;
   }
+  .sec--navi-block .contact-other{
+    margin-top: 50px;
+    text-align: center;
+  }
+  .sec--navi-block .contact-other p{
+    font-size: 1.8rem;
+  }
+  .sec--navi-block .contact-other a{
+    display: inline-block;
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  .sec--navi-block .contact-other span{
+    font-size: 1.8rem;
+  }
   .sec--page-navi{
     margin-top: 80px;
     padding-top: 0;
@@ -5095,6 +5227,17 @@ select-ms-expand{
   .sec.sec--sitemap{
     padding-bottom: 20px;
   }
+  .search-button-wrap{
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: calc(620px + 40px);
+    width: 100%;
+  }
+  .gsc-search-box .gsc-search-button{
+    padding-left: 10px;
+  }
   input:not([type=checkbox]):not([type=radio]),
   select,
   textarea{
@@ -5352,6 +5495,11 @@ select-ms-expand{
     padding-right: 50px;
     padding-left: 50px;
     max-width: calc(1200px + 100px);
+  }
+  .search-button-wrap{
+    padding-right: 50px;
+    padding-left: 50px;
+    max-width: calc(620px + 100px);
   }
   .form-wrap{
     padding-right: 50px;

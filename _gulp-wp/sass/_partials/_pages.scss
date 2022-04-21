@@ -472,6 +472,19 @@
   .button-wrap {
     margin-top: 30px;
   }
+  .contact-other {
+    margin-top: 30px;
+    text-align: center;
+    p {
+      text-align: center;
+    }
+    a {
+      display: block;
+      font-family: $ff-en;
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+  }
 }
 @include res_min( $break ) {
   .sec--navi-block {
@@ -481,6 +494,21 @@
     }
     .button-wrap {
       margin-top: 50px;
+    }
+    .contact-other {
+      margin-top: 50px;
+      text-align: center;
+      p {
+        font-size: 1.8rem;
+      }
+      a {
+        display: inline-block;
+        font-size: 3rem;
+        line-height: 1.2;
+      }
+      span {
+        font-size: 1.8rem;
+      }
     }
   }
 }
@@ -2008,5 +2036,101 @@
   }
   .contents-title--medium {
     margin-bottom: 5px;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  検索関連
+---------------------------------------------------------------- */
+.gsc-control-cse {
+  img,
+  svg {
+    width: auto !important;
+  }
+}
+
+.search-button-wrap {
+  padding: 0 10px;
+}
+@include res_min( $break ) {
+  .search-button-wrap {
+    @include maxW(620);
+  }
+}
+
+// google search をカスタマイズ
+.gsc-search-box {
+  margin-bottom: 0 !important;
+
+  // 入力
+  .gsc-input-box {
+    padding: 8px 0 8px 5px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    background-color: transparent;
+
+    // 入力input
+    .gsib_a {
+      padding: 0;
+      .gsc-input {
+        font-size: 1.8rem;
+        color: #fff;
+        background-image: none !important;
+        background-color: transparent !important;
+      }
+    }
+    // リセットボタン
+    .gsib_b {
+      .gscb_a {
+        color: #fff;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  // 検索ボタン
+  .gsc-search-button {
+    padding-left: 15px;
+    .gsc-search-button-v2 {
+      padding: 0;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background-color: transparent;
+      border-radius: 0;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url(./assets/img/common/icon_search-white.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 29px;
+        display: block;
+      }
+      svg {
+        display: none !important;
+      }
+    }
+  }
+}
+// 検索候補
+.gssb_c {
+  margin-top: 8px !important;
+  z-index: 999999 !important;
+  .gssb_a {
+    img {
+      width: auto !important;
+    }
+  }
+}
+@include res_min( $break ) {
+  .gsc-search-box {
+    // 検索ボタン
+    .gsc-search-button {
+      padding-left: 10px;
+    }
   }
 }
