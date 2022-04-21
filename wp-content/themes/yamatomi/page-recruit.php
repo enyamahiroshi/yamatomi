@@ -38,25 +38,33 @@
 				</tr>
 				<tr>
 					<th>募集職種</th>
-					<td></td>
+					<td>① 営業<br>② 製造<br>③ 配送</td>
 				</tr>
 				<tr>
 					<th>勤務時間</th>
-					<td>8：00～17：00（休憩90分）<br>※原則は定時退社ができます。<br>残業はあっても多くて日に1時間くらいで、月平均10時間以下です。</td>
+					<td>① 8：00～18：30（休憩90分）内固定残業時間60分<br>②③ 8：00～17：00（休憩90分）<br>残業はできるだけしない方針です。</td>
 				</tr>
 				<tr>
 					<th>勤務地</th>
 					<td>
-            <p>「上伊那工場」「明科工場」「明科七貴工場」の各工場<br>※いずれも転勤なし！ マイカー通勤OKです。</p>
+            <p>「本社」または「上伊那工場」「明科工場」「明科七貴工場」の各工場<br>※いずれも転勤なし！ マイカー通勤OKです。</p>
+			<p>【本社】<br>長野県松本市井川城1-2-9</p>
             <p>【上伊那工場】<br>長野県上伊那郡宮田村大久保5450‐207</p>
             <p>【明科工場】<br>長野県安曇野市明科東川手371</p>
-            <p>【明科七貴工場】<br>長野県安曇野市明科七貴6112-2<br>マイナビ転職の勤務地区分では…</p>
-            <p>長野県</p>
+            <p>【明科七貴工場】<br>長野県安曇野市明科七貴6112-2</p>
           </td>
 				</tr>
 				<tr>
-					<th>設立</th>
-					<td>月給19万～25万円（一律手当含む） ＋ 各種手当 ＋ 残業代<br>※年齢、経験、能力等を考慮の上、優遇します。<br>試用期間が1～3ヶ月あり、その間は日給8,000円です。<br>初年度の年収 <br>250万円～350万円</td>
+					<th>給与</th>
+					<td>① 月給22万～32万円（一律手当含む） ※固定残業代含む＋超過分の残業代<br>
+						② 月給19万～25万円（一律手当含む）＋残業代<br>
+						③ 月給22万～30万円（一律手当含む）＋残業代<br><br>
+						※年齢、経験、能力等を考慮の上、優遇します。<br>
+						① 試用期間が1～3ヶ月ありありますが、待遇に変更はありません。<br>
+						② 試用期間が1～3ヶ月あり、その間は日給8,000円です。<br>
+						③ 試用期間が1～3ヶ月あり、その間は日給9,000円です。
+						<br>
+						<br>初年度の年収 <br>250万円～350万円</td>
 				</tr>
 				<tr>
 					<th>資本金</th>
@@ -102,7 +110,6 @@
               <li>雇用保険</li>
               <li>労災保険</li>
               <li>退職金制度（中退共）</li>
-              <li>財形貯蓄制度</li>
             </ul>
           </td>
 				</tr>
@@ -144,7 +151,7 @@
       <div class="inner-wide">
         <div class="separate-block-content">
           <div class="separate-block-content__head">
-            <h2 class="separate-block-content__head__staff-name"><span>製造職</span><em>小松 健一</em></h2>
+            <h2 class="separate-block-content__head__staff-name"><span>製造職</span><em>K.K</em></h2>
             <em class="separate-block-content__head__staff-title">出来上がった製品に自分自身の成長を実感できます。</em>
           </div>
           <p class="separate-block-content__text">
@@ -159,7 +166,7 @@
       <div class="inner-wide">
         <div class="separate-block-content">
           <div class="separate-block-content__head">
-            <h2 class="separate-block-content__head__staff-name"><span>製造職</span><em>花岡 市郎</em></h2>
+            <h2 class="separate-block-content__head__staff-name"><span>製造職</span><em>I.H</em></h2>
             <em class="separate-block-content__head__staff-title">地域に貢献できる、やりがいのある仕事です。</em>
           </div>
           <p class="separate-block-content__text">
