@@ -3,7 +3,6 @@
 // ----------------------------------*/
 a {
   display: inline-block;
-  color: $baseColor;
   text-decoration: none;
   transition: all .1s linear 0s;
   &:link, &:visited {
@@ -35,6 +34,20 @@ footer,
       color: $baseColor;
       text-decoration: none;
     }
+  }
+}
+
+
+/* ----------------------------------------------------------------
+  テキストタイプ
+---------------------------------------------------------------- */
+.link {
+  &:link, &:visited {
+    color: $mainColor;
+    text-decoration: underline;
+  }
+  &:hover, &:active {
+    opacity: .8;
   }
 }
 

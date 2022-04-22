@@ -512,7 +512,6 @@ svg{
 // ----------------------------------*/
 a{
   display: inline-block;
-  color: #3b3b3b;
   text-decoration: none;
   transition: all .1s linear 0s;
 
@@ -564,6 +563,20 @@ footer a img:active,
   text-decoration: none;
   opacity: 1;
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+}
+
+/* ----------------------------------------------------------------
+  テキストタイプ
+---------------------------------------------------------------- */
+.link:link,
+.link:visited{
+  color: #052f4b;
+  text-decoration: underline;
+}
+.link:hover,
+.link:active{
+  opacity: .8;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
 }
 
 /* ----------------------------------------------------------------
@@ -2004,6 +2017,10 @@ body.is__open{
 }
 .sec--navi-block .button-wrap{
   margin-top: 30px;
+}
+.sec--navi-block .link-content{
+  margin-top: 20px;
+  text-align: center;
 }
 .sec--navi-block .contact-other{
   margin-top: 30px;
@@ -4537,6 +4554,9 @@ select-ms-expand{
   }
   .sec--navi-block .button-wrap{
     margin-top: 50px;
+  }
+  .sec--navi-block .link-content{
+    margin-top: 30px;
   }
   .sec--navi-block .contact-other{
     margin-top: 50px;

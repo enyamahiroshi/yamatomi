@@ -183,6 +183,9 @@
 				?>
         <a href="<?php echo esc_url( home_url() ); ?>/download/" class="button button__large">資料ダウンロードページはこちら<br>（CAD・仕様書）</a>
       </nav>
+			<p class="link-content">
+				<a href="<?php echo esc_url( home_url() ); ?>/contact/" class="link">初めての方はこちら</a>
+			</p>
     </div>
   </section>
 
