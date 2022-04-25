@@ -471,10 +471,13 @@
   }
   .button-wrap {
     margin-top: 30px;
-  }
-  .link-content {
-    margin-top: 20px;
-    text-align: center;
+    .button__download {
+      margin-top: 10px;
+    }
+    .link-content {
+      margin-top: 20px;
+      text-align: center;
+    }
   }
   .contact-other {
     margin-top: 30px;
@@ -498,9 +501,12 @@
     }
     .button-wrap {
       margin-top: 50px;
-    }
-    .link-content {
-      margin-top: 30px;
+      .button__download {
+        margin-top: 0;
+      }
+      .link-content {
+        margin-top: 30px;
+      }
     }
     .contact-other {
       margin-top: 50px;

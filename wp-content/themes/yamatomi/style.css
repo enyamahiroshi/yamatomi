@@ -2018,7 +2018,10 @@ body.is__open{
 .sec--navi-block .button-wrap{
   margin-top: 30px;
 }
-.sec--navi-block .link-content{
+.sec--navi-block .button-wrap .button__download{
+  margin-top: 10px;
+}
+.sec--navi-block .button-wrap .link-content{
   margin-top: 20px;
   text-align: center;
 }
@@ -4555,7 +4558,10 @@ select-ms-expand{
   .sec--navi-block .button-wrap{
     margin-top: 50px;
   }
-  .sec--navi-block .link-content{
+  .sec--navi-block .button-wrap .button__download{
+    margin-top: 0;
+  }
+  .sec--navi-block .button-wrap .link-content{
     margin-top: 30px;
   }
   .sec--navi-block .contact-other{
