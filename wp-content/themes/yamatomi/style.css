@@ -2573,6 +2573,17 @@ body.is__open{
   font-size: 1.4rem;
   line-height: 1.6;
 }
+.sec--aboutthis{
+  padding-top: 0;
+}
+
+.block-aboutthis p{
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  font-size: 2rem;
+}
 .sec--archive-case-study{
   padding-top: 22px;
 }
@@ -5077,6 +5088,12 @@ select-ms-expand{
   }
   .archive-product__list--center .archive-product__list__item:first-of-type{
     margin-left: 0;
+  }
+  .sec--aboutthis{
+    padding-top: 0;
+  }
+  .block-aboutthis p{
+    font-size: 2.4rem;
   }
   .sec--archive-case-study{
     padding-top: 40px;

@@ -17,7 +17,7 @@
         <p class="brand-kv__content__text">人と自然、人と経済、人と他の生物の関係。それら全てが山富産業のテーマです。私たちは、人間社会におけるあらゆる「環境」を考えよりよい環境構築のために必要な機能を持つ製品を開発します。</p>
       </div>
       <figure class="brand-kv__image">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_brand.png" alt="環境保全機能（生体機能） 景観機能 構造機能" width="834" height="780">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/top/img_brand.png" alt="環境保全機能（生態機能） 景観機能 構造機能" width="834" height="780">
       </figure>
     </div>
   </section>
@@ -41,7 +41,7 @@
     <div class="inner-wide">
       <div class="separate-block-content">
         <div class="separate-block-content__head">
-          <h2 class="separate-block-content__head__title"><span>ECOLOGY</span>環境保全機能（生体機能）</h2>
+          <h2 class="separate-block-content__head__title"><span>ECOLOGY</span>環境保全機能（生態機能）</h2>
           <strong class="separate-block-content__head__catchcopy">自然に近づき溶け込む。生物生息の場となるブロック。</strong>
         </div>
         <p class="separate-block-content__text">

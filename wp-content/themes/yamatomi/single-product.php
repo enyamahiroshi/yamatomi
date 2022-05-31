@@ -163,6 +163,19 @@
     </div><?php // .inner ?>
   </section>
 
+	<?php // この製品に関しましてはお問い合わせくださいの表示・非表示
+		$seihinmsg = scf::get('scf_seihinmsg');
+		if($seihinmsg==1):
+	?>
+	<section class="sec sec--aboutthis">
+    <div class="inner-small">
+			<div class="block-aboutthis">
+				<p>この製品に関しましてはお問い合わせください。</p>
+			</div>
+		</div><?php // .inner ?>
+  </section>
+	<?php endif; ?>
+
   <?php // download-navi ?>
   <section class="sec sec--navi-block">
     <div class="inner-wide">

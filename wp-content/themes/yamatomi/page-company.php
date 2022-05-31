@@ -277,13 +277,9 @@
             <td class="cell-data">ポラカブル販売開始</td>
           </tr>
           <tr>
-            <td rowspan="2" class="cell-history-year">平成12年</td>
+            <td class="cell-history-year">平成12年</td>
             <td class="cell-history-month">5月</td>
             <td class="cell-data">フラワーストーンIL販売開始</td>
-          </tr>
-          <tr>
-            <td class="cell-history-month">9月</td>
-            <td class="cell-data">ポーラススプリットン販売開始</td>
           </tr>
           <tr>
             <td class="cell-history-year">平成13年</td>

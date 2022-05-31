@@ -1607,6 +1607,30 @@
 }
 
 
+// この製品に関するお問い合わせメッセージ
+.sec--aboutthis {
+  padding-top: 0;
+}
+.block-aboutthis {
+  p {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+@include res_min( $break ) {
+  .sec--aboutthis {
+    padding-top: 0;
+  }
+  .block-aboutthis {
+    p {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+
 // case study
 .sec--archive-case-study {
   padding-top: 22px;
